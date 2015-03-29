@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>7f90a442-b318-43b1-8ea2-dae7d5cbc697</ProjectGuid>
+    <ProjectGuid>{7F90A442-B318-43B1-8EA2-DAE7D5CBC697}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XmlChecker</RootNamespace>
@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CsvParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlRuleXPath.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Rule.csv">
