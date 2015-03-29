@@ -1,0 +1,5 @@
+XA0101,Error,//*[name(.)='Grid'][not(*[2])],子要素を複数持たないGridは入れ子を解除してください。
+XA0201,Error,//*[name(.)='StackPanel'][not(*[2])],子要素を複数持たないStackPanelは入れ子を解除してください。
+XA0301,Error,//*[name(.)='Border'][not(@Background)][not(@BorderBrush) or not(@BorderThickness)],背景色も罫線を持たないBorderは表示されないので入れ子を解除してください。
+XA0401,Error,//*[name(.)='ScrollViewer'][not(@Background)],"マウスホイールに反応させるため、ScrollViewrにはBackground=""TransParent""を指定してください。"
+XA0501,Error,"//*[name(.)='TextBlock'][contains(@Text,'TwoWay')]",TextBlock.TextにはTwoWayバインドを指定しないでください。
