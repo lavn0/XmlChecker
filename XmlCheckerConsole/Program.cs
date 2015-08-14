@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Xml;
-using System.Xml.Linq;
+using XmlChecker;
 
-namespace XmlChecker
+namespace XmlCheckerConsole
 {
 	class Program
 	{
@@ -20,7 +18,7 @@ namespace XmlChecker
 			}
 			else
 			{
-				var message = "引き数にファイルまたはフォルダを指定してください。";
+				var message = "ファイルまたはフォルダを指定してください。";
 				Debug.WriteLine(message);
 				Console.WriteLine();
 			}
@@ -71,22 +69,7 @@ namespace XmlChecker
 			var ruleCsv = CsvParser.Parse(ruleStr).ToList();
 			var rules = ruleCsv.Select(l => new XmlRuleXPath(l)).ToList();
 
-			var results = new List<Violation>();
-
-			foreach (var file in files)
-			{
-				foreach (var rule in rules)
-				{
-					var xaml = XDocument.Load(file, LoadOptions.SetLineInfo | LoadOptions.PreserveWhitespace);
-					var violations = rule.GetViolatedElements(xaml);
-
-					foreach (var violation in violations)
-					{
-						var info = violation as IXmlLineInfo;
-						results.Add(new Violation(rule.Id, rule.Level, file, info.LineNumber, info.LinePosition, rule.Message));
-					}
-				}
-			}
+			var violations = ViolationUtility.GetVioltations(files, rules);
 
 			foreach (var rule in rules.Where(r => !r.IsValid.GetValueOrDefault(true)))
 			{
@@ -94,14 +77,20 @@ namespace XmlChecker
 				Console.WriteLine("ルールID={0} が異常終了しました。{1}", rule.Id, rule.XPathErrorMessage);
 			}
 
-			var dic = 結果整理(results);
+			var groupedViolations = violations
+				.OrderBy(r => r.Level)
+				.ThenBy(r => r.FileName)
+				.ThenBy(r => r.LineNumber)
+				.ThenBy(r => r.LinePosition)
+				.ThenBy(r => r.ErrorCode)
+				.GroupBy(r => r.Level);
 
-			foreach (var level in dic.Keys.OrderBy(k => k))
+			foreach (var item in groupedViolations)
 			{
-				Debug.WriteLine("■レベル {0} の結果", level);
-				Console.WriteLine("■レベル {0} の結果", level);
+				Debug.WriteLine(string.Format("■レベル {0} の結果", item.Key));
+				Console.WriteLine(string.Format("■レベル {0} の結果", item.Key));
 
-				foreach (var result in dic[level])
+				foreach (var result in item)
 				{
 					Debug.WriteLine("{0}({1},{2}): {3} {4} {5}", result.FileName, result.LineNumber, result.LinePosition, result.ErrorCode, result.Level, result.Message);
 					Console.WriteLine("{0}({1},{2}): {3} {4} {5}", result.FileName, result.LineNumber, result.LinePosition, result.ErrorCode, result.Level, result.Message);
@@ -114,35 +103,20 @@ namespace XmlChecker
 			Debug.WriteLine("");
 			Console.WriteLine("");
 
+			// ■サマリーの出力
+			var summaryMessage = string.Format(
+				"  Summary:  Total:{0}, {1}",
+				violations.Count,
+				string.Join(", ", groupedViolations.Select(p => string.Format("{0}:{1}", p.Key, p.Count()))));
 
-			var summary = string.Join(", ", dic.Select(p => string.Format("{0}:{1}", p.Key, p.Value.Count)));
+			Console.WriteLine(summaryMessage);
+			Console.WriteLine(summaryMessage);
 
-			Debug.WriteLine("  Summary:  Total:{0}, {1}", results.Count, summary);
-			Console.WriteLine("  Summary:  Total:{0}, {1}", results.Count, summary);
-
-			foreach (var errorCode in results.Select(r => r.ErrorCode).Distinct().OrderBy(e => e))
+			foreach (var errorCode in rules.Select(e => e.Id))
 			{
-				Debug.WriteLine("    {0}: {1}", errorCode, results.Count(r => r.ErrorCode == errorCode));
-				Console.WriteLine("    {0}: {1}", errorCode, results.Count(r => r.ErrorCode == errorCode));
+				Debug.WriteLine("    {0}: {1}", errorCode, violations.Count(r => r.ErrorCode == errorCode));
+				Console.WriteLine("    {0}: {1}", errorCode, violations.Count(r => r.ErrorCode == errorCode));
 			}
-		}
-
-		private static Dictionary<string, List<Violation>> 結果整理(List<Violation> results)
-		{
-			var dic = new Dictionary<string, List<Violation>>();
-			foreach (var result in results)
-			{
-				List<Violation> ls;
-				if (!dic.TryGetValue(result.Level, out ls))
-				{
-					ls = new List<Violation>();
-					dic[result.Level] = ls;
-				}
-
-				ls.Add(result);
-			}
-
-			return dic;
 		}
 	}
 }

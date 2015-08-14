@@ -45,6 +45,7 @@
     <Compile Include="CsvParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Violation.cs" />
+    <Compile Include="ViolationUtility.cs" />
     <Compile Include="XmlRuleXPath.cs" />
   </ItemGroup>
   <ItemGroup>
