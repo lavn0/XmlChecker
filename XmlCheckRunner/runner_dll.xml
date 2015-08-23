@@ -1,0 +1,20 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<TmpSourceCode>BuildCode.cs</TmpSourceCode>
+		<AssemblyDir>$(SolutionDir)XmlChecker\$(OutputPath)</AssemblyDir>
+		<AssemblyFile>$(AssemblyDir)XmlChecker.dll</AssemblyFile>
+		<RuleFiles>$(AssemblyDir)Rule.csv</RuleFiles>
+	</PropertyGroup>
+
+	<UsingTask
+		AssemblyFile="$(AssemblyFile)"
+		TaskName="XmlCheckTask">
+	</UsingTask>
+
+	<Target Name="BeforeBuild" Condition="@(Page) != ''">
+		<XmlCheckTask
+			TargetFiles="@(Page)"
+			RuleFiles="$(RuleFiles)"
+			ErrorLevels="Error;Critical"/>
+	</Target>
+</Project>
