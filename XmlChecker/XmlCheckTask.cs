@@ -1,5 +1,5 @@
 ﻿using Microsoft.Build.Utilities;
-using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -45,15 +45,19 @@ namespace XmlChecker
 				return false;
 			}
 
-			var ruleStr = string.Join(Environment.NewLine, RuleFiles.Select(f => File.ReadAllText(f, Encoding.GetEncoding("SHIFT_JIS"))));
-			var ruleCsv = CsvParser.Parse(ruleStr).ToList();
-			var rules = ruleCsv.Select(l => new XmlRuleXPath(l)).ToList();
+			var rules = new List<XmlRuleXPath>();
+			foreach (var rule in RuleFiles)
+			{
+				var ruleStr = File.ReadAllText(rule, Encoding.GetEncoding("SHIFT_JIS"));
+				var ruleCsv = CsvParser.Parse(ruleStr).ToList();
+				var ruleXPaths = ruleCsv.Select((strLine, lineNumber) => new XmlRuleXPath(rule, lineNumber, strLine)).ToList();
+				rules.AddRange(ruleXPaths);
+			}
 			var violations = ViolationUtility.GetVioltations(TargetFiles, rules);
 
 			foreach (var rule in rules.Where(r => !r.IsValid.GetValueOrDefault(true)))
 			{
-				Log.LogError("ルールID={0} が異常終了しました。{1}", rule.Id, rule.XPathErrorMessage);
-				return false;
+				Log.LogError("category", "R00000", "helpKeyword", rule.File, rule.LineNumber + 1, 0, rule.LineNumber + 1, 0, "ルールID={0} が異常終了しました。{1}", rule.Id, rule.XPathErrorMessage);
 			}
 
 			var groupedViolations = violations

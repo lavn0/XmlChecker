@@ -67,7 +67,7 @@ namespace XmlCheckerConsole
 
 			var ruleStr = File.ReadAllText(filePath, Encoding.GetEncoding("SHIFT_JIS"));
 			var ruleCsv = CsvParser.Parse(ruleStr).ToList();
-			var rules = ruleCsv.Select(l => new XmlRuleXPath(l)).ToList();
+			var rules = ruleCsv.Select((strLine, lineNumer) => new XmlRuleXPath(filePath, lineNumer, strLine)).ToList();
 
 			var violations = ViolationUtility.GetVioltations(files, rules);
 
