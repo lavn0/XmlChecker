@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -19,7 +20,11 @@ namespace XmlChecker
 
 					foreach (IXmlLineInfo info in violatedObjects)
 					{
-						results.Add(new Violation(rule.Id, rule.Level, file, info.LineNumber, info.LinePosition, rule.Message));
+						var xml = info.ToString();
+						var endLineNumber = info.LineNumber + xml.Count(c => c == '\n');
+						var endLinePosition = xml.Any(c => c == '\n') ? info.ToString().Substring(xml.LastIndexOf('\n')).Length : info.LinePosition + xml.Length;
+
+						results.Add(new Violation(rule.Id, rule.Level, file, info.LineNumber, info.LinePosition, endLineNumber, endLinePosition, rule.Message));
 					}
 				}
 			}

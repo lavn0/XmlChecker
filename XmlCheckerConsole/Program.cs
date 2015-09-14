@@ -80,8 +80,8 @@ namespace XmlCheckerConsole
 			var groupedViolations = violations
 				.OrderBy(r => r.Level)
 				.ThenBy(r => r.FileName)
-				.ThenBy(r => r.LineNumber)
-				.ThenBy(r => r.LinePosition)
+				.ThenBy(r => r.StartLineNumber)
+				.ThenBy(r => r.StartLinePosition)
 				.ThenBy(r => r.ErrorCode)
 				.GroupBy(r => r.Level);
 
@@ -92,8 +92,8 @@ namespace XmlCheckerConsole
 
 				foreach (var result in item)
 				{
-					Debug.WriteLine("{0}({1},{2}): {3} {4} {5}", result.FileName, result.LineNumber, result.LinePosition, result.ErrorCode, result.Level, result.Message);
-					Console.WriteLine("{0}({1},{2}): {3} {4} {5}", result.FileName, result.LineNumber, result.LinePosition, result.ErrorCode, result.Level, result.Message);
+					Debug.WriteLine("{0}({1},{2}): {3} {4} {5}", result.FileName, result.StartLineNumber, result.StartLinePosition, result.ErrorCode, result.Level, result.Message);
+					Console.WriteLine("{0}({1},{2}): {3} {4} {5}", result.FileName, result.StartLineNumber, result.StartLinePosition, result.ErrorCode, result.Level, result.Message);
 				}
 
 				Debug.WriteLine("");

@@ -1,11 +1,11 @@
-﻿namespace XmlChecker
-{
-	using Microsoft.Build.Utilities;
-	using System;
-	using System.IO;
-	using System.Linq;
-	using System.Text;
+﻿using Microsoft.Build.Utilities;
+using System;
+using System.IO;
+using System.Linq;
+using System.Text;
 
+namespace XmlChecker
+{
 	public class XmlCheckTask : Task
 	{
 		/// <summary>MSBuildプロセスで検証対象のファイル名を渡す</summary>
@@ -59,8 +59,8 @@
 			var groupedViolations = violations
 				.OrderBy(r => r.Level)
 				.ThenBy(r => r.FileName)
-				.ThenBy(r => r.LineNumber)
-				.ThenBy(r => r.LinePosition)
+				.ThenBy(r => r.StartLineNumber)
+				.ThenBy(r => r.StartLinePosition)
 				.ThenBy(r => r.ErrorCode)
 				.GroupBy(r => r.Level);
 
@@ -68,15 +68,15 @@
 			{
 				foreach (var result in item)
 				{
-					var message = string.Format("{0}({1},{2}): {3} {4} {5}", result.FileName, result.LineNumber, result.LinePosition, result.ErrorCode, result.Level, result.Message);
+					var message = string.Format("{0}({1},{2}): {3} {4} {5}", result.FileName, result.StartLineNumber, result.StartLinePosition, result.ErrorCode, result.Level, result.Message);
 
 					if (ErrorLevels.Contains(result.Level))
 					{
-						Log.LogWarning(result.Level, result.ErrorCode, "ヘルプキーワード", result.FileName, result.LineNumber, result.LinePosition, result.LineNumber, result.LinePosition, result.Message);
+						Log.LogWarning(result.Level, result.ErrorCode, "ヘルプキーワード", result.FileName, result.StartLineNumber, result.StartLinePosition, result.EndLineNumber, result.EndLinePosition, result.ErrorCode + ":" + result.Message);
 					}
 					else
 					{
-						Log.LogError(result.Level, result.ErrorCode, "ヘルプキーワード", result.FileName, result.LineNumber, result.LinePosition, result.LineNumber, result.LinePosition, result.Message);
+						Log.LogError(result.Level, result.ErrorCode, "ヘルプキーワード", result.FileName, result.StartLineNumber, result.StartLinePosition, result.EndLineNumber, result.EndLinePosition, result.ErrorCode + ":" + result.Message);
 					}
 				}
 			}
