@@ -55,6 +55,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="icon.png" />
+    <None Include="icon.svg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Condition="Exists('$(ProgramFiles)\MSBuild\StyleCop\v4.7\Microsoft.StyleCop.targets')" Project="$(ProgramFiles)\MSBuild\StyleCop\v4.7\Microsoft.StyleCop.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
