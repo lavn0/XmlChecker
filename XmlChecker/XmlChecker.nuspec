@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" ?>
+<package>
+	<metadata>
+		<id>$id$</id>
+		<version>$version$</version>
+		<title>$title$</title>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+		<projectUrl>https://github.com/lavn0/XmlChecker</projectUrl>
+		<iconUrl>https://raw.githubusercontent.com/lavn0/XmlChecker/master/XmlChecker/icon.png</iconUrl>
+		<description>$description$</description>
+		<copyright>Copyright 2016</copyright>
+		<tags>Xml CodeAnalysis</tags>
+	</metadata>
+	<files>
+		<file src="XmlChecker.targets" target="build" />
+	</files>
+</package>

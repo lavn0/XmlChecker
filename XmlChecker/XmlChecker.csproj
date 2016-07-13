@@ -51,9 +51,11 @@
     <Compile Include="XmlRuleXPath.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Rule.csv">
+    <Content Include="Rule.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
+    <None Include="XmlChecker.targets" />
+    <None Include="XmlChecker.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <None Include="icon.png" />
@@ -68,4 +70,39 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <UsingTask TaskName="DownloadFile" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+    <ParameterGroup>
+      <Address ParameterType="System.String" Required="true" />
+      <FileName ParameterType="System.String" Required="true" />
+    </ParameterGroup>
+    <Task>
+      <Reference Include="System" />
+      <Code Type="Fragment" Language="cs"><![CDATA[
+          new System.Net.WebClient().DownloadFile(Address, FileName);
+        ]]></Code>
+    </Task>
+  </UsingTask>
+  <UsingTask TaskName="AssemblyVersion" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+    <ParameterGroup>
+      <FileName ParameterType="System.String" Required="true" />
+      <Result ParameterType="System.String" Output="true" />
+    </ParameterGroup>
+    <Task>
+      <Reference Include="System" />
+      <Reference Include="System.Reflection" />
+      <Using Namespace="System.Reflection" />
+      <Code Type="Fragment" Language="cs"><![CDATA[
+          Result = AssemblyName.GetAssemblyName(FileName).Version.ToString();
+        ]]></Code>
+    </Task>
+  </UsingTask>
+  <Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
+    <DownloadFile Condition="!Exists('$(SolutionDir)nuget.exe')" Filename="$(SolutionDir)nuget.exe" Address="https://dist.nuget.org/win-x86-commandline/latest/nuget.exe" />
+    <Exec Command="$(SolutionDir)nuget.exe pack $(ProjectFileName) -Prop Configuration=Release -OutputDirectory $(OutputPath)" />
+    <AssemblyVersion FileName="$(TargetPath)">
+      <Output TaskParameter="Result" PropertyName="AssemblyVersion" />
+    </AssemblyVersion>
+    <Copy SourceFiles="$(OutputPath)$(ProjectName).$(AssemblyVersion).nupkg" DestinationFolder="$(SolutionDir)nupkg" />
+    <Message Text="$(SolutionDir)nupkg に $(ProjectName).$(AssemblyVersion).nupkg をコピーしました。" Importance="high" />
+  </Target>
 </Project>
