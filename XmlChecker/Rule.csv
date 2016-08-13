@@ -1,4 +1,4 @@
-XA0001,Info,"//@*[contains(.,'OneWay')]",OneWayバインディングはデフォルト値です。
+XA0001,Info,"//@*[starts-with(.,'{Binding ')][contains(.,'Mode=OneWay')]",OneWayバインディングはデフォルト値です。
 XA0002,Info,"//@*[contains(.,'TargetNullValue')]",TargetNullValueは使用しないでください。
 XA0003,Warning,"//@*[contains(.,'FallbackValue')]",FallbackValueが不要な実装を検討してください。FallbackValueが必要なケースは例外発生のケースであり、例外によってパフォーマンス低下が懸念されます。
 XA0004,Error,//@*[name(.)='Visibility'][.='Collapsed'][not(parent::*/@*[local-name(.)='Name'])],"Name属性が無いタグのVisibility属性に""Collapsed""が指定されています。このコントロールは表示されない可能性があります。"
