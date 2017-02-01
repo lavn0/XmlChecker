@@ -7,7 +7,8 @@ namespace UnitTestProject
 	public class CsvUnitTest
 	{
 		[TestMethod]
-		public void TestMethod1()
+		[TestCategory("Csv")]
+		public void CsvTest1()
 		{
 			string source = "test1,test2,test3";
 			var result = CsvParser.Parse(source);
@@ -20,7 +21,8 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		public void TestMethod2()
+		[TestCategory("Csv")]
+		public void CsvTest2()
 		{
 			string source = "test1,test2,test3\r\n" + "test1,test2,test3";
 			var result = CsvParser.Parse(source);
@@ -39,7 +41,8 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		public void TestMethod3()
+		[TestCategory("Csv")]
+		public void CsvTest3()
 		{
 			string source = "test1,test2,test3\n" + "test1,test2,test3";
 			var result = CsvParser.Parse(source);
@@ -58,7 +61,8 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		public void TestMethod4()
+		[TestCategory("Csv")]
+		public void CsvTest4()
 		{
 			string source = "test1,test2,test3\r" + "test4,test5,test6";
 			var result = CsvParser.Parse(source);
