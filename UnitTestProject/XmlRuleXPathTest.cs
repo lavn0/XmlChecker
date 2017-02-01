@@ -1,7 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using XmlChecker;
 
 namespace UnitTestProject
@@ -9,104 +11,2160 @@ namespace UnitTestProject
 	[TestClass]
 	public class XmlRuleXPathTest
 	{
-		[TestMethod]
-		public void XA0101_GridTest()
-		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0101", "Error", "//*[name(.)='Grid'][not(*[2])]", "子要素を複数持たないGridは入れ子を解除してください。", });
-			var xaml = @"<Grid><TextBlock Text=""Test"" /></Grid>";
-			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
-			var errorInstances = xDoc.XPathSelectElements(rule.XPath).ToList();
-			Assert.AreEqual(1, errorInstances.Count);
-		}
+		public TestContext TestContext { get; set; }
 
 		[TestMethod]
-		public void XA0102_GridTest()
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0001_OK1.xaml", "Resources")]
+		public void XA0001_OK1()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0102", "Error", "//*[name(.)='Grid']", "子要素を複数持たないGridは入れ子を解除してください。", });
-			var xaml = @"<Grid><TextBlock Text=""Test"" /></Grid>";
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0001", "Info", "//@*[starts-with(.,'{Binding ')][contains(.,'Mode=OneWay')]", @"OneWayバインディングはデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0001_OK1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
-			var errorInstances = xDoc.XPathSelectElements(rule.XPath).ToList();
-			Assert.AreEqual(1, errorInstances.Count);
-		}
-
-		[TestMethod]
-		public void XA0201_StackPanelTest()
-		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0201", "Error", "//*[name(.)='StackPanel'][not(*[2])]", "子要素を複数持たないStackPanelは入れ子を解除してください。", });
-			var xaml = @"<StackPanel><TextBlock Text=""Test"" /></StackPanel>";
-			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
-			var errorInstances = xDoc.XPathSelectElements(rule.XPath).ToList();
-			Assert.AreEqual(1, errorInstances.Count);
-		}
-
-		[TestMethod]
-		public void XA0301_BorderTest1()
-		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0301", "Error", "//*[name(.)='Border'][not(@Background)][not(@BorderBrush) or not(@BorderThickness)]", "罫線色を持たないBorderは表示されないので入れ子を解除してください。", });
-			var xaml = @"<Border Background=""Black""><TextBlock Text=""Test"" /></Border>";
-			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
-			var errorInstances = xDoc.XPathSelectElements(rule.XPath).ToList();
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
 			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
-		public void XA0301_BorderTest2()
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0001_NG1.xaml", "Resources")]
+		public void XA0001_NG1()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0301", "Error", "//*[name(.)='Border'][not(@Background)][not(@BorderBrush) or not(@BorderThickness)]", "背景色も罫線を持たないBorderは表示されないので入れ子を解除してください。", });
-			var xaml = @"<Border><TextBlock Text=""Test"" /></Border>";
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0001", "Info", "//@*[starts-with(.,'{Binding ')][contains(.,'Mode=OneWay')]", @"OneWayバインディングはデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0001_NG1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
-			var errorInstances = xDoc.XPathSelectElements(rule.XPath).ToList();
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
 			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
-		public void XA0301_BorderTest3()
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0002_OK1.xaml", "Resources")]
+		public void XA0002_OK1()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0301", "Error", "//*[name(.)='Border'][not(@Background)][not(@BorderBrush) or not(@BorderThickness)]", "背景色も罫線を持たないBorderは表示されないので入れ子を解除してください。", });
-			var xaml = @"<Border BorderThickness=""1""><TextBlock Text=""Test"" /></Border>";
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0002", "Info", "//@*[contains(.,'TargetNullValue')]", @"TargetNullValueは使用しないでください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0002_OK1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
-			var errorInstances = xDoc.XPathSelectElements(rule.XPath).ToList();
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0002_NG1.xaml", "Resources")]
+		public void XA0002_NG1()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0002", "Info", "//@*[contains(.,'TargetNullValue')]", @"TargetNullValueは使用しないでください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0002_NG1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
 			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
-		public void XA0301_BorderTest4()
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0003_OK1.xaml", "Resources")]
+		public void XA0003_OK1()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0301", "Error", "//*[name(.)='Border'][not(@BorderBrush) or not(@BorderThickness)]", "背景色も罫線を持たないBorderは表示されないので入れ子を解除してください。", });
-			var xaml = @"<Border BorderBrush=""Black""><TextBlock Text=""Test"" /></Border>";
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0003", "Warning", "//@*[contains(.,'FallbackValue')]", @"FallbackValueが不要な実装を検討してください。FallbackValueが必要なケースは例外発生のケースであり、例外によってパフォーマンス低下が懸念されます。", });
+			var xaml = File.ReadAllText(@"Resources\XA0003_OK1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
-			var errorInstances = xDoc.XPathSelectElements(rule.XPath).ToList();
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0003_NG1.xaml", "Resources")]
+		public void XA0003_NG1()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0003", "Warning", "//@*[contains(.,'FallbackValue')]", @"FallbackValueが不要な実装を検討してください。FallbackValueが必要なケースは例外発生のケースであり、例外によってパフォーマンス低下が懸念されます。", });
+			var xaml = File.ReadAllText(@"Resources\XA0003_NG1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
 			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
-		public void XA0401_ScrollViewerTest()
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0004_OK1.xaml", "Resources")]
+		public void XA0004_OK1()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0401", "Error", "//*[name(.)='ScrollViewer'][not(@Background)]", "マウスホイールに反応させるため、ScrollViewrにはBackgroundを指定してください。", });
-			var xaml = @"<ScrollViewer><TextBlock Text=""Test"" /></ScrollViewer>";
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0004", "Error", "//@*[name(.)='Visibility'][.='Collapsed'][not(parent::*/@*[local-name(.)='Name'])]", @"Name属性が無いタグのVisibility属性に""Collapsed""が指定されています。このコントロールは表示されない可能性があります。", });
+			var xaml = File.ReadAllText(@"Resources\XA0004_OK1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
-			var errorInstances = xDoc.XPathSelectElements(rule.XPath).ToList();
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0004_NG1.xaml", "Resources")]
+		public void XA0004_NG1()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0004", "Error", "//@*[name(.)='Visibility'][.='Collapsed'][not(parent::*/@*[local-name(.)='Name'])]", @"Name属性が無いタグのVisibility属性に""Collapsed""が指定されています。このコントロールは表示されない可能性があります。", });
+			var xaml = File.ReadAllText(@"Resources\XA0004_NG1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
 			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
-		public void XA0501_TextBlockTest()
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0005_OK1.xaml", "Resources")]
+		public void XA0005_OK1()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0501", "Error", "//*[name(.)='TextBlock'][contains(@Text,'TwoWay')]", "TextBlock.TextにはTwoWayバインドを指定しないでください。", });
-			var xaml = @"<TextBlock Text=""{Binding Text, Mode=TwoWay}"" />";
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0005", "Default", "//@*[name(.)='Margin'][contains(.,' ')]", @"Margin属性は空白区切りではなく"",""区切りで指定してください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0005_OK1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
-			var errorInstances = xDoc.XPathSelectElements(rule.XPath).ToList();
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0005_NG1.xaml", "Resources")]
+		public void XA0005_NG1()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0005", "Default", "//@*[name(.)='Margin'][contains(.,' ')]", @"Margin属性は空白区切りではなく"",""区切りで指定してください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0005_NG1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
 			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
-		public void XA0601_TextBoxTest()
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0005_NG2.xaml", "Resources")]
+		public void XA0005_NG2()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0601", "Error", "//*[name(.)='TextBox'][contains(@Text,'{Binding')][not(contains(@Text,'TwoWay'))]", "TextBox.TextのバインドがTwoWayバインドされていません。", });
-			var xaml = @"<TextBox Text=""{Binding Text}"" />";
+			var rule = new XmlRuleXPath(string.Empty, 1, new string[] { "XA0005", "Default", "//@*[name(.)='Margin'][contains(.,' ')]", @"Margin属性は空白区切りではなく"",""区切りで指定してください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0005_NG2.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
-			var errorInstances = xDoc.XPathSelectElements(rule.XPath).ToList();
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
 			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0005_NG3.xaml", "Resources")]
+		public void XA0005_NG3()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 2, new string[] { "XA0005", "Default", "//@*[name(.)='Margin'][contains(.,' ')]", @"Margin属性は空白区切りではなく"",""区切りで指定してください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0005_NG3.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0006_OK1.xaml", "Resources")]
+		public void XA0006_OK1()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0006", "Default", "//@*[name(.)='Padding'][contains(.,' ')]", @"Padding属性は空白区切りではなく"",""区切りで指定してください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0006_OK1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0006_NG1.xaml", "Resources")]
+		public void XA0006_NG1()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0006", "Default", "//@*[name(.)='Padding'][contains(.,' ')]", @"Padding属性は空白区切りではなく"",""区切りで指定してください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0006_NG1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0006_NG2.xaml", "Resources")]
+		public void XA0006_NG2()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 1, new string[] { "XA0006", "Default", "//@*[name(.)='Padding'][contains(.,' ')]", @"Padding属性は空白区切りではなく"",""区切りで指定してください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0006_NG2.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0006_NG3.xaml", "Resources")]
+		public void XA0006_NG3()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 2, new string[] { "XA0006", "Default", "//@*[name(.)='Padding'][contains(.,' ')]", @"Padding属性は空白区切りではなく"",""区切りで指定してください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0006_NG3.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0007_OK1.xaml", "Resources")]
+		public void XA0007_OK1()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0007", "Warning", "//@*[name(.)='Margin'][contains(.,'-')]", @"Margin属性にマイナス値があります。", });
+			var xaml = File.ReadAllText(@"Resources\XA0007_OK1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0007_NG1.xaml", "Resources")]
+		public void XA0007_NG1()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0007", "Warning", "//@*[name(.)='Margin'][contains(.,'-')]", @"Margin属性にマイナス値があります。", });
+			var xaml = File.ReadAllText(@"Resources\XA0007_NG1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0008_OK1.xaml", "Resources")]
+		public void XA0008_OK1()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0008", "Critical", "//@*[name(.)='IsEnabled'][contains(.,'TwoWay')]", @"IsEnabledはTwoWayバインディングしないでください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0008_OK1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0008_NG1.xaml", "Resources")]
+		public void XA0008_NG1()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0008", "Critical", "//@*[name(.)='IsEnabled'][contains(.,'TwoWay')]", @"IsEnabledはTwoWayバインディングしないでください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0008_NG1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0009_OK1.xaml", "Resources")]
+		public void XA0009_OK1()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0009", "Critical", "//@*[name(.)='Visibility'][contains(.,'TwoWay')]", @"VisibilityはTwoWayバインディングしないでください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0009_OK1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0009_NG1.xaml", "Resources")]
+		public void XA0009_NG1()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0009", "Critical", "//@*[name(.)='Visibility'][contains(.,'TwoWay')]", @"VisibilityはTwoWayバインディングしないでください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0009_NG1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0101_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0101)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0101_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0101)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0102_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0102)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0102_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0102)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0103_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0103)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0103_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0103)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0104_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0104)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0104_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0104)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0105_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0105)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0105_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0105)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0106_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0106)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0106_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0106)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0107_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0107)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0107_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0107)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0108_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0108)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0108_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0108)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0109_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0109)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0109_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0109)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0110_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0110)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0110_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0110)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0111_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0111)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0111_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0111)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0201_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0201)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0201_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0201)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0202_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0202)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0202_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0202)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0203_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0203)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0203_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0203)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0204_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0204)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0204_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0204)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0205_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0205)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0205_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0205)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0206_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0206)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0206_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0206)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0207_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0207)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0207_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0207)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0208_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0208)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0208_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0208)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0209_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0209)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0209_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0209)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0210_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0210)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0210_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0210)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0211_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0211)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0211_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0211)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0212_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0212)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0212_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0212)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0301_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0301)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0301_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0301)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0302_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0302)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0302_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0302)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0303_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0303)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0303_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0303)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0304_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0304)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0304_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0304)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0305_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0305)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0305_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0305)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0306_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0306)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0306_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0306)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0307_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0307)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0307_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0307)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0308_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0308)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0308_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0308)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0309_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0309)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0309_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0309)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0310_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0310)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0310_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0310)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0311_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0311)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0311_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0311)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0312_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0312)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0312_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0312)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0313_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0313)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0313_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0313)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0314_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0314)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0314_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0314)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0315_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0315)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0315_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0315)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0316_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0316)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0316_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0316)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0317_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0317)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0317_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0317)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0318_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0318)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0318_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0318)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0319_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0319)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0319_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0319)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0320_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0320)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0320_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0320)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0321_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0321)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0321_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0321)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0322_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0322)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0322_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0322)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0323_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0323)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0323_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0323)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0324_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0324)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0324_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0324)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0401_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0401)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0401_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0401)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0402_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0402)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0402_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0402)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0403_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0403)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0403_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0403)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0404_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0404)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0404_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0404)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0405_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0405)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0405_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0405)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0406_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0406)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0406_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0406)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0407_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0407)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0407_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0407)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0408_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0408)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0408_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0408)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0409_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0409)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0409_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0409)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0410_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0410)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0410_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0410)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0411_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0411)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0411_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0411)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0412_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0412)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0412_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0412)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0413_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0413)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0413_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0413)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0414_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0414)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0414_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0414)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0415_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0415)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0415_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0415)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0416_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0416)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0416_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0416)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0417_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0417)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0417_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0417)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0418_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0418)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0418_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0418)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0501_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0501)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0501_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0501)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0502_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0502)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0502_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0502)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0503_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0503)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0503_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0503)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0504_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0504)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0504_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0504)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0505_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0505)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0505_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0505)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0506_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0506)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0506_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0506)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0507_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0507)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0507_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0507)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0508_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0508)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0508_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0508)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0509_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0509)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0509_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0509)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0510_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0510)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0510_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0510)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0601_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0601)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0601_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0601)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0602_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0602)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0602_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0602)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0603_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0603)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0603_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0603)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0701_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0701)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0701_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0701)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0702_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0702)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0702_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0702)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0703_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0703)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0703_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0703)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0704_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0704)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0704_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0704)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0705_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0705)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0705_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0705)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0706_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0706)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0706_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0706)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0707_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0707)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0707_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0707)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0708_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0708)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0708_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0708)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0709_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0709)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0709_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0709)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0710_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0710)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0710_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0710)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0711_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0711)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0711_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0711)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0712_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0712)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0712_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0712)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0713_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0713)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0713_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0713)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0714_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0714)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0714_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0714)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0801_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0801)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0801_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0801)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0802_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0802)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0802_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0802)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0803_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0803)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0803_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0803)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0804_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0804)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0804_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0804)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0805_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0805)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0805_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0805)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0806_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0806)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0806_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0806)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0807_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0807)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0807_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0807)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0808_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0808)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0808_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0808)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0809_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0809)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0809_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0809)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0810_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0810)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0810_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0810)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0901_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0901)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0901_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0901)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0902_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0902)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0902_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0902)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0903_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0903)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0903_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0903)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0904_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0904)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0904_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0904)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0905_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0905)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0905_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0905)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0906_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0906)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0906_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0906)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0907_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0907)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0907_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0907)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0908_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0908)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0908_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0908)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0909_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0909)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0909_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0909)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0910_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0910)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0910_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0910)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1001_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1001)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1001_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1001)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1002_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1002)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1002_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1002)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1003_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1003)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1003_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1003)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1004_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1004)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1004_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1004)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1005_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1005)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1005_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1005)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1006_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1006)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1006_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1006)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1007_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1007)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1007_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1007)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1008_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1008)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1008_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1008)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1009_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1009)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1009_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1009)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1010_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1010)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1010_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1010)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1011_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1011)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1011_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1011)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1012_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1012)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1012_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1012)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1101_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1101)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1101_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1101)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1102_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1102)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1102_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1102)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1103_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1103)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1103_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1103)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1104_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1104)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1104_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1104)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1105_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1105)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1105_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1105)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1106_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1106)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1106_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1106)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1107_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1107)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1107_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1107)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1108_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1108)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1108_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1108)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1109_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA1109)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA1109_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA1109)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0055_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0055)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0055_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0055)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0056_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0056)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0056_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0056)の異常系テストが作成されていません。");
 		}
 	}
 }

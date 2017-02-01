@@ -1,0 +1,85 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ output encoding="UTF-8" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ assembly name="$(SolutionDir)\XmlChecker\bin\$(ConfigurationName)\XmlChecker.dll" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ import namespace="XmlChecker" #>
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Xml.Linq;
+using System.Xml.XPath;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using XmlChecker;
+
+namespace UnitTestProject
+{
+	[TestClass]
+	public class XmlRuleXPathTest
+	{
+		public TestContext TestContext { get; set; }
+<#
+	var relativePath = @"..\XmlChecker\Rule.csv";
+	var solvedPath = this.Host.ResolvePath(@"..\XmlChecker\Rule.csv");
+	var fullPath = Path.GetFullPath(solvedPath);
+	var csv = File.ReadAllText(fullPath, Encoding.GetEncoding(932));
+	var sepalatedCsv = CsvParser.Parse(csv);
+
+	var resourcesPath = this.Host.ResolvePath("Resources");
+
+	foreach (var csvLine in sepalatedCsv)
+	{
+		var id = csvLine[0];
+		var level = csvLine[1];
+		var xpath = csvLine[2];
+		var description = csvLine[3];
+
+		var keys = new [] { "OK", "NG", };
+		foreach (var key in keys)
+		{
+			var okFiles = Directory.EnumerateFiles(resourcesPath, id + "_"+ key + "*.xaml").ToList();
+			if (okFiles.Any())
+			{
+				foreach (var okFile in okFiles)
+				{
+					var filePath = Path.Combine("Resources", Path.GetFileName(okFile));
+					var testName = Path.GetFileNameWithoutExtension(okFile);
+#>
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"<#= filePath #>", "Resources")]
+		public void <#= testName #>()
+		{
+			var rule = new XmlRuleXPath(string.Empty, <#= okFiles.IndexOf(okFile) #>, new string[] { "<#= id #>", "<#= level #>", "<#= xpath #>", @"<#= description.Replace(@"""", @"""""") #>", });
+			var xaml = File.ReadAllText(@"<#= filePath #>");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(<#= key == "OK" ? 0 : 1 #>, errorInstances.Count);
+		}
+<#
+				}
+			}
+			else
+			{
+#>
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void <#= id + "_" + key #>()
+		{
+			Assert.Inconclusive("ルール(ID=<#= id #>)の<#= key == "OK" ? "正常系" : "異常系" #>テストが作成されていません。");
+		}
+<#
+			}
+		}
+	}
+#>
+	}
+}
