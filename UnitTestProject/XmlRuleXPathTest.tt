@@ -7,6 +7,7 @@
 <#@ import namespace="System.IO" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Xml.Linq" #>
 <#@ import namespace="XmlChecker" #>
@@ -49,7 +50,9 @@ namespace UnitTestProject
 				foreach (var okFile in okFiles)
 				{
 					var filePath = Path.Combine("Resources", Path.GetFileName(okFile));
-					var testName = Path.GetFileNameWithoutExtension(okFile);
+					var testName = Regex.Match(Path.GetFileNameWithoutExtension(okFile), "^.*?(OK|NG)").Value;
+					int ngCount;
+					int.TryParse(Regex.Match(okFile, @"(?<=NG)\d+").Value, out ngCount);
 #>
 
 		[TestMethod]
@@ -61,7 +64,7 @@ namespace UnitTestProject
 			var xaml = File.ReadAllText(@"<#= filePath #>");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
-			Assert.AreEqual(<#= key == "OK" ? 0 : 1 #>, errorInstances.Count);
+			Assert.AreEqual(<#= key == "OK" ? 0 : ngCount #>, errorInstances.Count);
 		}
 <#
 				}

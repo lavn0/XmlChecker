@@ -1,0 +1,5 @@
+﻿<Border
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	BorderBrush="Transparent" BorderThickness="1">
+	<TextBlock Text="DummyText" />
+</Border>

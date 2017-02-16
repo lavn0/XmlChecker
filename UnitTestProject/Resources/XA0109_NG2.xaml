@@ -1,0 +1,10 @@
+﻿<StackPanel
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Border>
+		<TextBlock Text="意味なくBorderで囲まれたTextBlock" />
+	</Border>
+	<Border BorderBrush="Black">
+		<TextBlock Text="線の太さ0のBorderで囲まれたTextBlock" />
+	</Border>
+</StackPanel>
