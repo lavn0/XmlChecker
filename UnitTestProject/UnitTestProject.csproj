@@ -216,25 +216,53 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>XA0111_NG1.xaml</DependentUpon>
     </Content>
-		<Content Include="Resources\XA0201_NG1.xaml">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="Resources\XA0201_OK.xaml">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-			<DependentUpon>XA0201_NG1.xaml</DependentUpon>
-		</Content>
-		<Content Include="Resources\XA0202_NG1.xaml">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="Resources\XA0202_OK.xaml">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-			<DependentUpon>XA0202_NG1.xaml</DependentUpon>
-		</Content>
-		<Content Include="XmlRuleXPathTest.tt">
-			<Generator>TextTemplatingFileGenerator</Generator>
-			<LastGenOutput>XmlRuleXPathTest.cs</LastGenOutput>
-		</Content>
-	</ItemGroup>
+    <Content Include="Resources\XA0201_NG1.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\XA0201_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>XA0201_NG1.xaml</DependentUpon>
+    </Content>
+    <Content Include="Resources\XA0202_NG1.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\XA0202_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>XA0202_NG1.xaml</DependentUpon>
+    </Content>
+    <Content Include="Resources\XA0203_NG1.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\XA0203_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>XA0203_NG1.xaml</DependentUpon>
+    </Content>
+    <Content Include="Resources\XA0204_NG1.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\XA0204_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>XA0204_NG1.xaml</DependentUpon>
+    </Content>
+    <Content Include="Resources\XA0205_NG4.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\XA0205_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>XA0205_NG4.xaml</DependentUpon>
+    </Content>
+    <Content Include="Resources\XA0206_NG1.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\XA0206_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>XA0206_NG1.xaml</DependentUpon>
+    </Content>
+    <Content Include="XmlRuleXPathTest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>XmlRuleXPathTest.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

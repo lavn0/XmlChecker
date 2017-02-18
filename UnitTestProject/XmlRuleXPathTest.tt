@@ -27,7 +27,7 @@ namespace UnitTestProject
 		public TestContext TestContext { get; set; }
 <#
 	var relativePath = @"..\XmlChecker\Rule.csv";
-	var solvedPath = this.Host.ResolvePath(@"..\XmlChecker\Rule.csv");
+	var solvedPath = this.Host.ResolvePath(relativePath);
 	var fullPath = Path.GetFullPath(solvedPath);
 	var csv = File.ReadAllText(fullPath, Encoding.GetEncoding(932));
 	var sepalatedCsv = CsvParser.Parse(csv);
@@ -60,7 +60,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"<#= filePath #>", "Resources")]
 		public void <#= testName #>()
 		{
-			var rule = new XmlRuleXPath(string.Empty, <#= okFiles.IndexOf(okFile) #>, new string[] { "<#= id #>", "<#= level #>", "<#= xpath #>", @"<#= description.Replace(@"""", @"""""") #>", });
+			var rule = new XmlRuleXPath(string.Empty, <#= okFiles.IndexOf(okFile) #>, new string[] { "<#= id #>", "<#= level #>", @"<#= xpath.Replace(@"""", @"""""") #>", @"<#= description.Replace(@"""", @"""""") #>", });
 			var xaml = File.ReadAllText(@"<#= filePath #>");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();

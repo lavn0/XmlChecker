@@ -1,0 +1,7 @@
+﻿<StackPanel
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<StackPanel />
+	<StackPanel HorizontalAlignment="Left" />
+	<StackPanel HorizontalAlignment="Center" />
+	<StackPanel HorizontalAlignment="Right" />
+</StackPanel>

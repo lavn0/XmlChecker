@@ -18,7 +18,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0001_OK.xaml", "Resources")]
 		public void XA0001_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0001", "Info", "//@*[starts-with(.,'{Binding ')][contains(.,'Mode=OneWay')]", @"OneWayバインディングはデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0001", "Info", @"//@*[starts-with(.,'{Binding ')][contains(.,'Mode=OneWay')]", @"OneWayバインディングはデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0001_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -30,7 +30,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0001_NG1.xaml", "Resources")]
 		public void XA0001_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0001", "Info", "//@*[starts-with(.,'{Binding ')][contains(.,'Mode=OneWay')]", @"OneWayバインディングはデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0001", "Info", @"//@*[starts-with(.,'{Binding ')][contains(.,'Mode=OneWay')]", @"OneWayバインディングはデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0001_NG1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -42,7 +42,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0002_OK.xaml", "Resources")]
 		public void XA0002_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0002", "Info", "//@*[contains(.,'TargetNullValue')]", @"TargetNullValueは使用しないでください。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0002", "Info", @"//@*[contains(.,'TargetNullValue')]", @"TargetNullValueは使用しないでください。", });
 			var xaml = File.ReadAllText(@"Resources\XA0002_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -54,7 +54,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0002_NG1.xaml", "Resources")]
 		public void XA0002_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0002", "Info", "//@*[contains(.,'TargetNullValue')]", @"TargetNullValueは使用しないでください。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0002", "Info", @"//@*[contains(.,'TargetNullValue')]", @"TargetNullValueは使用しないでください。", });
 			var xaml = File.ReadAllText(@"Resources\XA0002_NG1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -66,7 +66,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0003_OK.xaml", "Resources")]
 		public void XA0003_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0003", "Warning", "//@*[contains(.,'FallbackValue')]", @"FallbackValueが不要な実装を検討してください。FallbackValueが必要なケースは例外発生のケースであり、例外によってパフォーマンス低下が懸念されます。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0003", "Warning", @"//@*[contains(.,'FallbackValue')]", @"FallbackValueが不要な実装を検討してください。FallbackValueが必要なケースは例外発生のケースであり、例外によってパフォーマンス低下が懸念されます。", });
 			var xaml = File.ReadAllText(@"Resources\XA0003_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -78,7 +78,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0003_NG1.xaml", "Resources")]
 		public void XA0003_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0003", "Warning", "//@*[contains(.,'FallbackValue')]", @"FallbackValueが不要な実装を検討してください。FallbackValueが必要なケースは例外発生のケースであり、例外によってパフォーマンス低下が懸念されます。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0003", "Warning", @"//@*[contains(.,'FallbackValue')]", @"FallbackValueが不要な実装を検討してください。FallbackValueが必要なケースは例外発生のケースであり、例外によってパフォーマンス低下が懸念されます。", });
 			var xaml = File.ReadAllText(@"Resources\XA0003_NG1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -90,7 +90,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0004_OK.xaml", "Resources")]
 		public void XA0004_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0004", "Error", "//@*[name(.)='Visibility'][.='Collapsed'][not(parent::*/@*[local-name(.)='Name'])]", @"Name属性が無いタグのVisibility属性に""Collapsed""が指定されています。このコントロールは表示されない可能性があります。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0004", "Error", @"//@*[name(.)='Visibility'][.='Collapsed'][not(parent::*/@*[local-name(.)='Name'])]", @"Name属性が無いタグのVisibility属性に""Collapsed""が指定されています。このコントロールは表示されない可能性があります。", });
 			var xaml = File.ReadAllText(@"Resources\XA0004_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -102,7 +102,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0004_NG1.xaml", "Resources")]
 		public void XA0004_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0004", "Error", "//@*[name(.)='Visibility'][.='Collapsed'][not(parent::*/@*[local-name(.)='Name'])]", @"Name属性が無いタグのVisibility属性に""Collapsed""が指定されています。このコントロールは表示されない可能性があります。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0004", "Error", @"//@*[name(.)='Visibility'][.='Collapsed'][not(parent::*/@*[local-name(.)='Name'])]", @"Name属性が無いタグのVisibility属性に""Collapsed""が指定されています。このコントロールは表示されない可能性があります。", });
 			var xaml = File.ReadAllText(@"Resources\XA0004_NG1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -114,7 +114,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0005_OK.xaml", "Resources")]
 		public void XA0005_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0005", "Default", "//@*[name(.)='Margin'][contains(.,' ')]", @"Margin属性は空白区切りではなく"",""区切りで指定してください。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0005", "Default", @"//@*[name(.)='Margin'][contains(.,' ')]", @"Margin属性は空白区切りではなく"",""区切りで指定してください。", });
 			var xaml = File.ReadAllText(@"Resources\XA0005_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -126,7 +126,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0005_NG3.xaml", "Resources")]
 		public void XA0005_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0005", "Default", "//@*[name(.)='Margin'][contains(.,' ')]", @"Margin属性は空白区切りではなく"",""区切りで指定してください。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0005", "Default", @"//@*[name(.)='Margin'][contains(.,' ')]", @"Margin属性は空白区切りではなく"",""区切りで指定してください。", });
 			var xaml = File.ReadAllText(@"Resources\XA0005_NG3.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -138,7 +138,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0006_OK.xaml", "Resources")]
 		public void XA0006_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0006", "Default", "//@*[name(.)='Padding'][contains(.,' ')]", @"Padding属性は空白区切りではなく"",""区切りで指定してください。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0006", "Default", @"//@*[name(.)='Padding'][contains(.,' ')]", @"Padding属性は空白区切りではなく"",""区切りで指定してください。", });
 			var xaml = File.ReadAllText(@"Resources\XA0006_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -150,7 +150,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0006_NG3.xaml", "Resources")]
 		public void XA0006_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0006", "Default", "//@*[name(.)='Padding'][contains(.,' ')]", @"Padding属性は空白区切りではなく"",""区切りで指定してください。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0006", "Default", @"//@*[name(.)='Padding'][contains(.,' ')]", @"Padding属性は空白区切りではなく"",""区切りで指定してください。", });
 			var xaml = File.ReadAllText(@"Resources\XA0006_NG3.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -162,7 +162,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0007_OK.xaml", "Resources")]
 		public void XA0007_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0007", "Warning", "//@*[name(.)='Margin'][contains(.,'-')]", @"Margin属性にマイナス値があります。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0007", "Warning", @"//@*[name(.)='Margin'][contains(.,'-')]", @"Margin属性にマイナス値があります。", });
 			var xaml = File.ReadAllText(@"Resources\XA0007_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -174,7 +174,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0007_NG1.xaml", "Resources")]
 		public void XA0007_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0007", "Warning", "//@*[name(.)='Margin'][contains(.,'-')]", @"Margin属性にマイナス値があります。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0007", "Warning", @"//@*[name(.)='Margin'][contains(.,'-')]", @"Margin属性にマイナス値があります。", });
 			var xaml = File.ReadAllText(@"Resources\XA0007_NG1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -186,7 +186,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0008_OK.xaml", "Resources")]
 		public void XA0008_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0008", "Critical", "//@*[name(.)='IsEnabled'][contains(.,'TwoWay')]", @"IsEnabledはTwoWayバインディングしないでください。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0008", "Critical", @"//@*[name(.)='IsEnabled'][contains(.,'TwoWay')]", @"IsEnabledはTwoWayバインディングしないでください。", });
 			var xaml = File.ReadAllText(@"Resources\XA0008_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -198,7 +198,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0008_NG1.xaml", "Resources")]
 		public void XA0008_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0008", "Critical", "//@*[name(.)='IsEnabled'][contains(.,'TwoWay')]", @"IsEnabledはTwoWayバインディングしないでください。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0008", "Critical", @"//@*[name(.)='IsEnabled'][contains(.,'TwoWay')]", @"IsEnabledはTwoWayバインディングしないでください。", });
 			var xaml = File.ReadAllText(@"Resources\XA0008_NG1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -210,7 +210,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0009_OK1.xaml", "Resources")]
 		public void XA0009_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0009", "Critical", "//@*[name(.)='Visibility'][contains(.,'TwoWay')]", @"VisibilityはTwoWayバインディングしないでください。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0009", "Critical", @"//@*[name(.)='Visibility'][contains(.,'TwoWay')]", @"VisibilityはTwoWayバインディングしないでください。", });
 			var xaml = File.ReadAllText(@"Resources\XA0009_OK1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -222,7 +222,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0009_NG1.xaml", "Resources")]
 		public void XA0009_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0009", "Critical", "//@*[name(.)='Visibility'][contains(.,'TwoWay')]", @"VisibilityはTwoWayバインディングしないでください。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0009", "Critical", @"//@*[name(.)='Visibility'][contains(.,'TwoWay')]", @"VisibilityはTwoWayバインディングしないでください。", });
 			var xaml = File.ReadAllText(@"Resources\XA0009_NG1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -234,7 +234,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0101_OK.xaml", "Resources")]
 		public void XA0101_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0101", "Default", "//*[name(.)='Border']/@*[name(.)='Visibility'][.='Visible']", @"Visibility=""Visible""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0101", "Default", @"//*[name(.)='Border']/@*[name(.)='Visibility'][.='Visible']", @"Visibility=""Visible""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0101_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -246,7 +246,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0101_NG1.xaml", "Resources")]
 		public void XA0101_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0101", "Default", "//*[name(.)='Border']/@*[name(.)='Visibility'][.='Visible']", @"Visibility=""Visible""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0101", "Default", @"//*[name(.)='Border']/@*[name(.)='Visibility'][.='Visible']", @"Visibility=""Visible""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0101_NG1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -258,7 +258,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0102_OK.xaml", "Resources")]
 		public void XA0102_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0102", "Default", "//*[name(.)='Border']/@*[name(.)='IsEnabled'][.='True']", @"IsEnabled=""True""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0102", "Default", @"//*[name(.)='Border']/@*[name(.)='IsEnabled'][.='True']", @"IsEnabled=""True""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0102_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -270,7 +270,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0102_NG1.xaml", "Resources")]
 		public void XA0102_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0102", "Default", "//*[name(.)='Border']/@*[name(.)='IsEnabled'][.='True']", @"IsEnabled=""True""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0102", "Default", @"//*[name(.)='Border']/@*[name(.)='IsEnabled'][.='True']", @"IsEnabled=""True""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0102_NG1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -282,7 +282,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0103_OK.xaml", "Resources")]
 		public void XA0103_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0103", "Default", "//*[name(.)='Border']/@*[name(.)='HorizontalAlignment'][.='Stretch']", @"HorizontalAlignment=""Stretch""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0103", "Default", @"//*[name(.)='Border']/@*[name(.)='HorizontalAlignment'][.='Stretch']", @"HorizontalAlignment=""Stretch""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0103_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -294,7 +294,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0103_NG1.xaml", "Resources")]
 		public void XA0103_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0103", "Default", "//*[name(.)='Border']/@*[name(.)='HorizontalAlignment'][.='Stretch']", @"HorizontalAlignment=""Stretch""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0103", "Default", @"//*[name(.)='Border']/@*[name(.)='HorizontalAlignment'][.='Stretch']", @"HorizontalAlignment=""Stretch""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0103_NG1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -306,7 +306,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0104_OK.xaml", "Resources")]
 		public void XA0104_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0104", "Default", "//*[name(.)='Border']/@*[name(.)='VerticalAlignment'][.='Stretch']", @"VerticalAlignment=""Stretch""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0104", "Default", @"//*[name(.)='Border']/@*[name(.)='VerticalAlignment'][.='Stretch']", @"VerticalAlignment=""Stretch""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0104_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -318,7 +318,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0104_NG1.xaml", "Resources")]
 		public void XA0104_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0104", "Default", "//*[name(.)='Border']/@*[name(.)='VerticalAlignment'][.='Stretch']", @"VerticalAlignment=""Stretch""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0104", "Default", @"//*[name(.)='Border']/@*[name(.)='VerticalAlignment'][.='Stretch']", @"VerticalAlignment=""Stretch""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0104_NG1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -330,7 +330,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0105_OK.xaml", "Resources")]
 		public void XA0105_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0105", "Default", "//*[name(.)='Border'][not(@*[name(.)='Name'])]/@*[name(.)='Margin'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"Margin=""0""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0105", "Default", @"//*[name(.)='Border'][not(@*[name(.)='Name'])]/@*[name(.)='Margin'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"Margin=""0""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0105_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -342,7 +342,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0105_NG5.xaml", "Resources")]
 		public void XA0105_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0105", "Default", "//*[name(.)='Border'][not(@*[name(.)='Name'])]/@*[name(.)='Margin'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"Margin=""0""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0105", "Default", @"//*[name(.)='Border'][not(@*[name(.)='Name'])]/@*[name(.)='Margin'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"Margin=""0""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0105_NG5.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -354,7 +354,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0106_OK.xaml", "Resources")]
 		public void XA0106_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0106", "Default", "//*[name(.)='Border'][not(@*[name(.)='Name'])]/@*[name(.)='Padding'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"Padding=""0""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0106", "Default", @"//*[name(.)='Border'][not(@*[name(.)='Name'])]/@*[name(.)='Padding'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"Padding=""0""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0106_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -366,7 +366,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0106_NG5.xaml", "Resources")]
 		public void XA0106_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0106", "Default", "//*[name(.)='Border'][not(@*[name(.)='Name'])]/@*[name(.)='Padding'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"Padding=""0""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0106", "Default", @"//*[name(.)='Border'][not(@*[name(.)='Name'])]/@*[name(.)='Padding'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"Padding=""0""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0106_NG5.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -378,7 +378,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0107_OK.xaml", "Resources")]
 		public void XA0107_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0107", "Error", "//*[name(.)='Border'][not(@*[name(.)='Name'])]/@*[name(.)='BorderBrush'][.='Transparent']", @"BorderBrush=""Transparent""を指定しなくとも背景は透明です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0107", "Error", @"//*[name(.)='Border'][not(@*[name(.)='Name'])]/@*[name(.)='BorderBrush'][.='Transparent']", @"BorderBrush=""Transparent""を指定しなくとも背景は透明です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0107_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -390,7 +390,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0107_NG1.xaml", "Resources")]
 		public void XA0107_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0107", "Error", "//*[name(.)='Border'][not(@*[name(.)='Name'])]/@*[name(.)='BorderBrush'][.='Transparent']", @"BorderBrush=""Transparent""を指定しなくとも背景は透明です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0107", "Error", @"//*[name(.)='Border'][not(@*[name(.)='Name'])]/@*[name(.)='BorderBrush'][.='Transparent']", @"BorderBrush=""Transparent""を指定しなくとも背景は透明です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0107_NG1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -402,7 +402,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0108_OK.xaml", "Resources")]
 		public void XA0108_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0108", "Default", "//*[name(.)='Border']/@*[name(.)='BorderThickness'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"BorderThickness=""0""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0108", "Default", @"//*[name(.)='Border']/@*[name(.)='BorderThickness'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"BorderThickness=""0""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0108_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -414,7 +414,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0108_NG5.xaml", "Resources")]
 		public void XA0108_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0108", "Default", "//*[name(.)='Border']/@*[name(.)='BorderThickness'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"BorderThickness=""0""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0108", "Default", @"//*[name(.)='Border']/@*[name(.)='BorderThickness'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"BorderThickness=""0""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0108_NG5.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -426,7 +426,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0109_OK.xaml", "Resources")]
 		public void XA0109_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0109", "Error", "//*[name(.)='Border'][not(@Style)][not(@Background)][not(@BorderThickness) or @BorderThickness[.='0' or .='0 0' or .='0,0' or .='0 0 0 0' or .='0,0,0,0']]", @"BorderのStyle属性もBackground属性もBordertThickness属性もありません。背景色も罫線も持たないBorderは表示されないので入れ子を解除して下さい。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0109", "Error", @"//*[name(.)='Border'][not(@Style)][not(@Background)][not(@BorderThickness) or @BorderThickness[.='0' or .='0 0' or .='0,0' or .='0 0 0 0' or .='0,0,0,0']]", @"BorderのStyle属性もBackground属性もBordertThickness属性もありません。背景色も罫線も持たないBorderは表示されないので入れ子を解除して下さい。", });
 			var xaml = File.ReadAllText(@"Resources\XA0109_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -438,7 +438,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0109_NG2.xaml", "Resources")]
 		public void XA0109_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0109", "Error", "//*[name(.)='Border'][not(@Style)][not(@Background)][not(@BorderThickness) or @BorderThickness[.='0' or .='0 0' or .='0,0' or .='0 0 0 0' or .='0,0,0,0']]", @"BorderのStyle属性もBackground属性もBordertThickness属性もありません。背景色も罫線も持たないBorderは表示されないので入れ子を解除して下さい。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0109", "Error", @"//*[name(.)='Border'][not(@Style)][not(@Background)][not(@BorderThickness) or @BorderThickness[.='0' or .='0 0' or .='0,0' or .='0 0 0 0' or .='0,0,0,0']]", @"BorderのStyle属性もBackground属性もBordertThickness属性もありません。背景色も罫線も持たないBorderは表示されないので入れ子を解除して下さい。", });
 			var xaml = File.ReadAllText(@"Resources\XA0109_NG2.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -450,7 +450,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0110_OK.xaml", "Resources")]
 		public void XA0110_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0110", "Error", "//*[name(.)='Border'][not(@Width)][@HorizontalAlignment]/*/@HorizontalAlignment", @"HorizontalAlignment属性が指定されたBorder配下の要素のHorizontalAlignmentは機能しません。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0110", "Error", @"//*[name(.)='Border'][not(@Width)][@HorizontalAlignment]/*/@HorizontalAlignment", @"HorizontalAlignment属性が指定されたBorder配下の要素のHorizontalAlignmentは機能しません。", });
 			var xaml = File.ReadAllText(@"Resources\XA0110_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -462,7 +462,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0110_NG2.xaml", "Resources")]
 		public void XA0110_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0110", "Error", "//*[name(.)='Border'][not(@Width)][@HorizontalAlignment]/*/@HorizontalAlignment", @"HorizontalAlignment属性が指定されたBorder配下の要素のHorizontalAlignmentは機能しません。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0110", "Error", @"//*[name(.)='Border'][not(@Width)][@HorizontalAlignment]/*/@HorizontalAlignment", @"HorizontalAlignment属性が指定されたBorder配下の要素のHorizontalAlignmentは機能しません。", });
 			var xaml = File.ReadAllText(@"Resources\XA0110_NG2.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -474,7 +474,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0111_OK.xaml", "Resources")]
 		public void XA0111_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0111", "Error", "//*[name(.)='Border'][not(@Height)][@VerticalAlignment]/*/@VerticalAlignment", @"VerticalAlignment属性が指定されたBorder配下の要素のVerticalAlignmentは機能しません。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0111", "Error", @"//*[name(.)='Border'][not(@Height)][@VerticalAlignment]/*/@VerticalAlignment", @"VerticalAlignment属性が指定されたBorder配下の要素のVerticalAlignmentは機能しません。", });
 			var xaml = File.ReadAllText(@"Resources\XA0111_OK.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -486,7 +486,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0111_NG1.xaml", "Resources")]
 		public void XA0111_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0111", "Error", "//*[name(.)='Border'][not(@Height)][@VerticalAlignment]/*/@VerticalAlignment", @"VerticalAlignment属性が指定されたBorder配下の要素のVerticalAlignmentは機能しません。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0111", "Error", @"//*[name(.)='Border'][not(@Height)][@VerticalAlignment]/*/@VerticalAlignment", @"VerticalAlignment属性が指定されたBorder配下の要素のVerticalAlignmentは機能しません。", });
 			var xaml = File.ReadAllText(@"Resources\XA0111_NG1.xaml");
 			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -495,86 +495,146 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0201_OK.xaml", "Resources")]
 		public void XA0201_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0201)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0201", "Default", @"//*[name(.)='StackPanel']/@*[name(.)='Visibility'][.='Visible']", @"Visibility=""Visible""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0201_OK.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0201_NG1.xaml", "Resources")]
 		public void XA0201_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0201)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0201", "Default", @"//*[name(.)='StackPanel']/@*[name(.)='Visibility'][.='Visible']", @"Visibility=""Visible""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0201_NG1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0202_OK.xaml", "Resources")]
 		public void XA0202_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0202)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0202", "Default", @"//*[name(.)='StackPanel']/@*[name(.)='IsEnabled'][.='True']", @"IsEnabled=""True""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0202_OK.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0202_NG1.xaml", "Resources")]
 		public void XA0202_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0202)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0202", "Default", @"//*[name(.)='StackPanel']/@*[name(.)='IsEnabled'][.='True']", @"IsEnabled=""True""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0202_NG1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0203_OK.xaml", "Resources")]
 		public void XA0203_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0203)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0203", "Default", @"//*[name(.)='StackPanel']/@*[name(.)='HorizontalAlignment'][.='Stretch']", @"HorizontalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0203_OK.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0203_NG1.xaml", "Resources")]
 		public void XA0203_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0203)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0203", "Default", @"//*[name(.)='StackPanel']/@*[name(.)='HorizontalAlignment'][.='Stretch']", @"HorizontalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0203_NG1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0204_OK.xaml", "Resources")]
 		public void XA0204_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0204)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0204", "Default", @"//*[name(.)='StackPanel']/@*[name(.)='VerticalAlignment'][.='Stretch']", @"VerticalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0204_OK.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0204_NG1.xaml", "Resources")]
 		public void XA0204_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0204)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0204", "Default", @"//*[name(.)='StackPanel']/@*[name(.)='VerticalAlignment'][.='Stretch']", @"VerticalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0204_NG1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0205_OK.xaml", "Resources")]
 		public void XA0205_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0205)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0205", "Default", @"//*[name(.)='StackPanel'][not(@*[name(.)='Name'])]/@*[name(.)='Margin'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"Margin=""0""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0205_OK.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0205_NG4.xaml", "Resources")]
 		public void XA0205_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0205)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0205", "Default", @"//*[name(.)='StackPanel'][not(@*[name(.)='Name'])]/@*[name(.)='Margin'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"Margin=""0""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0205_NG4.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(4, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0206_OK.xaml", "Resources")]
 		public void XA0206_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0206)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0206", "Warning", @"//*[name(.)='StackPanel'][@Orientation=""Vertical""]", @"StackPanel.Orientation=""Vertical""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0206_OK.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0206_NG1.xaml", "Resources")]
 		public void XA0206_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0206)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0206", "Warning", @"//*[name(.)='StackPanel'][@Orientation=""Vertical""]", @"StackPanel.Orientation=""Vertical""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0206_NG1.xaml");
+			var xDoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xDoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
@@ -1433,6 +1493,34 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		public void XA0604_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0604)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0604_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0604)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0605_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0605)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0605_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0605)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
 		public void XA0701_OK()
 		{
 			Assert.Inconclusive("ルール(ID=XA0701)の正常系テストが作成されていません。");
@@ -2199,34 +2287,6 @@ namespace UnitTestProject
 		public void XA1109_NG()
 		{
 			Assert.Inconclusive("ルール(ID=XA1109)の異常系テストが作成されていません。");
-		}
-
-		[TestMethod]
-		[TestCategory("XmlChecker")]
-		public void XA0055_OK()
-		{
-			Assert.Inconclusive("ルール(ID=XA0055)の正常系テストが作成されていません。");
-		}
-
-		[TestMethod]
-		[TestCategory("XmlChecker")]
-		public void XA0055_NG()
-		{
-			Assert.Inconclusive("ルール(ID=XA0055)の異常系テストが作成されていません。");
-		}
-
-		[TestMethod]
-		[TestCategory("XmlChecker")]
-		public void XA0056_OK()
-		{
-			Assert.Inconclusive("ルール(ID=XA0056)の正常系テストが作成されていません。");
-		}
-
-		[TestMethod]
-		[TestCategory("XmlChecker")]
-		public void XA0056_NG()
-		{
-			Assert.Inconclusive("ルール(ID=XA0056)の異常系テストが作成されていません。");
 		}
 	}
 }

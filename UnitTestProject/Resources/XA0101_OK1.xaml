@@ -1,7 +1,0 @@
-﻿<StackPanel
-	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-	<TextBox Text="{Binding Message, Mode=TwoWay}" Visibility="{Binding Visibility}" />
-	<TextBox Text="{Binding Message, Mode=TwoWay}" Visibility="{Binding Visibility, Mode=OneTime}" />
-	<TextBox Text="{Binding Message, Mode=TwoWay}" Visibility="{Binding Visibility, Mode=OneWay}" />
-</StackPanel>
