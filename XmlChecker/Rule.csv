@@ -24,7 +24,7 @@ XA0203,Default,//*[name(.)='StackPanel']/@*[name(.)='HorizontalAlignment'][.='St
 XA0204,Default,//*[name(.)='StackPanel']/@*[name(.)='VerticalAlignment'][.='Stretch'],"VerticalAlignment=""Stretch""はデフォルト値です。"
 XA0205,Default,"//*[name(.)='StackPanel'][not(@*[name(.)='Name'])]/@*[name(.)='Margin'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","Margin=""0""はデフォルト値です。"
 XA0206,Warning,//*[name(.)='StackPanel'][@Orientation="Vertical"],"StackPanel.Orientation=""Vertical""はデフォルト値です。"
-XA0207,Error,//*[name(.)='StackPanel'][*[1]][not(*[2])],StackPanelの子要素が1つしかありません。子要素を複数持たないStackPanelは不要な入れ子なので解除するか、Borderに変更できます。
+XA0207,Error,"//*[name(.)='StackPanel'][*[not(starts-with(local-name(.),'StackPanel.'))][1]][not(*[not(starts-with(local-name(.),'StackPanel.'))][2])]",StackPanelの子要素が1つしかありません。子要素を複数持たないStackPanelは不要な入れ子なので解除するか、Borderに変更できます。
 XA0208,Error,//*[name(.)='StackPanel'][not(@Orientation=('Horizontal'))]/@HorizontalAlignment[.='Center' or .='Left'],縦方向StackPanelではなく、内部のコントロールに対してHorizontalAlignmentを設定すべきです。
 XA0209,Error,//*[name(.)='StackPanel'][@Orientation='Horizontal']/@VerticalAlignment[.='Center' or .='Top'],横方向StackPanelではなく、内部のコントロールに対してVerticalAlignmentを設定すべきです。
 XA0210,Warning,//*[name(.)='StackPanel'][not(@Orientation='Horizontal')]/*/@VerticalAlignment,縦方向StackPanel配下のVerticalAlignmentは機能しません。

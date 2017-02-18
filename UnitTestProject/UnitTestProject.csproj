@@ -258,6 +258,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>XA0206_NG1.xaml</DependentUpon>
     </Content>
+    <Content Include="Resources\XA0207_NG2.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\XA0207_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>XA0207_NG2.xaml</DependentUpon>
+    </Content>
     <Content Include="XmlRuleXPathTest.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>XmlRuleXPathTest.cs</LastGenOutput>
