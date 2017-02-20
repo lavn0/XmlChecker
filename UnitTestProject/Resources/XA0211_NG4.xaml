@@ -1,0 +1,8 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<StackPanel Orientation="Horizontal">
+		<TextBlock Text="DummyText1" HorizontalAlignment="Stretch" />
+		<TextBlock Text="DummyText2" HorizontalAlignment="Left" />
+		<TextBlock Text="DummyText3" HorizontalAlignment="Center" />
+		<TextBlock Text="DummyText4" HorizontalAlignment="Right" />
+	</StackPanel>
+</Grid>
