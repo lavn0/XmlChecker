@@ -76,6 +76,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\*.xaml" />
+    <Content Include="ImportXaml.targets">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImportXaml.tt</DependentUpon>
+    </Content>
     <Content Include="ImportXaml.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ImportXaml.targets</LastGenOutput>
@@ -84,13 +89,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>XmlRuleXPathTest.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ImportXaml.targets">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ImportXaml.tt</DependentUpon>
-    </None>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
