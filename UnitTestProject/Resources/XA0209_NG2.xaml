@@ -1,0 +1,4 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<StackPanel Orientation="Horizontal" VerticalAlignment="Top" />
+	<StackPanel Orientation="Horizontal" VerticalAlignment="Center" />
+</Grid>
