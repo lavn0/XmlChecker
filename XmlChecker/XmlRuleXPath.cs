@@ -32,13 +32,13 @@ namespace XmlChecker
 			this.Message = line[3];
 		}
 
-		public List<XObject> GetViolatedElements(XDocument xDocument)
+		public List<XObject> GetViolatedElements(XDocument xdocument)
 		{
 			if (this.IsValid.GetValueOrDefault(true))
 			{
 				try
 				{
-					var evaluateResult = xDocument.XPathEvaluate(this.XPath) as IEnumerable<object>;
+					var evaluateResult = xdocument.XPathEvaluate(this.XPath) as IEnumerable<object>;
 					var result = evaluateResult.Cast<XObject>().ToList();
 					this.IsValid = true;
 					return result;

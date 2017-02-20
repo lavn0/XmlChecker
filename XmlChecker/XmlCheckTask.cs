@@ -1,8 +1,8 @@
-﻿using Microsoft.Build.Utilities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using Microsoft.Build.Utilities;
 
 namespace XmlChecker
 {
@@ -53,6 +53,7 @@ namespace XmlChecker
 				var ruleXPaths = ruleCsv.Select((strLine, lineNumber) => new XmlRuleXPath(rule, lineNumber, strLine)).ToList();
 				rules.AddRange(ruleXPaths);
 			}
+
 			var violations = ViolationUtility.GetVioltations(TargetFiles, rules);
 
 			foreach (var rule in rules.Where(r => !r.IsValid.GetValueOrDefault(true)))
