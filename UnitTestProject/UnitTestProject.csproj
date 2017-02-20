@@ -75,201 +75,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\XA0001_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Resources\XA0001_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0001_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0002_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0002_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0002_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0003_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0003_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0003_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0004_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0004_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0004_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0005_NG3.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0005_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0005_NG3.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0006_NG3.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0006_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0006_NG3.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0007_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0007_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0007_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0008_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0008_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0008_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0009_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0009_OK1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0009_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0101_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0101_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0101_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0102_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0102_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0102_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0103_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0103_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0103_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0104_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0104_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0104_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0105_NG5.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0105_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0105_NG5.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0106_NG5.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0106_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0106_NG5.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0107_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0107_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0107_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0108_NG5.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0108_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0108_NG5.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0109_NG2.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0109_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0109_NG2.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0110_NG2.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0110_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0110_NG2.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0111_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0111_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0111_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0201_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0201_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0201_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0202_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0202_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0202_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0203_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0203_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0203_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0204_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0204_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0204_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0205_NG4.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0205_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0205_NG4.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0206_NG1.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\XA0206_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0206_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="Resources\XA0207_NG2.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Resources\XA0207_OK.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>XA0207_NG2.xaml</DependentUpon>
+    <Content Include="Resources\*.xaml" />
+    <Content Include="ImportXaml.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ImportXaml.targets</LastGenOutput>
     </Content>
     <Content Include="XmlRuleXPathTest.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>XmlRuleXPathTest.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ImportXaml.targets">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImportXaml.tt</DependentUpon>
+    </None>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
@@ -291,6 +112,7 @@
   </Choose>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="ImportXaml.targets" />
   <Import Condition="Exists('$(ProgramFiles)\MSBuild\StyleCop\v4.7\StyleCop.targets')" Project="$(ProgramFiles)\MSBuild\StyleCop\v4.7\StyleCop.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

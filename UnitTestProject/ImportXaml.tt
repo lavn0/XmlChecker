@@ -1,0 +1,31 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".targets" #>
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+<#
+var projectDir = this.Host.ResolvePath(string.Empty);
+var resourcesPath = this.Host.ResolvePath("Resources");
+var ngFiles = Directory.EnumerateFiles(resourcesPath, "*_NG*.xaml").ToList();
+foreach (var ngFile in ngFiles)
+{
+	var ngPath = ngFile.Replace(projectDir + @"\", string.Empty);
+	var okPath = Regex.Replace(ngPath, @"NG\d", "OK");
+#>
+    <Content Include="<#= ngPath #>">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="<#= okPath #>">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon><#= ngPath.Replace(@"Resources\", string.Empty) #></DependentUpon>
+    </Content>
+<#
+}
+#>
+  </ItemGroup>
+</Project>
