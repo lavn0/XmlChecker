@@ -60,7 +60,7 @@
     <Content Include="Resources\XA0009_NG1.xaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\XA0009_OK1.xaml">
+    <Content Include="Resources\XA0009_OK.xaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>XA0009_NG1.xaml</DependentUpon>
     </Content>
@@ -189,7 +189,6 @@
     <Content Include="Resources\XA0207_OK.xaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>XA0207_NG2.xaml</DependentUpon>
-    </Content>
     </Content>
   </ItemGroup>
 </Project>

@@ -207,11 +207,11 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
-		[DeploymentItem(@"Resources\XA0009_OK1.xaml", "Resources")]
+		[DeploymentItem(@"Resources\XA0009_OK.xaml", "Resources")]
 		public void XA0009_OK()
 		{
 			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0009", "Critical", @"//@*[name(.)='Visibility'][contains(.,'TwoWay')]", @"VisibilityはTwoWayバインディングしないでください。", });
-			var xaml = File.ReadAllText(@"Resources\XA0009_OK1.xaml");
+			var xaml = File.ReadAllText(@"Resources\XA0009_OK.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
 			Assert.AreEqual(0, errorInstances.Count);
