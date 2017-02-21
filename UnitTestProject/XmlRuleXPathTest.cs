@@ -783,16 +783,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0301_OK.xaml", "Resources")]
 		public void XA0301_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0301)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0301", "Default", @"//*[name(.)='Grid']/@*[name(.)='Visibility'][.='Visible']", @"Visibility=""Visible""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0301_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0301_NG1.xaml", "Resources")]
 		public void XA0301_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0301)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0301", "Default", @"//*[name(.)='Grid']/@*[name(.)='Visibility'][.='Visible']", @"Visibility=""Visible""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0301_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
