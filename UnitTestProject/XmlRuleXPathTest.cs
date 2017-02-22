@@ -975,16 +975,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0310_OK.xaml", "Resources")]
 		public void XA0310_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0310)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0310", "Error", @"//*[name(.)='RowDefinition'][not(parent::*/parent::*/*/@Grid.Row=position()-1)][not(position()=1 and parent::*/parent::*/*[not(@Grid.Row)][not(starts-with(name(.),'Grid.'))])][@Height='Auto']", @"この行に要素が存在しません。", });
+			var xaml = File.ReadAllText(@"Resources\XA0310_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0310_NG1.xaml", "Resources")]
 		public void XA0310_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0310)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0310", "Error", @"//*[name(.)='RowDefinition'][not(parent::*/parent::*/*/@Grid.Row=position()-1)][not(position()=1 and parent::*/parent::*/*[not(@Grid.Row)][not(starts-with(name(.),'Grid.'))])][@Height='Auto']", @"この行に要素が存在しません。", });
+			var xaml = File.ReadAllText(@"Resources\XA0310_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
