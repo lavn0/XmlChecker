@@ -927,16 +927,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0308_OK.xaml", "Resources")]
 		public void XA0308_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0308)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0308", "Error", @"//*[name(.)='Grid']/*[@Grid.Row][@Grid.RowSpan][number(@Grid.Row)+number(@Grid.RowSpan)-1>=count(parent::*/*[name(.)='Grid.RowDefinitions']/*[name(.)='RowDefinition'])]/@Grid.RowSpan", @"指定された(Grid.Row+Grid.RowSpan)の位置のRowDefinitionがありません。", });
+			var xaml = File.ReadAllText(@"Resources\XA0308_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0308_NG1.xaml", "Resources")]
 		public void XA0308_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0308)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0308", "Error", @"//*[name(.)='Grid']/*[@Grid.Row][@Grid.RowSpan][number(@Grid.Row)+number(@Grid.RowSpan)-1>=count(parent::*/*[name(.)='Grid.RowDefinitions']/*[name(.)='RowDefinition'])]/@Grid.RowSpan", @"指定された(Grid.Row+Grid.RowSpan)の位置のRowDefinitionがありません。", });
+			var xaml = File.ReadAllText(@"Resources\XA0308_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
