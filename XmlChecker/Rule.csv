@@ -31,7 +31,6 @@ XA0210,Warning,//*[name(.)='StackPanel'][not(@Orientation='Horizontal')]/*/@Vert
 XA0211,Warning,//*[name(.)='StackPanel'][@Orientation='Horizontal']/*/@HorizontalAlignment,横方向StackPanel配下のHorizontalAlignmentは機能しません。
 XA0212,Warning,//*[name(.)='StackPanel'][@Orientation='Horizontal']/*[not(@Width)]/@TextAlignment,横方向StackPanel配下のTextAlignmentは機能しません。
 XA0301,Default,//*[name(.)='Grid']/@*[name(.)='Visibility'][.='Visible'],"Visibility=""Visible""はデフォルト値です。"
-XA0302,Default,//*[name(.)='Grid']/@*[name(.)='IsEnabled'][.='True'],"IsEnabled=""True""はデフォルト値です。"
 XA0303,Default,//*[name(.)='Grid']/@*[name(.)='HorizontalAlignment'][.='Stretch'],"HorizontalAlignment=""Stretch""はデフォルト値です。"
 XA0304,Default,//*[name(.)='Grid']/@*[name(.)='VerticalAlignment'][.='Stretch'],"VerticalAlignment=""Stretch""はデフォルト値です。"
 XA0305,Default,"//*[name(.)='Grid'][not(@*[name(.)='Name'])]/@*[name(.)='Margin'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","Margin=""0""はデフォルト値です。"
