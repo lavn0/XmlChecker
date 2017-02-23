@@ -16,6 +16,9 @@ Here is command usage.
 "target" require directory or file.
 If "target" is directory, XmlCheckerConsole.exe check "*.xaml" files in directory hierarchical.
 
+if you wanto to call from Visual Studio, settings is below.  
+![settings for visual studio to call outside tools](vssetting.png "settings for visual studio to call outside tools")
+
 ### Use by MSBuild
 XmlCheckTask is msbuild task.<br/>
 Usable parameters are here.

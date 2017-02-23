@@ -16,6 +16,9 @@ XmlCheckerConsole.exe がコマンドラインツールです。<br/>
 "target" にはディレクトリまたはファイルのパスを指定します。
 ディレクトリが指定された場合、現行バージョンではディレクトリ配下のすべてのxamlファイルをチェック対象とします。
 
+Visual Studioからは下図のように外部ツールとして登録して使用すると便利です。  
+![VisualStudioの外部ツールとして登録するときの設定](vssetting.png "VisualStudioの外部ツールとして登録するときの設定")
+
 ### MSBuildタスクの使い方
 XmlCheckTask が MSBuild として定義してあります。<br/>
 使用できるパラメータは以下の通りです。
