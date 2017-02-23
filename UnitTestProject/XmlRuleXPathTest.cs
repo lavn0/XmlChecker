@@ -1431,16 +1431,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0405_OK.xaml", "Resources")]
 		public void XA0405_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0405)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0405", "Default", @"//*[name(.)='ScrollViewer'][not(@*[name(.)='Name'])]/@*[name(.)='Margin'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"ScrollViewer.Margin=""0""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0405_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0405_NG5.xaml", "Resources")]
 		public void XA0405_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0405)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0405", "Default", @"//*[name(.)='ScrollViewer'][not(@*[name(.)='Name'])]/@*[name(.)='Margin'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"ScrollViewer.Margin=""0""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0405_NG5.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(5, errorInstances.Count);
 		}
 
 		[TestMethod]
