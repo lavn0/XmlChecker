@@ -1,0 +1,5 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<ScrollViewer HorizontalContentAlignment="Stretch" />
+	<ScrollViewer HorizontalContentAlignment="Center" />
+	<ScrollViewer HorizontalContentAlignment="Right" />
+</Grid>
