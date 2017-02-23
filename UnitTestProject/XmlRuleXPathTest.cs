@@ -1146,7 +1146,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0317_OK.xaml", "Resources")]
 		public void XA0317_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0317", "Error", @"//*[name(.)='Grid'][not(*[name(.)='Grid.ColumnDefinitions'])][*[name(.)='Grid.RowDefinitions']/*[name(.)='RowDefinition'][not(*[name(.)='RowDefinition'][@Height='*'])]]", @"ColumnDefinitionが無く、いずれのRowDefinition.Height属性にも'*'が含まれません。縦方向StackPanelで代用できます。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0317", "Error", @"//*[name(.)='Grid'][not(*[name(.)='Grid.ColumnDefinitions'])][*[name(.)='Grid.RowDefinitions']/*[name(.)='RowDefinition'][not(@Height='*')]]", @"ColumnDefinitionが無く、いずれのRowDefinition.Height属性にも'*'が含まれません。縦方向StackPanelで代用できます。", });
 			var xaml = File.ReadAllText(@"Resources\XA0317_OK.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1158,7 +1158,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0317_NG1.xaml", "Resources")]
 		public void XA0317_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0317", "Error", @"//*[name(.)='Grid'][not(*[name(.)='Grid.ColumnDefinitions'])][*[name(.)='Grid.RowDefinitions']/*[name(.)='RowDefinition'][not(*[name(.)='RowDefinition'][@Height='*'])]]", @"ColumnDefinitionが無く、いずれのRowDefinition.Height属性にも'*'が含まれません。縦方向StackPanelで代用できます。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0317", "Error", @"//*[name(.)='Grid'][not(*[name(.)='Grid.ColumnDefinitions'])][*[name(.)='Grid.RowDefinitions']/*[name(.)='RowDefinition'][not(@Height='*')]]", @"ColumnDefinitionが無く、いずれのRowDefinition.Height属性にも'*'が含まれません。縦方向StackPanelで代用できます。", });
 			var xaml = File.ReadAllText(@"Resources\XA0317_NG1.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1167,16 +1167,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0318_OK.xaml", "Resources")]
 		public void XA0318_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0318)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0318", "Error", @"//*[name(.)='Grid'][*[name(.)='Grid.ColumnDefinitions']][1=count(*[name(.)='Grid.ColumnDefinitions']/*[name(.)='ColumnDefinition'])][*[name(.)='Grid.RowDefinitions']/*[name(.)='RowDefinition'][not(@Height='*')]]", @"ColumnDefinitionが一つしか無く、いずれのRowDefinition.Height属性にも'*'が含まれません。縦方向StackPanelで代用できます。", });
+			var xaml = File.ReadAllText(@"Resources\XA0318_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0318_NG1.xaml", "Resources")]
 		public void XA0318_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0318)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0318", "Error", @"//*[name(.)='Grid'][*[name(.)='Grid.ColumnDefinitions']][1=count(*[name(.)='Grid.ColumnDefinitions']/*[name(.)='ColumnDefinition'])][*[name(.)='Grid.RowDefinitions']/*[name(.)='RowDefinition'][not(@Height='*')]]", @"ColumnDefinitionが一つしか無く、いずれのRowDefinition.Height属性にも'*'が含まれません。縦方向StackPanelで代用できます。", });
+			var xaml = File.ReadAllText(@"Resources\XA0318_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
