@@ -47,7 +47,7 @@ XA0315,Error,"//@*[name(.)='Grid.ColumnSpan'][parent::*/parent::*[not(name(.)='G
 XA0316,Error,//*[name(.)='Grid'][not(*[2])],Gridの子要素が1つしかありません。子要素を複数持たないGridは入れ子を解除できます。
 XA0317,Error,//*[name(.)='Grid'][not(*[name(.)='Grid.ColumnDefinitions'])][*[name(.)='Grid.RowDefinitions']/*[name(.)='RowDefinition'][not(@Height='*')]],ColumnDefinitionが無く、いずれのRowDefinition.Height属性にも'*'が含まれません。縦方向StackPanelで代用できます。
 XA0318,Error,//*[name(.)='Grid'][*[name(.)='Grid.ColumnDefinitions']][1=count(*[name(.)='Grid.ColumnDefinitions']/*[name(.)='ColumnDefinition'])][*[name(.)='Grid.RowDefinitions']/*[name(.)='RowDefinition'][not(@Height='*')]],ColumnDefinitionが一つしか無く、いずれのRowDefinition.Height属性にも'*'が含まれません。縦方向StackPanelで代用できます。
-XA0319,Error,//*[name(.)='Grid'][not(*[name(.)='Grid.RowDefinitions'])][*[name(.)='Grid.ColumnDefinitions']/*[name(.)='ColumnDefinition'][not(*[name(.)='ColumnDefinition'][@Width='*'])]],RowDefinitionが無く、いずれのColumnDefinition.Width属性にも'*'が含まれません。横方向StackPanelで代用できます。
+XA0319,Error,//*[name(.)='Grid'][not(*[name(.)='Grid.RowDefinitions'])][*[name(.)='Grid.ColumnDefinitions']/*[name(.)='ColumnDefinition'][not(@Width='*')]],RowDefinitionが無く、いずれのColumnDefinition.Width属性にも'*'が含まれません。横方向StackPanelで代用できます。
 XA0320,Error,//*[name(.)='Grid'][*[name(.)='Grid.RowDefinitions']][1=count(*[name(.)='Grid.RowDefinitions']/*[name(.)='RowDefinition'])][*[name(.)='Grid.ColumnDefinitions']/*[name(.)='ColumnDefinition'][not(*[name(.)='ColumnDefinition'][@Width='*'])]],RowDefinitionが無く、いずれのColumnDefinition.Width属性にも'*'が含まれません。横方向StackPanelで代用できます。
 XA0321,Error,//*[name(.)='Grid.RowDefinitions'][not(*)],Grid.RowDefinitions配下の要素がありません。
 XA0322,Error,//*[name(.)='Grid.ColumnDefinitions'][not(*)],Grid.ColumnDefinitions配下の要素がありません。
