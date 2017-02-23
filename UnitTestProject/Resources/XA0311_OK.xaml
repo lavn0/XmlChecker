@@ -1,0 +1,12 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="Auto" />
+		</Grid.ColumnDefinitions>
+		<TextBlock Grid.Column="0" Text="1st Column" />
+		<TextBlock Grid.Column="1" Text="2nd Column" />
+		<TextBlock Grid.Column="2" Text="3rd Column" />
+	</Grid>
+</UserControl>
