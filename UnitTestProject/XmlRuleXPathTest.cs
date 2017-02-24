@@ -1338,7 +1338,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0401_OK.xaml", "Resources")]
 		public void XA0401_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0401", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='Visibility'][.='Visible']", @"Visibility=""Visible""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0401", "Default", @"//*[name(.)='ScrollViewer']/@Visibility[.='Visible']", @"Visibility=""Visible""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0401_OK.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1350,7 +1350,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0401_NG1.xaml", "Resources")]
 		public void XA0401_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0401", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='Visibility'][.='Visible']", @"Visibility=""Visible""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0401", "Default", @"//*[name(.)='ScrollViewer']/@Visibility[.='Visible']", @"Visibility=""Visible""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0401_NG1.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1362,7 +1362,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0402_OK.xaml", "Resources")]
 		public void XA0402_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0402", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='IsEnabled'][.='True']", @"IsEnabled=""True""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0402", "Default", @"//*[name(.)='ScrollViewer']/@IsEnabled[.='True']", @"IsEnabled=""True""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0402_OK.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1374,7 +1374,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0402_NG1.xaml", "Resources")]
 		public void XA0402_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0402", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='IsEnabled'][.='True']", @"IsEnabled=""True""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0402", "Default", @"//*[name(.)='ScrollViewer']/@IsEnabled[.='True']", @"IsEnabled=""True""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0402_NG1.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1386,7 +1386,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0403_OK.xaml", "Resources")]
 		public void XA0403_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0403", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='HorizontalAlignment'][.='Stretch']", @"HorizontalAlignment=""Stretch""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0403", "Default", @"//*[name(.)='ScrollViewer']/@HorizontalAlignment[.='Stretch']", @"HorizontalAlignment=""Stretch""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0403_OK.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1398,7 +1398,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0403_NG1.xaml", "Resources")]
 		public void XA0403_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0403", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='HorizontalAlignment'][.='Stretch']", @"HorizontalAlignment=""Stretch""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0403", "Default", @"//*[name(.)='ScrollViewer']/@HorizontalAlignment[.='Stretch']", @"HorizontalAlignment=""Stretch""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0403_NG1.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1410,7 +1410,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0404_OK.xaml", "Resources")]
 		public void XA0404_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0404", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='VerticalAlignment'][.='Stretch']", @"VerticalAlignment=""Stretch""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0404", "Default", @"//*[name(.)='ScrollViewer']/@VerticalAlignment[.='Stretch']", @"VerticalAlignment=""Stretch""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0404_OK.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1422,7 +1422,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0404_NG1.xaml", "Resources")]
 		public void XA0404_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0404", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='VerticalAlignment'][.='Stretch']", @"VerticalAlignment=""Stretch""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0404", "Default", @"//*[name(.)='ScrollViewer']/@VerticalAlignment[.='Stretch']", @"VerticalAlignment=""Stretch""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0404_NG1.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1434,7 +1434,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0405_OK.xaml", "Resources")]
 		public void XA0405_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0405", "Default", @"//*[name(.)='ScrollViewer'][not(@*[name(.)='Name'])]/@*[name(.)='Margin'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"ScrollViewer.Margin=""0""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0405", "Default", @"//*[name(.)='ScrollViewer'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"ScrollViewer.Margin=""0""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0405_OK.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1446,7 +1446,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0405_NG5.xaml", "Resources")]
 		public void XA0405_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0405", "Default", @"//*[name(.)='ScrollViewer'][not(@*[name(.)='Name'])]/@*[name(.)='Margin'][.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"ScrollViewer.Margin=""0""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0405", "Default", @"//*[name(.)='ScrollViewer'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"ScrollViewer.Margin=""0""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0405_NG5.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1458,7 +1458,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0406_OK.xaml", "Resources")]
 		public void XA0406_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0406", "Default", @"//*[name(.)='ScrollViewer'][not(@*[name(.)='Name'])]/@*[name(.)='Padding'][.='4' or .='4,4' or .='4 4' or .='4,4,4,4' or .='4 4 4 4']", @"ScrollViewer.Padding=""4""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0406", "Default", @"//*[name(.)='ScrollViewer'][not(@Name)]/@Padding[.='4' or .='4,4' or .='4 4' or .='4,4,4,4' or .='4 4 4 4']", @"ScrollViewer.Padding=""4""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0406_OK.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1470,7 +1470,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0406_NG5.xaml", "Resources")]
 		public void XA0406_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0406", "Default", @"//*[name(.)='ScrollViewer'][not(@*[name(.)='Name'])]/@*[name(.)='Padding'][.='4' or .='4,4' or .='4 4' or .='4,4,4,4' or .='4 4 4 4']", @"ScrollViewer.Padding=""4""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0406", "Default", @"//*[name(.)='ScrollViewer'][not(@Name)]/@Padding[.='4' or .='4,4' or .='4 4' or .='4,4,4,4' or .='4 4 4 4']", @"ScrollViewer.Padding=""4""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0406_NG5.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1482,7 +1482,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0407_OK.xaml", "Resources")]
 		public void XA0407_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0407", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='BorderThickness'][.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"ScrollViewer.BorderThickness=""1""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0407", "Default", @"//*[name(.)='ScrollViewer']/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"ScrollViewer.BorderThickness=""1""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0407_OK.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1494,7 +1494,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0407_NG5.xaml", "Resources")]
 		public void XA0407_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0407", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='BorderThickness'][.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"ScrollViewer.BorderThickness=""1""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0407", "Default", @"//*[name(.)='ScrollViewer']/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"ScrollViewer.BorderThickness=""1""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0407_NG5.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1506,7 +1506,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0408_OK.xaml", "Resources")]
 		public void XA0408_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0408", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='HorizontalContentAlignment'][.='Left']", @"ScrollViewer.HorizontalContentAlignment=""Left""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0408", "Default", @"//*[name(.)='ScrollViewer']/@HorizontalContentAlignment[.='Left']", @"ScrollViewer.HorizontalContentAlignment=""Left""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0408_OK.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1518,7 +1518,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0408_NG1.xaml", "Resources")]
 		public void XA0408_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0408", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='HorizontalContentAlignment'][.='Left']", @"ScrollViewer.HorizontalContentAlignment=""Left""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0408", "Default", @"//*[name(.)='ScrollViewer']/@HorizontalContentAlignment[.='Left']", @"ScrollViewer.HorizontalContentAlignment=""Left""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0408_NG1.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1530,7 +1530,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0409_OK.xaml", "Resources")]
 		public void XA0409_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0409", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='VerticalContentAlignment'][.='Top']", @"ScrollViewer.VerticalContentAlignment=""Top""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0409", "Default", @"//*[name(.)='ScrollViewer']/@VerticalContentAlignment[.='Top']", @"ScrollViewer.VerticalContentAlignment=""Top""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0409_OK.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1542,7 +1542,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0409_NG1.xaml", "Resources")]
 		public void XA0409_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0409", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='VerticalContentAlignment'][.='Top']", @"ScrollViewer.VerticalContentAlignment=""Top""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0409", "Default", @"//*[name(.)='ScrollViewer']/@VerticalContentAlignment[.='Top']", @"ScrollViewer.VerticalContentAlignment=""Top""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0409_NG1.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1554,7 +1554,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0410_OK.xaml", "Resources")]
 		public void XA0410_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0410", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='HorizontalScrollBarVisibility'][.='Auto']", @"ScrollViewer.HorizontalScrollBarVisibility=""Auto""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0410", "Default", @"//*[name(.)='ScrollViewer']/@HorizontalScrollBarVisibility[.='Auto']", @"ScrollViewer.HorizontalScrollBarVisibility=""Auto""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0410_OK.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1566,7 +1566,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0410_NG1.xaml", "Resources")]
 		public void XA0410_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0410", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='HorizontalScrollBarVisibility'][.='Auto']", @"ScrollViewer.HorizontalScrollBarVisibility=""Auto""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0410", "Default", @"//*[name(.)='ScrollViewer']/@HorizontalScrollBarVisibility[.='Auto']", @"ScrollViewer.HorizontalScrollBarVisibility=""Auto""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0410_NG1.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1578,7 +1578,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0411_OK.xaml", "Resources")]
 		public void XA0411_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0411", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='VerticalScrollBarVisibility'][.='Visible']", @"ScrollViewer.VerticalScrollBarVisibility=""Visible""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0411", "Default", @"//*[name(.)='ScrollViewer']/@VerticalScrollBarVisibility[.='Visible']", @"ScrollViewer.VerticalScrollBarVisibility=""Visible""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0411_OK.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1590,7 +1590,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"Resources\XA0411_NG1.xaml", "Resources")]
 		public void XA0411_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0411", "Default", @"//*[name(.)='ScrollViewer']/@*[name(.)='VerticalScrollBarVisibility'][.='Visible']", @"ScrollViewer.VerticalScrollBarVisibility=""Visible""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0411", "Default", @"//*[name(.)='ScrollViewer']/@VerticalScrollBarVisibility[.='Visible']", @"ScrollViewer.VerticalScrollBarVisibility=""Visible""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"Resources\XA0411_NG1.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -1627,16 +1627,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0414_OK.xaml", "Resources")]
 		public void XA0414_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0414)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0414", "Critical", @"//*[name(.)='ScrollViewer'][not(@Background)]", @"ScrollViewer.Background属性が有りません。マウスホイールに反応させるため、Background=""Transparent""を指定してください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0414_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0414_NG1.xaml", "Resources")]
 		public void XA0414_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0414)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0414", "Critical", @"//*[name(.)='ScrollViewer'][not(@Background)]", @"ScrollViewer.Background属性が有りません。マウスホイールに反応させるため、Background=""Transparent""を指定してください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0414_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
@@ -1665,34 +1675,6 @@ namespace UnitTestProject
 		public void XA0416_NG()
 		{
 			Assert.Inconclusive("ルール(ID=XA0416)の異常系テストが作成されていません。");
-		}
-
-		[TestMethod]
-		[TestCategory("XmlChecker")]
-		public void XA0417_OK()
-		{
-			Assert.Inconclusive("ルール(ID=XA0417)の正常系テストが作成されていません。");
-		}
-
-		[TestMethod]
-		[TestCategory("XmlChecker")]
-		public void XA0417_NG()
-		{
-			Assert.Inconclusive("ルール(ID=XA0417)の異常系テストが作成されていません。");
-		}
-
-		[TestMethod]
-		[TestCategory("XmlChecker")]
-		public void XA0418_OK()
-		{
-			Assert.Inconclusive("ルール(ID=XA0418)の正常系テストが作成されていません。");
-		}
-
-		[TestMethod]
-		[TestCategory("XmlChecker")]
-		public void XA0418_NG()
-		{
-			Assert.Inconclusive("ルール(ID=XA0418)の異常系テストが作成されていません。");
 		}
 
 		[TestMethod]
