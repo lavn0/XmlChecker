@@ -1623,16 +1623,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0413_OK.xaml", "Resources")]
 		public void XA0413_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0413)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0413", "Warning", @"//*[name(.)='ScrollViewer']/@VerticalScrollBarVisibility[not(.='Auto')][not(.='Visible')]", @"ScrollViewer.VerticalScrollBarVisibility属性に""Auto"",""Visible""以外の値が指定されています。レイアウトのズレが目視確認できなくなっている可能性があります。", });
+			var xaml = File.ReadAllText(@"Resources\XA0413_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0413_NG2.xaml", "Resources")]
 		public void XA0413_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0413)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0413", "Warning", @"//*[name(.)='ScrollViewer']/@VerticalScrollBarVisibility[not(.='Auto')][not(.='Visible')]", @"ScrollViewer.VerticalScrollBarVisibility属性に""Auto"",""Visible""以外の値が指定されています。レイアウトのズレが目視確認できなくなっている可能性があります。", });
+			var xaml = File.ReadAllText(@"Resources\XA0413_NG2.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(2, errorInstances.Count);
 		}
 
 		[TestMethod]
