@@ -98,7 +98,7 @@ XA0706,Default,//*[name(.)='CheckBox']/@VerticalContentAlignment[.='Top'],"Check
 XA0707,Default,"//*[name(.)='CheckBox'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","CheckBox.Margin=""0""はデフォルト値です。"
 XA0708,Default,"//*[name(.)='CheckBox'][not(@Name)]/@Padding[.='4,1,0,0' or .='4 1 0 0']","CheckBox.Padding=""4,1,0,0""はデフォルト値です。"
 XA0709,Default,"//*[name(.)='CheckBox'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']","CheckBox.BorderThickness=""1""はデフォルト値です。"
-XA0710,Default,"//*[name(.)='CheckBox'][not(@Name)]/@Background[.='Transparent']","CheckBox.Background=""Transparent""はデフォルト値です。"
+XA0710,Default,"//*[name(.)='CheckBox'][not(@Name)]/@Background[.='#FF448DCA']","CheckBox.Background=""#FF448DCA""はデフォルト値です。"
 XA0711,Info,"//*[name(.)='CheckBox'][not(@IsEnabled='False')][not(contains(@IsChecked,'TwoWay'))][@*[local-name()='Name']]",名前付きコントロールの読み取り専用ではないCheckBox.IsCheckedプロパティがTwoWayバインドされていません。
 XA0712,Critical,"//*[name(.)='CheckBox'][not(@IsEnabled='False')][not(contains(@IsChecked,'TwoWay'))][not(@*[local-name()='Name'])]",名前なしコントロールの読み取り専用ではないCheckBox.IsCheckedプロパティがTwoWayバインドされていません。
 XA0713,Error,"//*[name(.)='CheckBox']/@Content[starts-with(.,' ') or starts-with(.,'　')]",CheckBox.Content属性の先頭に空白があります]
