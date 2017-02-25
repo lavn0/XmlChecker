@@ -1,0 +1,5 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<TextBlock Text="DummyText1" HorizontalAlignment="Left" />
+	<TextBlock Text="DummyText2" HorizontalAlignment="Center" />
+	<TextBlock Text="DummyText3" HorizontalAlignment="Right" />
+</Grid>
