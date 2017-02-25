@@ -2643,16 +2643,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0805_OK.xaml", "Resources")]
 		public void XA0805_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0805)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0805", "Default", @"//*[name(.)='Button']/@HorizontalContentAlignment[.='Center']", @"Button.HorizontalContentAlignment=""Center""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0805_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0805_NG1.xaml", "Resources")]
 		public void XA0805_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0805)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0805", "Default", @"//*[name(.)='Button']/@HorizontalContentAlignment[.='Center']", @"Button.HorizontalContentAlignment=""Center""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0805_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
