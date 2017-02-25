@@ -2005,6 +2005,90 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		public void XA0606_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0606)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0606_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0606)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0607_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0607)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0607_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0607)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0608_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0608)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0608_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0608)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0609_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0609)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0609_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0609)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0610_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0610)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0610_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0610)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0611_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA0611)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		public void XA0611_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA0611)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
 		public void XA0701_OK()
 		{
 			Assert.Inconclusive("ルール(ID=XA0701)の正常系テストが作成されていません。");

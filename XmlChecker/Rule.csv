@@ -78,11 +78,17 @@ XA0507,Critical,//*[name(.)='TextBlock'][not(@Text)][not(text())],TextBlock.Text
 XA0508,Critical,"//*[name(.)='TextBlock']/@Text[contains(.,'TwoWay')]",TextBlock.Text属性はTwoWayバインディングしないでください。
 XA0509,Warning,//*[name(.)='Grid']/*[name(.)='Grid.ColumnDefinitions']/*[name(.)='ColumnDefinition'][@Width='Auto'][count(preceding-sibling::*)=parent::*/parent::*/*[@TextAlignment][not(number(@Grid.ColumnSpan)>1)]/@Grid.Column],"ColulmnDefinition.Width=""Auto""が指定されているため、該当列に存在する要素の""TextAlignment""の指定値は機能しません。"
 XA0510,Warning,//*[name(.)='StackPanel'][@Orientation='Horizontal']/*/@TextAlignment,横方向StackPanel配下のTextAlignmentは機能しません。
-XA0601,Critical,//*[name(.)='TextBox'][not(@Text)][not(text())],TextBox.Text属性がありません。
-XA0602,Critical,"//*[name(.)='TextBox'][not(@IsReadOnly='True')][not(@IsEnabled='False')]/@Text[not(contains(.,'TwoWay'))]",読み取り専用ではないTextBox.Text属性がTwoWayバインディングされていません。
-XA0603,Critical,//*[name(.)='TextBox'][@TextWrapping='Wrap'][not(@Style or @Template)][not(name(..)='StackPanel' and ../@Orientation='Horizontal')],TextBox.TextWrappingのSilverlightバグが発生する可能性があります。
-XA0604,Error,//*[name(.)='StackPanel'][@Orientation='Horizontal']/*[name(.)='TextBox']/@TextWrapping,"横方向StackPanel配下のTextBoxにTextWrapping=""Wrap""を指定しても機能しません。"
-XA0605,Error,//*[name(.)='TextBox'][not(@MaxLength)][parent::*][not(@IsReadOnly='True') and not(@IsEnabled='False')],TextBox.MaxLengthが設定されていません。
+XA0601,Default,//*[name(.)='TextBox']/@Visibility[.='Visible'],"Visibility=""Visible""はデフォルト値です。"
+XA0602,Default,//*[name(.)='TextBox']/@IsEnabled[.='True'],"IsEnabled=""True""はデフォルト値です。"
+XA0603,Default,//*[name(.)='TextBox']/@HorizontalAlignment[.='Stretch'],"HorizontalAlignment=""Stretch""はデフォルト値です。"
+XA0604,Default,//*[name(.)='TextBox']/@VerticalAlignment[.='Stretch'],"VerticalAlignment=""Stretch""はデフォルト値です。"
+XA0605,Default,"//*[name(.)='TextBox'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","TextBox.Margin=""0""はデフォルト値です。"
+XA0606,Default,"//*[name(.)='TextBox'][not(@Name)]/@Padding[.='2' or .='2,2' or .='2 2' or .='2,2,2,2' or .='2 2 2 2']","TextBox.Padding=""4""はデフォルト値です。"
+XA0607,Default,"//*[name(.)='TextBox']/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']","TextBox.BorderThickness=""1""はデフォルト値です。"
+XA0608,Critical,//*[name(.)='TextBox'][not(@Text)][not(text())],TextBox.Text属性がありません。
+XA0609,Critical,"//*[name(.)='TextBox'][not(@IsReadOnly='True')][not(@IsEnabled='False')]/@Text[not(contains(.,'TwoWay'))]",読み取り専用ではないTextBox.Text属性がTwoWayバインディングされていません。
+XA0610,Critical,//*[name(.)='TextBox'][@TextWrapping='Wrap'][not(@Style or @Template)][not(name(..)='StackPanel' and ../@Orientation='Horizontal')],TextBox.TextWrappingのSilverlightバグが発生する可能性があります。
+XA0611,Error,//*[name(.)='TextBox'][not(@MaxLength)][parent::*][not(@IsReadOnly='True') and not(@IsEnabled='False')],TextBox.MaxLengthが設定されていません。
 XA0701,Default,//*[name(.)='CheckBox']/@Visibility[.='Visible'],"CheckBox.Visibility=""Visible""はデフォルト値です。"
 XA0702,Default,//*[name(.)='CheckBox']/@IsEnabled[.='True'],"CheckBox.IsEnabled=""True""はデフォルト値です。"
 XA0703,Default,//*[name(.)='CheckBox']/@HorizontalAlignment[.='Stretch'],"CheckBox.HorizontalAlignment=""Stretch""はデフォルト値です。"
