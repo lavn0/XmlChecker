@@ -1,0 +1,8 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<TextBox Text="{Binding DummyText}" IsReadOnly="True" />
+	<TextBox Text="{Binding DummyText}" IsEnabled="False" />
+	<TextBox Text="{Binding DummyText, Mode=OneTime}" IsReadOnly="True" />
+	<TextBox Text="{Binding DummyText, Mode=OneTime}" IsEnabled="False" />
+	<TextBox Text="{Binding DummyText, Mode=OneWay}" IsReadOnly="True" />
+	<TextBox Text="{Binding DummyText, Mode=OneWay}" IsEnabled="False" />
+</Grid>

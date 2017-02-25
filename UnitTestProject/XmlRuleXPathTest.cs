@@ -2127,16 +2127,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0609_OK.xaml", "Resources")]
 		public void XA0609_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0609)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0609", "Critical", @"//*[name(.)='TextBox'][not(@IsReadOnly='True')][not(@IsEnabled='False')]/@Text[not(contains(.,'TwoWay'))]", @"読み取り専用ではないTextBox.Text属性がTwoWayバインディングされていません。", });
+			var xaml = File.ReadAllText(@"Resources\XA0609_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0609_NG3.xaml", "Resources")]
 		public void XA0609_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0609)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0609", "Critical", @"//*[name(.)='TextBox'][not(@IsReadOnly='True')][not(@IsEnabled='False')]/@Text[not(contains(.,'TwoWay'))]", @"読み取り専用ではないTextBox.Text属性がTwoWayバインディングされていません。", });
+			var xaml = File.ReadAllText(@"Resources\XA0609_NG3.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(3, errorInstances.Count);
 		}
 
 		[TestMethod]
