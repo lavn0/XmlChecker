@@ -112,7 +112,7 @@ XA0806,Default,//*[name(.)='Button']/@VerticalContentAlignment[.='Center'],"Butt
 XA0807,Default,"//*[name(.)='Button'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","Button.Margin=""0""はデフォルト値です。"
 XA0808,Default,"//*[name(.)='Button'][not(@Name)]/@Padding[.='3' or .='3,3' or .='3 3' or .='3,3,3,3' or .='3 3 3 3']","Button.Padding=""3""はデフォルト値です。"
 XA0809,Default,"//*[name(.)='Button'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']","Button.BorderThickness=""1""はデフォルト値です。"
-XA0810,Default,"//*[name(.)='Button'][not(@Name)]/@Background[.='Transparent']","Button.Background=""Transparent""はデフォルト値です。"
+XA0810,Default,"//*[name(.)='Button'][not(@Name)]/@Background[.='#FF1F3B53' or .='#1F3B53']","Button.Background=""#FF1F3B53""はデフォルト値です。"
 XA0901,Default,//*[name(.)='HyperlinkButton']/@Visibility[.='Visible'],"HyperlinkButton.Visibility=""Visible""はデフォルト値です。"
 XA0902,Default,//*[name(.)='HyperlinkButton']/@IsEnabled[.='True'],"HyperlinkButton.IsEnabled=""True""はデフォルト値です。"
 XA0903,Default,//*[name(.)='HyperlinkButton']/@HorizontalAlignment[.='Stretch'],"HyperlinkButton.HorizontalAlignment=""Stretch""はデフォルト値です。"

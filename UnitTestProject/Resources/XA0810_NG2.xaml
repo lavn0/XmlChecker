@@ -1,0 +1,4 @@
+﻿<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<Button Content="Button1" Background="#FF1F3B53" />
+	<Button Content="Button2" Background="#1F3B53" />
+</StackPanel>
