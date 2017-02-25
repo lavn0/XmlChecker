@@ -1,0 +1,5 @@
+﻿<StackPanel
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	Orientation="Horizontal">
+	<Button Width="100" Content="Button1" VerticalContentAlignment="Center" />
+</StackPanel>
