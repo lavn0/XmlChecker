@@ -2523,16 +2523,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0714_OK.xaml", "Resources")]
 		public void XA0714_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0714)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0714", "Error", @"//*[name(.)='CheckBox']/@Content[substring(.,string-length())=' ' or substring(.,string-length())='　']", @"CheckBox.Content属性の末尾に空白があります", });
+			var xaml = File.ReadAllText(@"Resources\XA0714_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0714_NG2.xaml", "Resources")]
 		public void XA0714_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0714)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0714", "Error", @"//*[name(.)='CheckBox']/@Content[substring(.,string-length())=' ' or substring(.,string-length())='　']", @"CheckBox.Content属性の末尾に空白があります", });
+			var xaml = File.ReadAllText(@"Resources\XA0714_NG2.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(2, errorInstances.Count);
 		}
 
 		[TestMethod]
