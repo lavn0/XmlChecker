@@ -1743,20 +1743,6 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
-		public void XA0502_OK()
-		{
-			Assert.Inconclusive("ルール(ID=XA0502)の正常系テストが作成されていません。");
-		}
-
-		[TestMethod]
-		[TestCategory("XmlChecker")]
-		public void XA0502_NG()
-		{
-			Assert.Inconclusive("ルール(ID=XA0502)の異常系テストが作成されていません。");
-		}
-
-		[TestMethod]
-		[TestCategory("XmlChecker")]
 		public void XA0503_OK()
 		{
 			Assert.Inconclusive("ルール(ID=XA0503)の正常系テストが作成されていません。");
