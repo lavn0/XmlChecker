@@ -2175,11 +2175,23 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
-		[DeploymentItem(@"Resources\XA0611_OK.xaml", "Resources")]
-		public void XA0611_OK()
+		[DeploymentItem(@"Resources\XA0611_OK1.xaml", "Resources")]
+		public void XA0611_OK1()
 		{
 			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0611", "Error", @"//*[name(.)='TextBox'][not(@MaxLength)][parent::*][not(@IsReadOnly='True') and not(@IsEnabled='False')]", @"TextBox.MaxLengthが設定されていません。", });
-			var xaml = File.ReadAllText(@"Resources\XA0611_OK.xaml");
+			var xaml = File.ReadAllText(@"Resources\XA0611_OK1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0611_OK2.xaml", "Resources")]
+		public void XA0611_OK2()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 1, new string[] { "XA0611", "Error", @"//*[name(.)='TextBox'][not(@MaxLength)][parent::*][not(@IsReadOnly='True') and not(@IsEnabled='False')]", @"TextBox.MaxLengthが設定されていません。", });
+			var xaml = File.ReadAllText(@"Resources\XA0611_OK2.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
 			Assert.AreEqual(0, errorInstances.Count);

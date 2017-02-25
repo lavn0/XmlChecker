@@ -12,19 +12,26 @@
 var projectDir = this.Host.ResolvePath(string.Empty);
 var resourcesPath = this.Host.ResolvePath("Resources");
 var ngFiles = Directory.EnumerateFiles(resourcesPath, "*_NG*.xaml").ToList();
-foreach (var ngFile in ngFiles)
+var okFiles = Directory.EnumerateFiles(resourcesPath, "*_OK*.xaml").ToList();
+var pairs = ngFiles.ToDictionary(f => f, f => Directory.EnumerateFiles(resourcesPath, Regex.Replace(Path.GetFileNameWithoutExtension(f), @"NG.*$", "OK*.xaml")));
+foreach (var pair in pairs)
 {
-	var ngPath = ngFile.Replace(projectDir + @"\", string.Empty);
-	var okPath = Regex.Replace(ngPath, @"NG\d", "OK");
+	var ngPath = pair.Key.Replace(projectDir + @"\", string.Empty);
 #>
     <Content Include="<#= ngPath #>">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+<#
+	foreach (var okFullPath in pair.Value)
+	{
+		var okPath = okFullPath.Replace(projectDir + @"\", string.Empty);
+#>
     <Content Include="<#= okPath #>">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon><#= ngPath.Replace(@"Resources\", string.Empty) #></DependentUpon>
     </Content>
 <#
+	}
 }
 #>
   </ItemGroup>

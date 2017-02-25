@@ -50,7 +50,7 @@ namespace UnitTestProject
 				foreach (var okFile in okFiles)
 				{
 					var filePath = Path.Combine("Resources", Path.GetFileName(okFile));
-					var testName = Regex.Match(Path.GetFileNameWithoutExtension(okFile), "^.*?(OK|NG)").Value;
+					var testName = Regex.Replace(Path.GetFileNameWithoutExtension(okFile), @"NG\d+", "NG");
 					int ngCount;
 					int.TryParse(Regex.Match(okFile, @"(?<=NG)\d+").Value, out ngCount);
 #>
