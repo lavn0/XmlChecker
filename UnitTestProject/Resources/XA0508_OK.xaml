@@ -1,0 +1,6 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<TextBlock Text="DummyText1" />
+	<TextBlock Text="{Binding BindingText}" />
+	<TextBlock Text="{Binding BindingText, Mode=OneTime}" />
+	<TextBlock Text="{Binding BindingText, Mode=OneWay}" />
+</Grid>
