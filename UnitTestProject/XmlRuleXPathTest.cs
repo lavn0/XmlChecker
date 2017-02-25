@@ -1887,16 +1887,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0509_OK.xaml", "Resources")]
 		public void XA0509_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0509)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0509", "Warning", @"//*[name(.)='Grid']/*[name(.)='Grid.ColumnDefinitions']/*[name(.)='ColumnDefinition'][@Width='Auto'][count(preceding-sibling::*)=parent::*/parent::*/*[@TextAlignment][not(number(@Grid.ColumnSpan)>1)]/@Grid.Column]", @"ColulmnDefinition.Width=""Auto""が指定されているため、該当列に存在する要素の""TextAlignment""の指定値は機能しません。", });
+			var xaml = File.ReadAllText(@"Resources\XA0509_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0509_NG2.xaml", "Resources")]
 		public void XA0509_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0509)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0509", "Warning", @"//*[name(.)='Grid']/*[name(.)='Grid.ColumnDefinitions']/*[name(.)='ColumnDefinition'][@Width='Auto'][count(preceding-sibling::*)=parent::*/parent::*/*[@TextAlignment][not(number(@Grid.ColumnSpan)>1)]/@Grid.Column]", @"ColulmnDefinition.Width=""Auto""が指定されているため、該当列に存在する要素の""TextAlignment""の指定値は機能しません。", });
+			var xaml = File.ReadAllText(@"Resources\XA0509_NG2.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(2, errorInstances.Count);
 		}
 
 		[TestMethod]
