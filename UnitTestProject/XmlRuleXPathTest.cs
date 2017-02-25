@@ -2715,16 +2715,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0808_OK.xaml", "Resources")]
 		public void XA0808_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0808)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0808", "Default", @"//*[name(.)='Button'][not(@Name)]/@Padding[.='3' or .='3,3' or .='3 3' or .='3,3,3,3' or .='3 3 3 3']", @"Button.Padding=""3""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0808_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0808_NG5.xaml", "Resources")]
 		public void XA0808_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0808)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0808", "Default", @"//*[name(.)='Button'][not(@Name)]/@Padding[.='3' or .='3,3' or .='3 3' or .='3,3,3,3' or .='3 3 3 3']", @"Button.Padding=""3""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0808_NG5.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(5, errorInstances.Count);
 		}
 
 		[TestMethod]
