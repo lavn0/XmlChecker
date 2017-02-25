@@ -2151,16 +2151,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0610_OK.xaml", "Resources")]
 		public void XA0610_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0610)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0610", "Critical", @"//*[name(.)='TextBox'][@TextWrapping='Wrap'][not(@Style or @Template)][not(name(..)='StackPanel' and ../@Orientation='Horizontal')]", @"TextBox.TextWrappingのSilverlightバグが発生する可能性があります。", });
+			var xaml = File.ReadAllText(@"Resources\XA0610_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0610_NG1.xaml", "Resources")]
 		public void XA0610_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0610)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0610", "Critical", @"//*[name(.)='TextBox'][@TextWrapping='Wrap'][not(@Style or @Template)][not(name(..)='StackPanel' and ../@Orientation='Horizontal')]", @"TextBox.TextWrappingのSilverlightバグが発生する可能性があります。", });
+			var xaml = File.ReadAllText(@"Resources\XA0610_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
