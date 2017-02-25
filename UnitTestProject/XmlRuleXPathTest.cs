@@ -2055,16 +2055,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0606_OK.xaml", "Resources")]
 		public void XA0606_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0606)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0606", "Default", @"//*[name(.)='TextBox'][not(@Name)]/@Padding[.='2' or .='2,2' or .='2 2' or .='2,2,2,2' or .='2 2 2 2']", @"TextBox.Padding=""4""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0606_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0606_NG5.xaml", "Resources")]
 		public void XA0606_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0606)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0606", "Default", @"//*[name(.)='TextBox'][not(@Name)]/@Padding[.='2' or .='2,2' or .='2 2' or .='2,2,2,2' or .='2 2 2 2']", @"TextBox.Padding=""4""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0606_NG5.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(5, errorInstances.Count);
 		}
 
 		[TestMethod]
