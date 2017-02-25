@@ -2475,16 +2475,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0712_OK.xaml", "Resources")]
 		public void XA0712_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0712)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0712", "Critical", @"//*[name(.)='CheckBox'][not(@IsEnabled='False')][not(contains(@IsChecked,'TwoWay'))][not(@*[local-name()='Name'])]", @"名前なしコントロールの読み取り専用ではないCheckBox.IsCheckedプロパティがTwoWayバインドされていません。", });
+			var xaml = File.ReadAllText(@"Resources\XA0712_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0712_NG3.xaml", "Resources")]
 		public void XA0712_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0712)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0712", "Critical", @"//*[name(.)='CheckBox'][not(@IsEnabled='False')][not(contains(@IsChecked,'TwoWay'))][not(@*[local-name()='Name'])]", @"名前なしコントロールの読み取り専用ではないCheckBox.IsCheckedプロパティがTwoWayバインドされていません。", });
+			var xaml = File.ReadAllText(@"Resources\XA0712_NG3.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(3, errorInstances.Count);
 		}
 
 		[TestMethod]
