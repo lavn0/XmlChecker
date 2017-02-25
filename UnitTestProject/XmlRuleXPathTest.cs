@@ -2499,16 +2499,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0713_OK.xaml", "Resources")]
 		public void XA0713_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0713)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0713", "Error", @"//*[name(.)='CheckBox']/@Content[starts-with(.,' ') or starts-with(.,'　')]", @"CheckBox.Content属性の先頭に空白があります]", });
+			var xaml = File.ReadAllText(@"Resources\XA0713_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0713_NG2.xaml", "Resources")]
 		public void XA0713_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0713)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0713", "Error", @"//*[name(.)='CheckBox']/@Content[starts-with(.,' ') or starts-with(.,'　')]", @"CheckBox.Content属性の先頭に空白があります]", });
+			var xaml = File.ReadAllText(@"Resources\XA0713_NG2.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(2, errorInstances.Count);
 		}
 
 		[TestMethod]
