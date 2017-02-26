@@ -1,0 +1,21 @@
+﻿<StackPanel
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	Orientation="Horizontal"
+	Height="100">
+	<ListBox>
+		<ListBoxItem Content="ListBoxItem1-1"/>
+		<ListBoxItem Content="ListBoxItem1-2"/>
+	</ListBox>
+	<ListBox VerticalAlignment="Top">
+		<ListBoxItem Content="ListBoxItem2-1"/>
+		<ListBoxItem Content="ListBoxItem2-2"/>
+	</ListBox>
+	<ListBox VerticalAlignment="Center">
+		<ListBoxItem Content="ListBoxItem3-1"/>
+		<ListBoxItem Content="ListBoxItem3-2"/>
+	</ListBox>
+	<ListBox VerticalAlignment="Bottom">
+		<ListBoxItem Content="ListBoxItem4-1"/>
+		<ListBoxItem Content="ListBoxItem4-2"/>
+	</ListBox>
+</StackPanel>
