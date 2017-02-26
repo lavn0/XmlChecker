@@ -1,0 +1,8 @@
+﻿<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<ListBox IsEnabled="True">
+		<ListBoxItem Content="ListBoxItem1"/>
+		<ListBoxItem Content="ListBoxItem2"/>
+		<ListBoxItem Content="ListBoxItem3"/>
+		<ListBoxItem Content="ListBoxItem4"/>
+	</ListBox>
+</StackPanel>
