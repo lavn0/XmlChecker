@@ -3267,16 +3267,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA1010_OK.xaml", "Resources")]
 		public void XA1010_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA1010)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA1010", "Default", @"//*[name(.)='ListBox'][not(@Name)]/@Background[.='White' or .='#FFFFFFFF' or .='#FFFFFF']", @"ListBox.Background=""White""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA1010_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA1010_NG3.xaml", "Resources")]
 		public void XA1010_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA1010)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA1010", "Default", @"//*[name(.)='ListBox'][not(@Name)]/@Background[.='White' or .='#FFFFFFFF' or .='#FFFFFF']", @"ListBox.Background=""White""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA1010_NG3.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(3, errorInstances.Count);
 		}
 
 		[TestMethod]

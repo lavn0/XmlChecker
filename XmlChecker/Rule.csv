@@ -133,7 +133,7 @@ XA1006,Default,//*[name(.)='ListBox']/@VerticalContentAlignment[.='Top'],"ListBo
 XA1007,Default,"//*[name(.)='ListBox'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","ListBox.Margin=""0""はデフォルト値です。"
 XA1008,Default,"//*[name(.)='ListBox'][not(@Name)]/@Padding[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']","ListBox.Padding=""1""はデフォルト値です。"
 XA1009,Default,"//*[name(.)='ListBox'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']","ListBox.BorderThickness=""1""はデフォルト値です。"
-XA1010,Default,"//*[name(.)='ListBox'][not(@Name)]/@Background[.='White'][.='#FFFFFFFF']","ListBox.Background=""White""はデフォルト値です。"
+XA1010,Default,"//*[name(.)='ListBox'][not(@Name)]/@Background[.='White' or .='#FFFFFFFF' or .='#FFFFFF']","ListBox.Background=""White""はデフォルト値です。"
 XA1011,Default,"//*[name(.)='ListBox'][not(@Name)]/@*[name(.)='ScrollViewer.HorizontalScrollBarVisibility'][.='Auto']","ListBox.HorizontalScrollBarVisibility=""Auto""はデフォルト値です。"
 XA1012,Default,"//*[name(.)='ListBox'][not(@Name)]/@*[name(.)='ScrollViewer.VerticalScrollBarVisibility'][.='Auto']","ListBox.VerticalScrollBarVisibility=""Auto""はデフォルト値です。"
 XA1101,Default,//*[name(.)='ComboBox']/@Visibility[.='Visible'],"ComboBox.Visibility=""Visible""はデフォルト値です。"
