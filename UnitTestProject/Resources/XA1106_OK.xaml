@@ -1,0 +1,32 @@
+﻿<StackPanel
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	Orientation="Horizontal">
+	<StackPanel.Resources>
+		<Style TargetType="ComboBoxItem">
+			<Setter Property="Height" Value="50" />
+			<Setter Property="BorderBrush" Value="Red" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Setter Property="Margin" Value="2" />
+		</Style>
+	</StackPanel.Resources>
+	<ComboBox Width="200">
+		<ComboBoxItem Content="{Binding VerticalContentAlignment, RelativeSource={RelativeSource Mode=Self}}"/>
+		<ComboBoxItem Content="ComboBoxItem1-1" />
+		<ComboBoxItem Content="ComboBoxItem1-2" />
+	</ComboBox>
+	<ComboBox Width="200" VerticalContentAlignment="Stretch">
+		<ComboBoxItem Content="{Binding VerticalContentAlignment, RelativeSource={RelativeSource Mode=Self}}"/>
+		<ComboBoxItem Content="ComboBoxItem1-2" />
+		<ComboBoxItem Content="ComboBoxItem2-2" />
+	</ComboBox>
+	<ComboBox Width="200" VerticalContentAlignment="Center">
+		<ComboBoxItem Content="{Binding VerticalContentAlignment, RelativeSource={RelativeSource Mode=Self}}"/>
+		<ComboBoxItem Content="ComboBoxItem3-1" />
+		<ComboBoxItem Content="ComboBoxItem3-2" />
+	</ComboBox>
+	<ComboBox Width="200" VerticalContentAlignment="Bottom">
+		<ComboBoxItem Content="{Binding VerticalContentAlignment, RelativeSource={RelativeSource Mode=Self}}"/>
+		<ComboBoxItem Content="ComboBoxItem4-1" />
+		<ComboBoxItem Content="ComboBoxItem4-2" />
+	</ComboBox>
+</StackPanel>
