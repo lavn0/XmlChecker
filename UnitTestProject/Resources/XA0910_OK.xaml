@@ -1,0 +1,4 @@
+﻿<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<HyperlinkButton Content="LinkText1" />
+	<HyperlinkButton Content="LinkText2" Background="Red" />
+</StackPanel>

@@ -873,5 +873,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>XA0909_NG5.xaml</DependentUpon>
     </Content>
+    <Content Include="Resources\XA0910_NG1.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\XA0910_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>XA0910_NG1.xaml</DependentUpon>
+    </Content>
   </ItemGroup>
 </Project>
