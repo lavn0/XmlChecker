@@ -2979,16 +2979,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0909_OK.xaml", "Resources")]
 		public void XA0909_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0909)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0909", "Default", @"//*[name(.)='HyperlinkButton'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"HyperlinkButton.BorderThickness=""1""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0909_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0909_NG5.xaml", "Resources")]
 		public void XA0909_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0909)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0909", "Default", @"//*[name(.)='HyperlinkButton'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"HyperlinkButton.BorderThickness=""1""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0909_NG5.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(5, errorInstances.Count);
 		}
 
 		[TestMethod]
