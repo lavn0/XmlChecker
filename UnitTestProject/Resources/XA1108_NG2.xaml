@@ -1,0 +1,16 @@
+﻿<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<ComboBox Padding="6,2,25,2" HorizontalAlignment="Left" SelectedIndex="0">
+		<ComboBoxItem Content="ComboBoxItem1" />
+		<ComboBoxItem Content="ComboBoxItem2" />
+		<ComboBoxItem Content="ComboBoxItem3" />
+		<ComboBoxItem Content="ComboBoxItem4" />
+		<ComboBoxItem Content="ComboBoxItem5" />
+	</ComboBox>
+	<ComboBox Padding="6 2 25 2" HorizontalAlignment="Left" SelectedIndex="1">
+		<ComboBoxItem Content="ComboBoxItem1" />
+		<ComboBoxItem Content="ComboBoxItem2" />
+		<ComboBoxItem Content="ComboBoxItem3" />
+		<ComboBoxItem Content="ComboBoxItem4" />
+		<ComboBoxItem Content="ComboBoxItem5" />
+	</ComboBox>
+</StackPanel>

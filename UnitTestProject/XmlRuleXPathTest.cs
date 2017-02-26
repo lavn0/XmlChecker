@@ -3507,16 +3507,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA1108_OK.xaml", "Resources")]
 		public void XA1108_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA1108)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA1108", "Default", @"//*[name(.)='ComboBox'][not(@Name)]/@Padding[.='6,2,25,2' or .='6 2 25 2']", @"ComboBox.Padding=""6,2,25,2""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA1108_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA1108_NG2.xaml", "Resources")]
 		public void XA1108_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA1108)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA1108", "Default", @"//*[name(.)='ComboBox'][not(@Name)]/@Padding[.='6,2,25,2' or .='6 2 25 2']", @"ComboBox.Padding=""6,2,25,2""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA1108_NG2.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(2, errorInstances.Count);
 		}
 
 		[TestMethod]
