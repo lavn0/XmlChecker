@@ -3243,16 +3243,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA1009_OK.xaml", "Resources")]
 		public void XA1009_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA1009)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA1009", "Default", @"//*[name(.)='ListBox'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"ListBox.BorderThickness=""1""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA1009_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA1009_NG5.xaml", "Resources")]
 		public void XA1009_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA1009)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA1009", "Default", @"//*[name(.)='ListBox'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"ListBox.BorderThickness=""1""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA1009_NG5.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(5, errorInstances.Count);
 		}
 
 		[TestMethod]
