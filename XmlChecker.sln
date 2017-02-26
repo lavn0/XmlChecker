@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlCheckRunner", "XmlCheckRunner\XmlCheckRunner.csproj", "{B91AB815-3553-4A5A-ADEC-02BB78093DA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightDummyControl", "SilverlightDummyControl\SilverlightDummyControl.csproj", "{370F08B4-545C-46AA-947A-4A0F9DE7364A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B91AB815-3553-4A5A-ADEC-02BB78093DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B91AB815-3553-4A5A-ADEC-02BB78093DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B91AB815-3553-4A5A-ADEC-02BB78093DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{370F08B4-545C-46AA-947A-4A0F9DE7364A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{370F08B4-545C-46AA-947A-4A0F9DE7364A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{370F08B4-545C-46AA-947A-4A0F9DE7364A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{370F08B4-545C-46AA-947A-4A0F9DE7364A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

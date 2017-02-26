@@ -69,6 +69,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SilverlightDummyControl\SilverlightDummyControl.csproj">
+      <Project>{370f08b4-545c-46aa-947a-4a0f9de7364a}</Project>
+      <Name>SilverlightDummyControl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XmlChecker\XmlChecker.csproj">
       <Project>{6f6747ff-e9dc-4eb4-9c93-a5233d862c45}</Project>
       <Name>XmlChecker</Name>
