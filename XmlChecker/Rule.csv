@@ -123,6 +123,7 @@ XA0907,Default,"//*[name(.)='HyperlinkButton'][not(@Name)]/@Margin[.='0' or .='0
 XA0908,Default,"//*[name(.)='HyperlinkButton'][not(@Name)]/@Padding[.='3' or .='3,3' or .='3 3' or .='3,3,3,3' or .='3 3 3 3']","HyperlinkButton.Padding=""3""はデフォルト値です。"
 XA0909,Default,"//*[name(.)='HyperlinkButton'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']","HyperlinkButton.BorderThickness=""1""はデフォルト値です。"
 XA0910,Default,"//*[name(.)='HyperlinkButton'][not(@Name)]/@Background[.='Transparent']","HyperlinkButton.Background=""Transparent""はデフォルト値です。"
+XA0911,Error,"//*[name(.)='HyperlinkButton'][not(@Name)]/text()",HyperlinkButtonのContentがテキストノードで指定されるとマウスオーバー時の下線が表示されなくなるため、Contentプロパティに指定してください。
 XA1001,Default,//*[name(.)='ListBox']/@Visibility[.='Visible'],"ListBox.Visibility=""Visible""はデフォルト値です。"
 XA1002,Default,//*[name(.)='ListBox']/@IsEnabled[.='True'],"ListBox.IsEnabled=""True""はデフォルト値です。"
 XA1003,Default,//*[name(.)='ListBox']/@HorizontalAlignment[.='Stretch'],"ListBox.HorizontalAlignment=""Stretch""はデフォルト値です。"

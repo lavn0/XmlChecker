@@ -3027,6 +3027,30 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0911_OK.xaml", "Resources")]
+		public void XA0911_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0911", "Error", @"//*[name(.)='HyperlinkButton'][not(@Name)]/text()", @"HyperlinkButtonのContentがテキストノードで指定されるとマウスオーバー時の下線が表示されなくなるため、Contentプロパティに指定してください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0911_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0911_NG1.xaml", "Resources")]
+		public void XA0911_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0911", "Error", @"//*[name(.)='HyperlinkButton'][not(@Name)]/text()", @"HyperlinkButtonのContentがテキストノードで指定されるとマウスオーバー時の下線が表示されなくなるため、Contentプロパティに指定してください。", });
+			var xaml = File.ReadAllText(@"Resources\XA0911_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("XmlChecker")]
 		public void XA1001_OK()
 		{
 			Assert.Inconclusive("ルール(ID=XA1001)の正常系テストが作成されていません。");
