@@ -1,0 +1,5 @@
+﻿<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<HyperlinkButton Content="LinkText" />
+	<HyperlinkButton Content="LinkText" VerticalContentAlignment="Center" />
+	<HyperlinkButton Content="LinkText" VerticalContentAlignment="Bottom" />
+</StackPanel>

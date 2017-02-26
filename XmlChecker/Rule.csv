@@ -118,7 +118,7 @@ XA0902,Default,//*[name(.)='HyperlinkButton']/@IsEnabled[.='True'],"HyperlinkBut
 XA0903,Default,//*[name(.)='HyperlinkButton']/@HorizontalAlignment[.='Stretch'],"HyperlinkButton.HorizontalAlignment=""Stretch""はデフォルト値です。"
 XA0904,Default,//*[name(.)='HyperlinkButton']/@VerticalAlignment[.='Stretch'],"HyperlinkButton.VerticalAlignment=""Stretch""はデフォルト値です。"
 XA0905,Default,//*[name(.)='HyperlinkButton']/@HorizontalContentAlignment[.='Left'],"HyperlinkButton.HorizontalContentAlignment=""Left""はデフォルト値です。"
-XA0906,Default,//*[name(.)='HyperlinkButton']/@VerticalContentAlignment[.='Center'],"HyperlinkButton.VerticalContentAlignment=""Center""はデフォルト値です。"
+XA0906,Default,//*[name(.)='HyperlinkButton']/@VerticalContentAlignment[.='Top'],"HyperlinkButton.VerticalContentAlignment=""Top""はデフォルト値です。"
 XA0907,Default,"//*[name(.)='HyperlinkButton'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","HyperlinkButton.Margin=""0""はデフォルト値です。"
 XA0908,Default,"//*[name(.)='HyperlinkButton'][not(@Name)]/@Padding[.='3' or .='3,3' or .='3 3' or .='3,3,3,3' or .='3 3 3 3']","HyperlinkButton.Padding=""3""はデフォルト値です。"
 XA0909,Default,"//*[name(.)='HyperlinkButton'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']","HyperlinkButton.BorderThickness=""1""はデフォルト値です。"
