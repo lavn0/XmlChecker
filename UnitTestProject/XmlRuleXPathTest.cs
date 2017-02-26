@@ -2859,16 +2859,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0904_OK.xaml", "Resources")]
 		public void XA0904_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA0904)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0904", "Default", @"//*[name(.)='HyperlinkButton']/@VerticalAlignment[.='Stretch']", @"HyperlinkButton.VerticalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0904_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
+		[DeploymentItem(@"Resources\XA0904_NG1.xaml", "Resources")]
 		public void XA0904_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA0904)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0904", "Default", @"//*[name(.)='HyperlinkButton']/@VerticalAlignment[.='Stretch']", @"HyperlinkButton.VerticalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"Resources\XA0904_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
