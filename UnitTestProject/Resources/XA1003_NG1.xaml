@@ -1,0 +1,8 @@
+﻿<StackPanel
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	Width="200">
+	<ListBox HorizontalAlignment="Stretch">
+		<ListBoxItem Content="ListBoxItem1"/>
+		<ListBoxItem Content="ListBoxItem2"/>
+	</ListBox>
+</StackPanel>
