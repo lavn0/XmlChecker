@@ -119,10 +119,6 @@
     <Content Include="TestResourcesSL\XA0101_OK.xaml">
       <DependentUpon>XA0101_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0102_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0102_OK.xaml">
-      <DependentUpon>XA0102_NG1.xaml</DependentUpon>
-    </Content>
     <Content Include="TestResourcesSL\XA0103_NG1.xaml" />
     <Content Include="TestResourcesSL\XA0103_OK.xaml">
       <DependentUpon>XA0103_NG1.xaml</DependentUpon>
@@ -162,10 +158,6 @@
     <Content Include="TestResourcesSL\XA0201_NG1.xaml" />
     <Content Include="TestResourcesSL\XA0201_OK.xaml">
       <DependentUpon>XA0201_NG1.xaml</DependentUpon>
-    </Content>
-    <Content Include="TestResourcesSL\XA0202_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0202_OK.xaml">
-      <DependentUpon>XA0202_NG1.xaml</DependentUpon>
     </Content>
     <Content Include="TestResourcesSL\XA0203_NG1.xaml" />
     <Content Include="TestResourcesSL\XA0203_OK.xaml">

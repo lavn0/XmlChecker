@@ -1,5 +1,0 @@
-﻿<Border
-	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	Background="Cyan" VerticalAlignment="Top">
-	<TextBlock Text="DummyText" />
-</Border>

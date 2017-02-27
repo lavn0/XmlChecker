@@ -1,6 +1,6 @@
 XA0001,Info,"//@*[starts-with(.,'{Binding ')][contains(.,'Mode=OneWay')]",OneWayバインディングはデフォルト値です。
 XA0002,Info,"//@*[contains(.,'TargetNullValue')]",TargetNullValueは使用しないでください。
-XA0003,Warning,"//@*[contains(.,'FallbackValue')]",FallbackValueが不要な実装を検討してください。FallbackValueが必要なケースは例外発生のケースであり、例外によってパフォーマンス低下が懸念されます。
+XA0003,Warning,"//@*[contains(.,'FallbackValue')]",FallbackValueが不要な実装を検討してください。FallbackValueが必要なケースは例外発生のケースであり、例外によってパフォーマンス低下が引き起こされる場合があります。
 XA0004,Error,//@Visibility[.='Collapsed'][not(parent::*/@*[local-name(.)='Name'])],"Name属性が無いタグのVisibility属性に""Collapsed""が指定されています。このコントロールは表示されない可能性があります。"
 XA0005,Default,"//@Margin[contains(.,' ')]","Margin属性は空白区切りではなく"",""区切りで指定してください。"
 XA0006,Default,"//@Padding[contains(.,' ')]","Padding属性は空白区切りではなく"",""区切りで指定してください。"
@@ -8,7 +8,6 @@ XA0007,Warning,"//@Margin[contains(.,'-')]",Margin属性にマイナス値があります。
 XA0008,Critical,"//@IsEnabled[contains(.,'TwoWay')]",IsEnabledはTwoWayバインディングしないでください。
 XA0009,Critical,"//@Visibility[contains(.,'TwoWay')]",VisibilityはTwoWayバインディングしないでください。
 XA0101,Default,//*[name(.)='Border']/@Visibility[.='Visible'],"Visibility=""Visible""はデフォルト値です。"
-XA0102,Default,//*[name(.)='Border']/@IsEnabled[.='True'],"IsEnabled=""True""はデフォルト値です。"
 XA0103,Default,//*[name(.)='Border']/@HorizontalAlignment[.='Stretch'],"HorizontalAlignment=""Stretch""はデフォルト値です。"
 XA0104,Default,//*[name(.)='Border']/@VerticalAlignment[.='Stretch'],"VerticalAlignment=""Stretch""はデフォルト値です。"
 XA0105,Default,"//*[name(.)='Border'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","Margin=""0""はデフォルト値です。"
@@ -19,7 +18,6 @@ XA0109,Error,"//*[name(.)='Border'][not(@Style)][not(@Background)][not(@BorderTh
 XA0110,Error,//*[name(.)='Border'][not(@Width)][@HorizontalAlignment]/*/@HorizontalAlignment,HorizontalAlignment属性が指定されたBorder配下の要素のHorizontalAlignmentは機能しません。
 XA0111,Error,//*[name(.)='Border'][not(@Height)][@VerticalAlignment]/*/@VerticalAlignment,VerticalAlignment属性が指定されたBorder配下の要素のVerticalAlignmentは機能しません。
 XA0201,Default,//*[name(.)='StackPanel']/@Visibility[.='Visible'],"Visibility=""Visible""はデフォルト値です。"
-XA0202,Default,//*[name(.)='StackPanel']/@IsEnabled[.='True'],"IsEnabled=""True""はデフォルト値です。"
 XA0203,Default,//*[name(.)='StackPanel']/@HorizontalAlignment[.='Stretch'],"HorizontalAlignment=""Stretch""はデフォルト値です。"
 XA0204,Default,//*[name(.)='StackPanel']/@VerticalAlignment[.='Stretch'],"VerticalAlignment=""Stretch""はデフォルト値です。"
 XA0205,Default,"//*[name(.)='StackPanel'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","Margin=""0""はデフォルト値です。"
