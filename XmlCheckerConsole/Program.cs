@@ -56,7 +56,7 @@ namespace XmlCheckerConsole
 			Console.WriteLine("チェックを開始します…");
 			Console.WriteLine();
 
-			var filePath = "Rule.csv";
+			var filePath = "SilverlightRule.csv";
 
 			if (!File.Exists(filePath))
 			{

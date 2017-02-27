@@ -26,13 +26,14 @@ namespace UnitTestProject
 	{
 		public TestContext TestContext { get; set; }
 <#
-	var relativePath = @"..\XmlChecker\Rule.csv";
+	const string RESOURCEPATH = "TestResourcesSL";
+	var relativePath = @"..\XmlChecker\SilverlightRule.csv";
 	var solvedPath = this.Host.ResolvePath(relativePath);
 	var fullPath = Path.GetFullPath(solvedPath);
 	var csv = File.ReadAllText(fullPath, Encoding.GetEncoding(932));
 	var sepalatedCsv = CsvParser.Parse(csv);
 
-	var resourcesPath = this.Host.ResolvePath("Resources");
+	var resourcesPath = this.Host.ResolvePath(RESOURCEPATH);
 
 	foreach (var csvLine in sepalatedCsv)
 	{
@@ -49,7 +50,7 @@ namespace UnitTestProject
 			{
 				foreach (var okFile in okFiles)
 				{
-					var filePath = Path.Combine("Resources", Path.GetFileName(okFile));
+					var filePath = Path.Combine(RESOURCEPATH, Path.GetFileName(okFile));
 					var testName = Regex.Replace(Path.GetFileNameWithoutExtension(okFile), @"NG\d+", "NG");
 					int ngCount;
 					int.TryParse(Regex.Match(okFile, @"(?<=NG)\d+").Value, out ngCount);
@@ -57,7 +58,7 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("XmlChecker")]
-		[DeploymentItem(@"<#= filePath #>", "Resources")]
+		[DeploymentItem(@"<#= filePath #>", "<#= RESOURCEPATH #>")]
 		public void <#= testName #>()
 		{
 			var rule = new XmlRuleXPath(string.Empty, <#= okFiles.IndexOf(okFile) #>, new string[] { "<#= id #>", "<#= level #>", @"<#= xpath.Replace(@"""", @"""""") #>", @"<#= description.Replace(@"""", @"""""") #>", });

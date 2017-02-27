@@ -51,7 +51,10 @@
     <Compile Include="XmlRuleXPath.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Rule.csv">
+    <Content Include="SilverlightRule.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfRule.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="XmlChecker.targets" />
