@@ -99,7 +99,7 @@ XA0709,Default,"//*[name(.)='CheckBox'][not(@Name)]/@BorderThickness[.='1' or .=
 XA0710,Default,"//*[name(.)='CheckBox'][not(@Name)]/@Background[.='#FF448DCA']","CheckBox.Background=""#FF448DCA""はデフォルト値です。"
 XA0711,Info,"//*[name(.)='CheckBox'][not(@IsEnabled='False')][not(contains(@IsChecked,'TwoWay'))][@*[local-name()='Name']]",名前付きコントロールの読み取り専用ではないCheckBox.IsCheckedプロパティがTwoWayバインドされていません。
 XA0712,Critical,"//*[name(.)='CheckBox'][not(@IsEnabled='False')][not(contains(@IsChecked,'TwoWay'))][not(@*[local-name()='Name'])]",名前なしコントロールの読み取り専用ではないCheckBox.IsCheckedプロパティがTwoWayバインドされていません。
-XA0713,Error,"//*[name(.)='CheckBox']/@Content[starts-with(.,' ') or starts-with(.,'　')]",CheckBox.Content属性の先頭に空白があります]
+XA0713,Error,"//*[name(.)='CheckBox']/@Content[starts-with(.,' ') or starts-with(.,'　')]",CheckBox.Content属性の先頭に空白があります
 XA0714,Error,"//*[name(.)='CheckBox']/@Content[substring(.,string-length())=' ' or substring(.,string-length())='　']",CheckBox.Content属性の末尾に空白があります
 XA0801,Default,//*[name(.)='Button']/@Visibility[.='Visible'],"Button.Visibility=""Visible""はデフォルト値です。"
 XA0802,Default,//*[name(.)='Button']/@IsEnabled[.='True'],"Button.IsEnabled=""True""はデフォルト値です。"
