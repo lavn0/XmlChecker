@@ -59,10 +59,10 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CsvParserTest.cs" />
-    <Compile Include="XmlRuleXPathTest.cs">
+    <Compile Include="XmlRuleXPathTestSilverlight.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>XmlRuleXPathTest.tt</DependentUpon>
+      <DependentUpon>XmlRuleXPathTestSilverlight.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -79,587 +79,587 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TestResourcesSL\XA0001_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0001_OK.xaml">
+    <Content Include="SilverlightXaml\XA0001_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0001_OK.xaml">
       <DependentUpon>XA0001_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0002_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0002_OK.xaml">
+    <Content Include="SilverlightXaml\XA0002_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0002_OK.xaml">
       <DependentUpon>XA0002_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0003_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0003_OK.xaml">
+    <Content Include="SilverlightXaml\XA0003_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0003_OK.xaml">
       <DependentUpon>XA0003_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0004_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0004_OK.xaml">
+    <Content Include="SilverlightXaml\XA0004_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0004_OK.xaml">
       <DependentUpon>XA0004_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0005_NG3.xaml" />
-    <Content Include="TestResourcesSL\XA0005_OK.xaml">
+    <Content Include="SilverlightXaml\XA0005_NG3.xaml" />
+    <Content Include="SilverlightXaml\XA0005_OK.xaml">
       <DependentUpon>XA0005_NG3.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0006_NG3.xaml" />
-    <Content Include="TestResourcesSL\XA0006_OK.xaml">
+    <Content Include="SilverlightXaml\XA0006_NG3.xaml" />
+    <Content Include="SilverlightXaml\XA0006_OK.xaml">
       <DependentUpon>XA0006_NG3.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0007_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0007_OK.xaml">
+    <Content Include="SilverlightXaml\XA0007_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0007_OK.xaml">
       <DependentUpon>XA0007_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0008_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0008_OK.xaml">
+    <Content Include="SilverlightXaml\XA0008_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0008_OK.xaml">
       <DependentUpon>XA0008_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0009_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0009_OK.xaml">
+    <Content Include="SilverlightXaml\XA0009_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0009_OK.xaml">
       <DependentUpon>XA0009_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0101_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0101_OK.xaml">
+    <Content Include="SilverlightXaml\XA0101_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0101_OK.xaml">
       <DependentUpon>XA0101_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0103_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0103_OK.xaml">
+    <Content Include="SilverlightXaml\XA0103_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0103_OK.xaml">
       <DependentUpon>XA0103_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0104_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0104_OK.xaml">
+    <Content Include="SilverlightXaml\XA0104_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0104_OK.xaml">
       <DependentUpon>XA0104_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0105_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0105_OK.xaml">
+    <Content Include="SilverlightXaml\XA0105_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0105_OK.xaml">
       <DependentUpon>XA0105_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0106_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0106_OK.xaml">
+    <Content Include="SilverlightXaml\XA0106_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0106_OK.xaml">
       <DependentUpon>XA0106_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0107_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0107_OK.xaml">
+    <Content Include="SilverlightXaml\XA0107_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0107_OK.xaml">
       <DependentUpon>XA0107_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0108_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0108_OK.xaml">
+    <Content Include="SilverlightXaml\XA0108_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0108_OK.xaml">
       <DependentUpon>XA0108_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0109_NG2.xaml" />
-    <Content Include="TestResourcesSL\XA0109_OK.xaml">
+    <Content Include="SilverlightXaml\XA0109_NG2.xaml" />
+    <Content Include="SilverlightXaml\XA0109_OK.xaml">
       <DependentUpon>XA0109_NG2.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0110_NG2.xaml" />
-    <Content Include="TestResourcesSL\XA0110_OK.xaml">
+    <Content Include="SilverlightXaml\XA0110_NG2.xaml" />
+    <Content Include="SilverlightXaml\XA0110_OK.xaml">
       <DependentUpon>XA0110_NG2.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0111_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0111_OK.xaml">
+    <Content Include="SilverlightXaml\XA0111_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0111_OK.xaml">
       <DependentUpon>XA0111_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0201_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0201_OK.xaml">
+    <Content Include="SilverlightXaml\XA0201_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0201_OK.xaml">
       <DependentUpon>XA0201_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0203_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0203_OK.xaml">
+    <Content Include="SilverlightXaml\XA0203_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0203_OK.xaml">
       <DependentUpon>XA0203_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0204_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0204_OK.xaml">
+    <Content Include="SilverlightXaml\XA0204_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0204_OK.xaml">
       <DependentUpon>XA0204_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0205_NG4.xaml" />
-    <Content Include="TestResourcesSL\XA0205_OK.xaml">
+    <Content Include="SilverlightXaml\XA0205_NG4.xaml" />
+    <Content Include="SilverlightXaml\XA0205_OK.xaml">
       <DependentUpon>XA0205_NG4.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0206_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0206_OK.xaml">
+    <Content Include="SilverlightXaml\XA0206_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0206_OK.xaml">
       <DependentUpon>XA0206_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0207_NG2.xaml" />
-    <Content Include="TestResourcesSL\XA0207_OK.xaml">
+    <Content Include="SilverlightXaml\XA0207_NG2.xaml" />
+    <Content Include="SilverlightXaml\XA0207_OK.xaml">
       <DependentUpon>XA0207_NG2.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0208_NG2.xaml" />
-    <Content Include="TestResourcesSL\XA0208_OK.xaml">
+    <Content Include="SilverlightXaml\XA0208_NG2.xaml" />
+    <Content Include="SilverlightXaml\XA0208_OK.xaml">
       <DependentUpon>XA0208_NG2.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0209_NG2.xaml" />
-    <Content Include="TestResourcesSL\XA0209_OK.xaml">
+    <Content Include="SilverlightXaml\XA0209_NG2.xaml" />
+    <Content Include="SilverlightXaml\XA0209_OK.xaml">
       <DependentUpon>XA0209_NG2.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0210_NG4.xaml" />
-    <Content Include="TestResourcesSL\XA0210_OK.xaml">
+    <Content Include="SilverlightXaml\XA0210_NG4.xaml" />
+    <Content Include="SilverlightXaml\XA0210_OK.xaml">
       <DependentUpon>XA0210_NG4.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0211_NG4.xaml" />
-    <Content Include="TestResourcesSL\XA0211_OK.xaml">
+    <Content Include="SilverlightXaml\XA0211_NG4.xaml" />
+    <Content Include="SilverlightXaml\XA0211_OK.xaml">
       <DependentUpon>XA0211_NG4.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0212_NG4.xaml" />
-    <Content Include="TestResourcesSL\XA0212_OK.xaml">
+    <Content Include="SilverlightXaml\XA0212_NG4.xaml" />
+    <Content Include="SilverlightXaml\XA0212_OK.xaml">
       <DependentUpon>XA0212_NG4.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0301_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0301_OK.xaml">
+    <Content Include="SilverlightXaml\XA0301_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0301_OK.xaml">
       <DependentUpon>XA0301_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0303_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0303_OK.xaml">
+    <Content Include="SilverlightXaml\XA0303_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0303_OK.xaml">
       <DependentUpon>XA0303_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0304_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0304_OK.xaml">
+    <Content Include="SilverlightXaml\XA0304_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0304_OK.xaml">
       <DependentUpon>XA0304_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0305_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0305_OK.xaml">
+    <Content Include="SilverlightXaml\XA0305_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0305_OK.xaml">
       <DependentUpon>XA0305_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0306_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0306_OK.xaml">
+    <Content Include="SilverlightXaml\XA0306_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0306_OK.xaml">
       <DependentUpon>XA0306_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0307_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0307_OK.xaml">
+    <Content Include="SilverlightXaml\XA0307_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0307_OK.xaml">
       <DependentUpon>XA0307_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0308_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0308_OK.xaml">
+    <Content Include="SilverlightXaml\XA0308_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0308_OK.xaml">
       <DependentUpon>XA0308_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0309_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0309_OK.xaml">
+    <Content Include="SilverlightXaml\XA0309_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0309_OK.xaml">
       <DependentUpon>XA0309_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0310_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0310_OK.xaml">
+    <Content Include="SilverlightXaml\XA0310_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0310_OK.xaml">
       <DependentUpon>XA0310_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0311_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0311_OK.xaml">
+    <Content Include="SilverlightXaml\XA0311_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0311_OK.xaml">
       <DependentUpon>XA0311_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0312_NG2.xaml" />
-    <Content Include="TestResourcesSL\XA0312_OK.xaml">
+    <Content Include="SilverlightXaml\XA0312_NG2.xaml" />
+    <Content Include="SilverlightXaml\XA0312_OK.xaml">
       <DependentUpon>XA0312_NG2.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0313_NG2.xaml" />
-    <Content Include="TestResourcesSL\XA0313_OK.xaml">
+    <Content Include="SilverlightXaml\XA0313_NG2.xaml" />
+    <Content Include="SilverlightXaml\XA0313_OK.xaml">
       <DependentUpon>XA0313_NG2.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0314_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0314_OK.xaml">
+    <Content Include="SilverlightXaml\XA0314_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0314_OK.xaml">
       <DependentUpon>XA0314_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0315_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0315_OK.xaml">
+    <Content Include="SilverlightXaml\XA0315_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0315_OK.xaml">
       <DependentUpon>XA0315_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0316_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0316_OK.xaml">
+    <Content Include="SilverlightXaml\XA0316_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0316_OK.xaml">
       <DependentUpon>XA0316_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0317_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0317_OK.xaml">
+    <Content Include="SilverlightXaml\XA0317_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0317_OK.xaml">
       <DependentUpon>XA0317_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0318_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0318_OK.xaml">
+    <Content Include="SilverlightXaml\XA0318_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0318_OK.xaml">
       <DependentUpon>XA0318_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0319_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0319_OK.xaml">
+    <Content Include="SilverlightXaml\XA0319_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0319_OK.xaml">
       <DependentUpon>XA0319_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0320_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0320_OK.xaml">
+    <Content Include="SilverlightXaml\XA0320_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0320_OK.xaml">
       <DependentUpon>XA0320_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0321_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0321_OK.xaml">
+    <Content Include="SilverlightXaml\XA0321_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0321_OK.xaml">
       <DependentUpon>XA0321_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0322_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0322_OK.xaml">
+    <Content Include="SilverlightXaml\XA0322_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0322_OK.xaml">
       <DependentUpon>XA0322_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0323_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0323_OK.xaml">
+    <Content Include="SilverlightXaml\XA0323_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0323_OK.xaml">
       <DependentUpon>XA0323_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0324_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0324_OK.xaml">
+    <Content Include="SilverlightXaml\XA0324_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0324_OK.xaml">
       <DependentUpon>XA0324_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0401_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0401_OK.xaml">
+    <Content Include="SilverlightXaml\XA0401_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0401_OK.xaml">
       <DependentUpon>XA0401_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0402_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0402_OK.xaml">
+    <Content Include="SilverlightXaml\XA0402_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0402_OK.xaml">
       <DependentUpon>XA0402_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0403_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0403_OK.xaml">
+    <Content Include="SilverlightXaml\XA0403_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0403_OK.xaml">
       <DependentUpon>XA0403_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0404_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0404_OK.xaml">
+    <Content Include="SilverlightXaml\XA0404_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0404_OK.xaml">
       <DependentUpon>XA0404_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0405_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0405_OK.xaml">
+    <Content Include="SilverlightXaml\XA0405_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0405_OK.xaml">
       <DependentUpon>XA0405_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0406_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0406_OK.xaml">
+    <Content Include="SilverlightXaml\XA0406_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0406_OK.xaml">
       <DependentUpon>XA0406_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0407_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0407_OK.xaml">
+    <Content Include="SilverlightXaml\XA0407_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0407_OK.xaml">
       <DependentUpon>XA0407_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0408_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0408_OK.xaml">
+    <Content Include="SilverlightXaml\XA0408_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0408_OK.xaml">
       <DependentUpon>XA0408_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0409_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0409_OK.xaml">
+    <Content Include="SilverlightXaml\XA0409_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0409_OK.xaml">
       <DependentUpon>XA0409_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0410_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0410_OK.xaml">
+    <Content Include="SilverlightXaml\XA0410_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0410_OK.xaml">
       <DependentUpon>XA0410_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0411_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0411_OK.xaml">
+    <Content Include="SilverlightXaml\XA0411_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0411_OK.xaml">
       <DependentUpon>XA0411_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0412_NG2.xaml" />
-    <Content Include="TestResourcesSL\XA0412_OK.xaml">
+    <Content Include="SilverlightXaml\XA0412_NG2.xaml" />
+    <Content Include="SilverlightXaml\XA0412_OK.xaml">
       <DependentUpon>XA0412_NG2.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0413_NG2.xaml" />
-    <Content Include="TestResourcesSL\XA0413_OK.xaml">
+    <Content Include="SilverlightXaml\XA0413_NG2.xaml" />
+    <Content Include="SilverlightXaml\XA0413_OK.xaml">
       <DependentUpon>XA0413_NG2.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0414_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0414_OK.xaml">
+    <Content Include="SilverlightXaml\XA0414_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0414_OK.xaml">
       <DependentUpon>XA0414_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0415_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0415_OK.xaml">
+    <Content Include="SilverlightXaml\XA0415_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0415_OK.xaml">
       <DependentUpon>XA0415_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0416_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0416_OK.xaml">
+    <Content Include="SilverlightXaml\XA0416_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0416_OK.xaml">
       <DependentUpon>XA0416_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0501_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0501_OK.xaml">
+    <Content Include="SilverlightXaml\XA0501_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0501_OK.xaml">
       <DependentUpon>XA0501_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0503_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0503_OK.xaml">
+    <Content Include="SilverlightXaml\XA0503_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0503_OK.xaml">
       <DependentUpon>XA0503_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0504_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0504_OK.xaml">
+    <Content Include="SilverlightXaml\XA0504_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0504_OK.xaml">
       <DependentUpon>XA0504_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0505_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0505_OK.xaml">
+    <Content Include="SilverlightXaml\XA0505_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0505_OK.xaml">
       <DependentUpon>XA0505_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0506_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0506_OK.xaml">
+    <Content Include="SilverlightXaml\XA0506_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0506_OK.xaml">
       <DependentUpon>XA0506_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0507_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0507_OK.xaml">
+    <Content Include="SilverlightXaml\XA0507_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0507_OK.xaml">
       <DependentUpon>XA0507_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0508_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0508_OK.xaml">
+    <Content Include="SilverlightXaml\XA0508_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0508_OK.xaml">
       <DependentUpon>XA0508_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0509_NG2.xaml" />
-    <Content Include="TestResourcesSL\XA0509_OK.xaml">
+    <Content Include="SilverlightXaml\XA0509_NG2.xaml" />
+    <Content Include="SilverlightXaml\XA0509_OK.xaml">
       <DependentUpon>XA0509_NG2.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0510_NG4.xaml" />
-    <Content Include="TestResourcesSL\XA0510_OK.xaml">
+    <Content Include="SilverlightXaml\XA0510_NG4.xaml" />
+    <Content Include="SilverlightXaml\XA0510_OK.xaml">
       <DependentUpon>XA0510_NG4.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0601_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0601_OK.xaml">
+    <Content Include="SilverlightXaml\XA0601_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0601_OK.xaml">
       <DependentUpon>XA0601_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0602_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0602_OK.xaml">
+    <Content Include="SilverlightXaml\XA0602_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0602_OK.xaml">
       <DependentUpon>XA0602_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0603_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0603_OK.xaml">
+    <Content Include="SilverlightXaml\XA0603_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0603_OK.xaml">
       <DependentUpon>XA0603_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0604_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0604_OK.xaml">
+    <Content Include="SilverlightXaml\XA0604_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0604_OK.xaml">
       <DependentUpon>XA0604_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0605_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0605_OK.xaml">
+    <Content Include="SilverlightXaml\XA0605_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0605_OK.xaml">
       <DependentUpon>XA0605_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0606_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0606_OK.xaml">
+    <Content Include="SilverlightXaml\XA0606_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0606_OK.xaml">
       <DependentUpon>XA0606_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0607_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0607_OK.xaml">
+    <Content Include="SilverlightXaml\XA0607_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0607_OK.xaml">
       <DependentUpon>XA0607_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0608_NG2.xaml" />
-    <Content Include="TestResourcesSL\XA0608_OK.xaml">
+    <Content Include="SilverlightXaml\XA0608_NG2.xaml" />
+    <Content Include="SilverlightXaml\XA0608_OK.xaml">
       <DependentUpon>XA0608_NG2.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0609_NG3.xaml" />
-    <Content Include="TestResourcesSL\XA0609_OK.xaml">
+    <Content Include="SilverlightXaml\XA0609_NG3.xaml" />
+    <Content Include="SilverlightXaml\XA0609_OK.xaml">
       <DependentUpon>XA0609_NG3.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0610_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0610_OK.xaml">
+    <Content Include="SilverlightXaml\XA0610_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0610_OK.xaml">
       <DependentUpon>XA0610_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0611_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0611_OK1.xaml">
+    <Content Include="SilverlightXaml\XA0611_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0611_OK1.xaml">
       <DependentUpon>XA0611_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0611_OK2.xaml">
+    <Content Include="SilverlightXaml\XA0611_OK2.xaml">
       <DependentUpon>XA0611_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0701_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0701_OK.xaml">
+    <Content Include="SilverlightXaml\XA0701_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0701_OK.xaml">
       <DependentUpon>XA0701_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0702_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0702_OK.xaml">
+    <Content Include="SilverlightXaml\XA0702_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0702_OK.xaml">
       <DependentUpon>XA0702_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0703_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0703_OK.xaml">
+    <Content Include="SilverlightXaml\XA0703_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0703_OK.xaml">
       <DependentUpon>XA0703_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0704_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0704_OK.xaml">
+    <Content Include="SilverlightXaml\XA0704_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0704_OK.xaml">
       <DependentUpon>XA0704_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0705_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0705_OK.xaml">
+    <Content Include="SilverlightXaml\XA0705_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0705_OK.xaml">
       <DependentUpon>XA0705_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0706_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0706_OK.xaml">
+    <Content Include="SilverlightXaml\XA0706_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0706_OK.xaml">
       <DependentUpon>XA0706_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0707_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0707_OK.xaml">
+    <Content Include="SilverlightXaml\XA0707_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0707_OK.xaml">
       <DependentUpon>XA0707_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0708_NG2.xaml" />
-    <Content Include="TestResourcesSL\XA0708_OK.xaml">
+    <Content Include="SilverlightXaml\XA0708_NG2.xaml" />
+    <Content Include="SilverlightXaml\XA0708_OK.xaml">
       <DependentUpon>XA0708_NG2.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0709_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0709_OK.xaml">
+    <Content Include="SilverlightXaml\XA0709_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0709_OK.xaml">
       <DependentUpon>XA0709_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0710_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0710_OK.xaml">
+    <Content Include="SilverlightXaml\XA0710_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0710_OK.xaml">
       <DependentUpon>XA0710_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0711_NG3.xaml" />
-    <Content Include="TestResourcesSL\XA0711_OK.xaml">
+    <Content Include="SilverlightXaml\XA0711_NG3.xaml" />
+    <Content Include="SilverlightXaml\XA0711_OK.xaml">
       <DependentUpon>XA0711_NG3.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0712_NG3.xaml" />
-    <Content Include="TestResourcesSL\XA0712_OK.xaml">
+    <Content Include="SilverlightXaml\XA0712_NG3.xaml" />
+    <Content Include="SilverlightXaml\XA0712_OK.xaml">
       <DependentUpon>XA0712_NG3.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0713_NG2.xaml" />
-    <Content Include="TestResourcesSL\XA0713_OK.xaml">
+    <Content Include="SilverlightXaml\XA0713_NG2.xaml" />
+    <Content Include="SilverlightXaml\XA0713_OK.xaml">
       <DependentUpon>XA0713_NG2.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0714_NG2.xaml" />
-    <Content Include="TestResourcesSL\XA0714_OK.xaml">
+    <Content Include="SilverlightXaml\XA0714_NG2.xaml" />
+    <Content Include="SilverlightXaml\XA0714_OK.xaml">
       <DependentUpon>XA0714_NG2.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0801_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0801_OK.xaml">
+    <Content Include="SilverlightXaml\XA0801_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0801_OK.xaml">
       <DependentUpon>XA0801_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0802_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0802_OK.xaml">
+    <Content Include="SilverlightXaml\XA0802_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0802_OK.xaml">
       <DependentUpon>XA0802_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0803_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0803_OK.xaml">
+    <Content Include="SilverlightXaml\XA0803_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0803_OK.xaml">
       <DependentUpon>XA0803_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0804_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0804_OK.xaml">
+    <Content Include="SilverlightXaml\XA0804_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0804_OK.xaml">
       <DependentUpon>XA0804_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0805_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0805_OK.xaml">
+    <Content Include="SilverlightXaml\XA0805_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0805_OK.xaml">
       <DependentUpon>XA0805_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0806_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0806_OK.xaml">
+    <Content Include="SilverlightXaml\XA0806_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0806_OK.xaml">
       <DependentUpon>XA0806_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0807_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0807_OK.xaml">
+    <Content Include="SilverlightXaml\XA0807_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0807_OK.xaml">
       <DependentUpon>XA0807_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0808_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0808_OK.xaml">
+    <Content Include="SilverlightXaml\XA0808_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0808_OK.xaml">
       <DependentUpon>XA0808_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0809_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0809_OK.xaml">
+    <Content Include="SilverlightXaml\XA0809_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0809_OK.xaml">
       <DependentUpon>XA0809_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0810_NG2.xaml" />
-    <Content Include="TestResourcesSL\XA0810_OK.xaml">
+    <Content Include="SilverlightXaml\XA0810_NG2.xaml" />
+    <Content Include="SilverlightXaml\XA0810_OK.xaml">
       <DependentUpon>XA0810_NG2.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0901_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0901_OK.xaml">
+    <Content Include="SilverlightXaml\XA0901_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0901_OK.xaml">
       <DependentUpon>XA0901_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0902_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0902_OK.xaml">
+    <Content Include="SilverlightXaml\XA0902_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0902_OK.xaml">
       <DependentUpon>XA0902_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0903_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0903_OK.xaml">
+    <Content Include="SilverlightXaml\XA0903_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0903_OK.xaml">
       <DependentUpon>XA0903_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0904_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0904_OK.xaml">
+    <Content Include="SilverlightXaml\XA0904_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0904_OK.xaml">
       <DependentUpon>XA0904_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0905_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0905_OK.xaml">
+    <Content Include="SilverlightXaml\XA0905_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0905_OK.xaml">
       <DependentUpon>XA0905_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0906_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0906_OK.xaml">
+    <Content Include="SilverlightXaml\XA0906_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0906_OK.xaml">
       <DependentUpon>XA0906_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0907_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0907_OK.xaml">
+    <Content Include="SilverlightXaml\XA0907_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0907_OK.xaml">
       <DependentUpon>XA0907_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0908_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0908_OK.xaml">
+    <Content Include="SilverlightXaml\XA0908_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0908_OK.xaml">
       <DependentUpon>XA0908_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0909_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA0909_OK.xaml">
+    <Content Include="SilverlightXaml\XA0909_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA0909_OK.xaml">
       <DependentUpon>XA0909_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0910_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0910_OK.xaml">
+    <Content Include="SilverlightXaml\XA0910_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0910_OK.xaml">
       <DependentUpon>XA0910_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA0911_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA0911_OK.xaml">
+    <Content Include="SilverlightXaml\XA0911_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA0911_OK.xaml">
       <DependentUpon>XA0911_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1001_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA1001_OK.xaml">
+    <Content Include="SilverlightXaml\XA1001_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA1001_OK.xaml">
       <DependentUpon>XA1001_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1002_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA1002_OK.xaml">
+    <Content Include="SilverlightXaml\XA1002_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA1002_OK.xaml">
       <DependentUpon>XA1002_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1003_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA1003_OK.xaml">
+    <Content Include="SilverlightXaml\XA1003_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA1003_OK.xaml">
       <DependentUpon>XA1003_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1004_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA1004_OK.xaml">
+    <Content Include="SilverlightXaml\XA1004_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA1004_OK.xaml">
       <DependentUpon>XA1004_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1005_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA1005_OK.xaml">
+    <Content Include="SilverlightXaml\XA1005_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA1005_OK.xaml">
       <DependentUpon>XA1005_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1006_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA1006_OK.xaml">
+    <Content Include="SilverlightXaml\XA1006_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA1006_OK.xaml">
       <DependentUpon>XA1006_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1007_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA1007_OK.xaml">
+    <Content Include="SilverlightXaml\XA1007_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA1007_OK.xaml">
       <DependentUpon>XA1007_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1008_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA1008_OK.xaml">
+    <Content Include="SilverlightXaml\XA1008_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA1008_OK.xaml">
       <DependentUpon>XA1008_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1009_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA1009_OK.xaml">
+    <Content Include="SilverlightXaml\XA1009_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA1009_OK.xaml">
       <DependentUpon>XA1009_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1010_NG3.xaml" />
-    <Content Include="TestResourcesSL\XA1010_OK.xaml">
+    <Content Include="SilverlightXaml\XA1010_NG3.xaml" />
+    <Content Include="SilverlightXaml\XA1010_OK.xaml">
       <DependentUpon>XA1010_NG3.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1011_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA1011_OK.xaml">
+    <Content Include="SilverlightXaml\XA1011_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA1011_OK.xaml">
       <DependentUpon>XA1011_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1012_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA1012_OK.xaml">
+    <Content Include="SilverlightXaml\XA1012_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA1012_OK.xaml">
       <DependentUpon>XA1012_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1101_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA1101_OK.xaml">
+    <Content Include="SilverlightXaml\XA1101_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA1101_OK.xaml">
       <DependentUpon>XA1101_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1102_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA1102_OK.xaml">
+    <Content Include="SilverlightXaml\XA1102_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA1102_OK.xaml">
       <DependentUpon>XA1102_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1103_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA1103_OK.xaml">
+    <Content Include="SilverlightXaml\XA1103_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA1103_OK.xaml">
       <DependentUpon>XA1103_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1104_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA1104_OK.xaml">
+    <Content Include="SilverlightXaml\XA1104_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA1104_OK.xaml">
       <DependentUpon>XA1104_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1105_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA1105_OK.xaml">
+    <Content Include="SilverlightXaml\XA1105_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA1105_OK.xaml">
       <DependentUpon>XA1105_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1106_NG1.xaml" />
-    <Content Include="TestResourcesSL\XA1106_OK.xaml">
+    <Content Include="SilverlightXaml\XA1106_NG1.xaml" />
+    <Content Include="SilverlightXaml\XA1106_OK.xaml">
       <DependentUpon>XA1106_NG1.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1107_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA1107_OK.xaml">
+    <Content Include="SilverlightXaml\XA1107_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA1107_OK.xaml">
       <DependentUpon>XA1107_NG5.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1108_NG2.xaml" />
-    <Content Include="TestResourcesSL\XA1108_OK.xaml">
+    <Content Include="SilverlightXaml\XA1108_NG2.xaml" />
+    <Content Include="SilverlightXaml\XA1108_OK.xaml">
       <DependentUpon>XA1108_NG2.xaml</DependentUpon>
     </Content>
-    <Content Include="TestResourcesSL\XA1109_NG5.xaml" />
-    <Content Include="TestResourcesSL\XA1109_OK.xaml">
+    <Content Include="SilverlightXaml\XA1109_NG5.xaml" />
+    <Content Include="SilverlightXaml\XA1109_OK.xaml">
       <DependentUpon>XA1109_NG5.xaml</DependentUpon>
     </Content>
     <Content Include="ImportXaml.targets">
@@ -671,9 +671,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ImportXaml.targets</LastGenOutput>
     </Content>
-    <Content Include="XmlRuleXPathTest.tt">
+    <Content Include="XmlRuleXPathTestSilverlight.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>XmlRuleXPathTest.cs</LastGenOutput>
+      <LastGenOutput>XmlRuleXPathTestSilverlight.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Choose>

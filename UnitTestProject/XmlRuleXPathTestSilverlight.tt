@@ -26,7 +26,7 @@ namespace UnitTestProject
 	{
 		public TestContext TestContext { get; set; }
 <#
-	const string RESOURCEPATH = "TestResourcesSL";
+	const string RESOURCEPATH = "SilverlightXaml";
 	var relativePath = @"..\XmlChecker\SilverlightRule.csv";
 	var solvedPath = this.Host.ResolvePath(relativePath);
 	var fullPath = Path.GetFullPath(solvedPath);
