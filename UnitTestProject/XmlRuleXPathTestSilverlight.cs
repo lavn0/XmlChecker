@@ -9,7 +9,7 @@ using XmlChecker;
 namespace UnitTestProject
 {
 	[TestClass]
-	public class XmlRuleXPathTest
+	public class XmlRuleXPathTestSilverlight
 	{
 		public TestContext TestContext { get; set; }
 

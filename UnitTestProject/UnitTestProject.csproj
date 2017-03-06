@@ -59,6 +59,11 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CsvParserTest.cs" />
+    <Compile Include="XmlRuleXPathTestWpf.cs">
+      <DependentUpon>XmlRuleXPathTestWpf.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="XmlRuleXPathTestSilverlight.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SilverlightXaml\*.xaml" />
+    <Content Include="WpfXaml\*.xaml" />
     <Content Include="ImportXaml.targets">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,6 +94,10 @@
     <Content Include="ImportXaml.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ImportXaml.targets</LastGenOutput>
+    </Content>
+    <Content Include="XmlRuleXPathTestWpf.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>XmlRuleXPathTestWpf.cs</LastGenOutput>
     </Content>
     <Content Include="XmlRuleXPathTestSilverlight.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

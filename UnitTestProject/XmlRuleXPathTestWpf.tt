@@ -22,12 +22,12 @@ using XmlChecker;
 namespace UnitTestProject
 {
 	[TestClass]
-	public class XmlRuleXPathTestSilverlight
+	public class XmlRuleXPathTestWpf
 	{
 		public TestContext TestContext { get; set; }
 <#
-	const string RESOURCEPATH = "SilverlightXaml";
-	var relativePath = @"..\XmlChecker\SilverlightRule.csv";
+	const string RESOURCEPATH = "WpfXaml";
+	var relativePath = @"..\XmlChecker\WpfRule.csv";
 	var solvedPath = this.Host.ResolvePath(relativePath);
 	var fullPath = Path.GetFullPath(solvedPath);
 	var csv = File.ReadAllText(fullPath, Encoding.GetEncoding(932));
@@ -57,7 +57,7 @@ namespace UnitTestProject
 #>
 
 		[TestMethod]
-		[TestCategory("SilverlightRule")]
+		[TestCategory("WpfRule")]
 		[DeploymentItem(@"<#= filePath #>", "<#= RESOURCEPATH #>")]
 		public void <#= testName #>()
 		{
@@ -75,7 +75,7 @@ namespace UnitTestProject
 #>
 
 		[TestMethod]
-		[TestCategory("SilverlightRule")]
+		[TestCategory("WpfRule")]
 		public void <#= id + "_" + key #>()
 		{
 			Assert.Inconclusive("ルール(ID=<#= id #>)の<#= key == "OK" ? "正常系" : "異常系" #>テストが作成されていません。");

@@ -9,29 +9,31 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
 <#
-const string RESOURCEPATH = "SilverlightXaml";
-var projectDir = this.Host.ResolvePath(string.Empty);
-var resourcesPath = this.Host.ResolvePath(RESOURCEPATH);
-var ngFiles = Directory.EnumerateFiles(resourcesPath, "*_NG*.xaml").ToList();
-var okFiles = Directory.EnumerateFiles(resourcesPath, "*_OK*.xaml").ToList();
-var pairs = ngFiles.ToDictionary(f => f, f => Directory.EnumerateFiles(resourcesPath, Regex.Replace(Path.GetFileNameWithoutExtension(f), @"NG.*$", "OK*.xaml")));
-foreach (var pair in pairs)
+foreach (var resourcePath in new[] { "SilverlightXaml", "WpfXaml" })
 {
-	var ngPath = pair.Key.Replace(projectDir + @"\", string.Empty);
+	var projectDir = this.Host.ResolvePath(string.Empty);
+	var resourcesPath = this.Host.ResolvePath(resourcePath);
+	var ngFiles = Directory.EnumerateFiles(resourcesPath, "*_NG*.xaml").ToList();
+	var okFiles = Directory.EnumerateFiles(resourcesPath, "*_OK*.xaml").ToList();
+	var pairs = ngFiles.ToDictionary(f => f, f => Directory.EnumerateFiles(resourcesPath, Regex.Replace(Path.GetFileNameWithoutExtension(f), @"NG.*$", "OK*.xaml")));
+	foreach (var pair in pairs)
+	{
+		var ngPath = pair.Key.Replace(projectDir + @"\", string.Empty);
 #>
     <Content Include="<#= ngPath #>">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
 <#
-	foreach (var okFullPath in pair.Value)
-	{
-		var okPath = okFullPath.Replace(projectDir + @"\", string.Empty);
+		foreach (var okFullPath in pair.Value)
+		{
+			var okPath = okFullPath.Replace(projectDir + @"\", string.Empty);
 #>
     <Content Include="<#= okPath #>">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon><#= ngPath.Replace(RESOURCEPATH + @"\", string.Empty) #></DependentUpon>
+      <DependentUpon><#= ngPath.Replace(resourcePath + @"\", string.Empty) #></DependentUpon>
     </Content>
 <#
+		}
 	}
 }
 #>
