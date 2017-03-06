@@ -14,7 +14,7 @@ namespace UnitTestProject
 		public TestContext TestContext { get; set; }
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0001_OK.xaml", "SilverlightXaml")]
 		public void XA0001_OK()
 		{
@@ -26,7 +26,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0001_NG1.xaml", "SilverlightXaml")]
 		public void XA0001_NG()
 		{
@@ -38,7 +38,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0002_OK.xaml", "SilverlightXaml")]
 		public void XA0002_OK()
 		{
@@ -50,7 +50,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0002_NG1.xaml", "SilverlightXaml")]
 		public void XA0002_NG()
 		{
@@ -62,7 +62,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0003_OK.xaml", "SilverlightXaml")]
 		public void XA0003_OK()
 		{
@@ -74,7 +74,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0003_NG1.xaml", "SilverlightXaml")]
 		public void XA0003_NG()
 		{
@@ -86,7 +86,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0004_OK.xaml", "SilverlightXaml")]
 		public void XA0004_OK()
 		{
@@ -98,7 +98,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0004_NG1.xaml", "SilverlightXaml")]
 		public void XA0004_NG()
 		{
@@ -110,7 +110,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0005_OK.xaml", "SilverlightXaml")]
 		public void XA0005_OK()
 		{
@@ -122,7 +122,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0005_NG3.xaml", "SilverlightXaml")]
 		public void XA0005_NG()
 		{
@@ -134,7 +134,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0006_OK.xaml", "SilverlightXaml")]
 		public void XA0006_OK()
 		{
@@ -146,7 +146,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0006_NG3.xaml", "SilverlightXaml")]
 		public void XA0006_NG()
 		{
@@ -158,7 +158,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0007_OK.xaml", "SilverlightXaml")]
 		public void XA0007_OK()
 		{
@@ -170,7 +170,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0007_NG1.xaml", "SilverlightXaml")]
 		public void XA0007_NG()
 		{
@@ -182,7 +182,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0008_OK.xaml", "SilverlightXaml")]
 		public void XA0008_OK()
 		{
@@ -194,7 +194,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0008_NG1.xaml", "SilverlightXaml")]
 		public void XA0008_NG()
 		{
@@ -206,7 +206,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0009_OK.xaml", "SilverlightXaml")]
 		public void XA0009_OK()
 		{
@@ -218,7 +218,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0009_NG1.xaml", "SilverlightXaml")]
 		public void XA0009_NG()
 		{
@@ -230,7 +230,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0101_OK.xaml", "SilverlightXaml")]
 		public void XA0101_OK()
 		{
@@ -242,7 +242,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0101_NG1.xaml", "SilverlightXaml")]
 		public void XA0101_NG()
 		{
@@ -254,7 +254,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0103_OK.xaml", "SilverlightXaml")]
 		public void XA0103_OK()
 		{
@@ -266,7 +266,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0103_NG1.xaml", "SilverlightXaml")]
 		public void XA0103_NG()
 		{
@@ -278,7 +278,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0104_OK.xaml", "SilverlightXaml")]
 		public void XA0104_OK()
 		{
@@ -290,7 +290,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0104_NG1.xaml", "SilverlightXaml")]
 		public void XA0104_NG()
 		{
@@ -302,7 +302,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0105_OK.xaml", "SilverlightXaml")]
 		public void XA0105_OK()
 		{
@@ -314,7 +314,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0105_NG5.xaml", "SilverlightXaml")]
 		public void XA0105_NG()
 		{
@@ -326,7 +326,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0106_OK.xaml", "SilverlightXaml")]
 		public void XA0106_OK()
 		{
@@ -338,7 +338,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0106_NG5.xaml", "SilverlightXaml")]
 		public void XA0106_NG()
 		{
@@ -350,7 +350,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0107_OK.xaml", "SilverlightXaml")]
 		public void XA0107_OK()
 		{
@@ -362,7 +362,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0107_NG1.xaml", "SilverlightXaml")]
 		public void XA0107_NG()
 		{
@@ -374,7 +374,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0108_OK.xaml", "SilverlightXaml")]
 		public void XA0108_OK()
 		{
@@ -386,7 +386,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0108_NG5.xaml", "SilverlightXaml")]
 		public void XA0108_NG()
 		{
@@ -398,7 +398,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0109_OK.xaml", "SilverlightXaml")]
 		public void XA0109_OK()
 		{
@@ -410,7 +410,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0109_NG2.xaml", "SilverlightXaml")]
 		public void XA0109_NG()
 		{
@@ -422,7 +422,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0110_OK.xaml", "SilverlightXaml")]
 		public void XA0110_OK()
 		{
@@ -434,7 +434,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0110_NG2.xaml", "SilverlightXaml")]
 		public void XA0110_NG()
 		{
@@ -446,7 +446,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0111_OK.xaml", "SilverlightXaml")]
 		public void XA0111_OK()
 		{
@@ -458,7 +458,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0111_NG1.xaml", "SilverlightXaml")]
 		public void XA0111_NG()
 		{
@@ -470,7 +470,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0201_OK.xaml", "SilverlightXaml")]
 		public void XA0201_OK()
 		{
@@ -482,7 +482,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0201_NG1.xaml", "SilverlightXaml")]
 		public void XA0201_NG()
 		{
@@ -494,7 +494,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0203_OK.xaml", "SilverlightXaml")]
 		public void XA0203_OK()
 		{
@@ -506,7 +506,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0203_NG1.xaml", "SilverlightXaml")]
 		public void XA0203_NG()
 		{
@@ -518,7 +518,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0204_OK.xaml", "SilverlightXaml")]
 		public void XA0204_OK()
 		{
@@ -530,7 +530,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0204_NG1.xaml", "SilverlightXaml")]
 		public void XA0204_NG()
 		{
@@ -542,7 +542,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0205_OK.xaml", "SilverlightXaml")]
 		public void XA0205_OK()
 		{
@@ -554,7 +554,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0205_NG4.xaml", "SilverlightXaml")]
 		public void XA0205_NG()
 		{
@@ -566,7 +566,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0206_OK.xaml", "SilverlightXaml")]
 		public void XA0206_OK()
 		{
@@ -578,7 +578,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0206_NG1.xaml", "SilverlightXaml")]
 		public void XA0206_NG()
 		{
@@ -590,7 +590,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0207_OK.xaml", "SilverlightXaml")]
 		public void XA0207_OK()
 		{
@@ -602,7 +602,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0207_NG2.xaml", "SilverlightXaml")]
 		public void XA0207_NG()
 		{
@@ -614,7 +614,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0208_OK.xaml", "SilverlightXaml")]
 		public void XA0208_OK()
 		{
@@ -626,7 +626,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0208_NG2.xaml", "SilverlightXaml")]
 		public void XA0208_NG()
 		{
@@ -638,7 +638,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0209_OK.xaml", "SilverlightXaml")]
 		public void XA0209_OK()
 		{
@@ -650,7 +650,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0209_NG2.xaml", "SilverlightXaml")]
 		public void XA0209_NG()
 		{
@@ -662,7 +662,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0210_OK.xaml", "SilverlightXaml")]
 		public void XA0210_OK()
 		{
@@ -674,7 +674,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0210_NG4.xaml", "SilverlightXaml")]
 		public void XA0210_NG()
 		{
@@ -686,7 +686,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0211_OK.xaml", "SilverlightXaml")]
 		public void XA0211_OK()
 		{
@@ -698,7 +698,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0211_NG4.xaml", "SilverlightXaml")]
 		public void XA0211_NG()
 		{
@@ -710,7 +710,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0212_OK.xaml", "SilverlightXaml")]
 		public void XA0212_OK()
 		{
@@ -722,7 +722,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0212_NG4.xaml", "SilverlightXaml")]
 		public void XA0212_NG()
 		{
@@ -734,7 +734,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0301_OK.xaml", "SilverlightXaml")]
 		public void XA0301_OK()
 		{
@@ -746,7 +746,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0301_NG1.xaml", "SilverlightXaml")]
 		public void XA0301_NG()
 		{
@@ -758,7 +758,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0303_OK.xaml", "SilverlightXaml")]
 		public void XA0303_OK()
 		{
@@ -770,7 +770,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0303_NG1.xaml", "SilverlightXaml")]
 		public void XA0303_NG()
 		{
@@ -782,7 +782,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0304_OK.xaml", "SilverlightXaml")]
 		public void XA0304_OK()
 		{
@@ -794,7 +794,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0304_NG1.xaml", "SilverlightXaml")]
 		public void XA0304_NG()
 		{
@@ -806,7 +806,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0305_OK.xaml", "SilverlightXaml")]
 		public void XA0305_OK()
 		{
@@ -818,7 +818,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0305_NG5.xaml", "SilverlightXaml")]
 		public void XA0305_NG()
 		{
@@ -830,7 +830,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0306_OK.xaml", "SilverlightXaml")]
 		public void XA0306_OK()
 		{
@@ -842,7 +842,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0306_NG1.xaml", "SilverlightXaml")]
 		public void XA0306_NG()
 		{
@@ -854,7 +854,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0307_OK.xaml", "SilverlightXaml")]
 		public void XA0307_OK()
 		{
@@ -866,7 +866,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0307_NG1.xaml", "SilverlightXaml")]
 		public void XA0307_NG()
 		{
@@ -878,7 +878,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0308_OK.xaml", "SilverlightXaml")]
 		public void XA0308_OK()
 		{
@@ -890,7 +890,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0308_NG1.xaml", "SilverlightXaml")]
 		public void XA0308_NG()
 		{
@@ -902,7 +902,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0309_OK.xaml", "SilverlightXaml")]
 		public void XA0309_OK()
 		{
@@ -914,7 +914,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0309_NG1.xaml", "SilverlightXaml")]
 		public void XA0309_NG()
 		{
@@ -926,7 +926,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0310_OK.xaml", "SilverlightXaml")]
 		public void XA0310_OK()
 		{
@@ -938,7 +938,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0310_NG1.xaml", "SilverlightXaml")]
 		public void XA0310_NG()
 		{
@@ -950,7 +950,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0311_OK.xaml", "SilverlightXaml")]
 		public void XA0311_OK()
 		{
@@ -962,7 +962,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0311_NG1.xaml", "SilverlightXaml")]
 		public void XA0311_NG()
 		{
@@ -974,7 +974,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0312_OK.xaml", "SilverlightXaml")]
 		public void XA0312_OK()
 		{
@@ -986,7 +986,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0312_NG2.xaml", "SilverlightXaml")]
 		public void XA0312_NG()
 		{
@@ -998,7 +998,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0313_OK.xaml", "SilverlightXaml")]
 		public void XA0313_OK()
 		{
@@ -1010,7 +1010,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0313_NG2.xaml", "SilverlightXaml")]
 		public void XA0313_NG()
 		{
@@ -1022,7 +1022,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0314_OK.xaml", "SilverlightXaml")]
 		public void XA0314_OK()
 		{
@@ -1034,7 +1034,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0314_NG1.xaml", "SilverlightXaml")]
 		public void XA0314_NG()
 		{
@@ -1046,7 +1046,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0315_OK.xaml", "SilverlightXaml")]
 		public void XA0315_OK()
 		{
@@ -1058,7 +1058,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0315_NG1.xaml", "SilverlightXaml")]
 		public void XA0315_NG()
 		{
@@ -1070,7 +1070,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0316_OK.xaml", "SilverlightXaml")]
 		public void XA0316_OK()
 		{
@@ -1082,7 +1082,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0316_NG1.xaml", "SilverlightXaml")]
 		public void XA0316_NG()
 		{
@@ -1094,7 +1094,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0317_OK.xaml", "SilverlightXaml")]
 		public void XA0317_OK()
 		{
@@ -1106,7 +1106,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0317_NG1.xaml", "SilverlightXaml")]
 		public void XA0317_NG()
 		{
@@ -1118,7 +1118,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0318_OK.xaml", "SilverlightXaml")]
 		public void XA0318_OK()
 		{
@@ -1130,7 +1130,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0318_NG1.xaml", "SilverlightXaml")]
 		public void XA0318_NG()
 		{
@@ -1142,7 +1142,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0319_OK.xaml", "SilverlightXaml")]
 		public void XA0319_OK()
 		{
@@ -1154,7 +1154,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0319_NG1.xaml", "SilverlightXaml")]
 		public void XA0319_NG()
 		{
@@ -1166,7 +1166,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0320_OK.xaml", "SilverlightXaml")]
 		public void XA0320_OK()
 		{
@@ -1178,7 +1178,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0320_NG1.xaml", "SilverlightXaml")]
 		public void XA0320_NG()
 		{
@@ -1190,7 +1190,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0321_OK.xaml", "SilverlightXaml")]
 		public void XA0321_OK()
 		{
@@ -1202,7 +1202,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0321_NG1.xaml", "SilverlightXaml")]
 		public void XA0321_NG()
 		{
@@ -1214,7 +1214,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0322_OK.xaml", "SilverlightXaml")]
 		public void XA0322_OK()
 		{
@@ -1226,7 +1226,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0322_NG1.xaml", "SilverlightXaml")]
 		public void XA0322_NG()
 		{
@@ -1238,7 +1238,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0323_OK.xaml", "SilverlightXaml")]
 		public void XA0323_OK()
 		{
@@ -1250,7 +1250,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0323_NG1.xaml", "SilverlightXaml")]
 		public void XA0323_NG()
 		{
@@ -1262,7 +1262,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0324_OK.xaml", "SilverlightXaml")]
 		public void XA0324_OK()
 		{
@@ -1274,7 +1274,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0324_NG1.xaml", "SilverlightXaml")]
 		public void XA0324_NG()
 		{
@@ -1286,7 +1286,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0401_OK.xaml", "SilverlightXaml")]
 		public void XA0401_OK()
 		{
@@ -1298,7 +1298,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0401_NG1.xaml", "SilverlightXaml")]
 		public void XA0401_NG()
 		{
@@ -1310,7 +1310,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0402_OK.xaml", "SilverlightXaml")]
 		public void XA0402_OK()
 		{
@@ -1322,7 +1322,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0402_NG1.xaml", "SilverlightXaml")]
 		public void XA0402_NG()
 		{
@@ -1334,7 +1334,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0403_OK.xaml", "SilverlightXaml")]
 		public void XA0403_OK()
 		{
@@ -1346,7 +1346,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0403_NG1.xaml", "SilverlightXaml")]
 		public void XA0403_NG()
 		{
@@ -1358,7 +1358,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0404_OK.xaml", "SilverlightXaml")]
 		public void XA0404_OK()
 		{
@@ -1370,7 +1370,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0404_NG1.xaml", "SilverlightXaml")]
 		public void XA0404_NG()
 		{
@@ -1382,7 +1382,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0405_OK.xaml", "SilverlightXaml")]
 		public void XA0405_OK()
 		{
@@ -1394,7 +1394,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0405_NG5.xaml", "SilverlightXaml")]
 		public void XA0405_NG()
 		{
@@ -1406,7 +1406,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0406_OK.xaml", "SilverlightXaml")]
 		public void XA0406_OK()
 		{
@@ -1418,7 +1418,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0406_NG5.xaml", "SilverlightXaml")]
 		public void XA0406_NG()
 		{
@@ -1430,7 +1430,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0407_OK.xaml", "SilverlightXaml")]
 		public void XA0407_OK()
 		{
@@ -1442,7 +1442,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0407_NG5.xaml", "SilverlightXaml")]
 		public void XA0407_NG()
 		{
@@ -1454,7 +1454,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0408_OK.xaml", "SilverlightXaml")]
 		public void XA0408_OK()
 		{
@@ -1466,7 +1466,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0408_NG1.xaml", "SilverlightXaml")]
 		public void XA0408_NG()
 		{
@@ -1478,7 +1478,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0409_OK.xaml", "SilverlightXaml")]
 		public void XA0409_OK()
 		{
@@ -1490,7 +1490,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0409_NG1.xaml", "SilverlightXaml")]
 		public void XA0409_NG()
 		{
@@ -1502,7 +1502,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0410_OK.xaml", "SilverlightXaml")]
 		public void XA0410_OK()
 		{
@@ -1514,7 +1514,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0410_NG1.xaml", "SilverlightXaml")]
 		public void XA0410_NG()
 		{
@@ -1526,7 +1526,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0411_OK.xaml", "SilverlightXaml")]
 		public void XA0411_OK()
 		{
@@ -1538,7 +1538,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0411_NG1.xaml", "SilverlightXaml")]
 		public void XA0411_NG()
 		{
@@ -1550,7 +1550,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0412_OK.xaml", "SilverlightXaml")]
 		public void XA0412_OK()
 		{
@@ -1562,7 +1562,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0412_NG2.xaml", "SilverlightXaml")]
 		public void XA0412_NG()
 		{
@@ -1574,7 +1574,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0413_OK.xaml", "SilverlightXaml")]
 		public void XA0413_OK()
 		{
@@ -1586,7 +1586,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0413_NG2.xaml", "SilverlightXaml")]
 		public void XA0413_NG()
 		{
@@ -1598,7 +1598,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0414_OK.xaml", "SilverlightXaml")]
 		public void XA0414_OK()
 		{
@@ -1610,7 +1610,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0414_NG1.xaml", "SilverlightXaml")]
 		public void XA0414_NG()
 		{
@@ -1622,7 +1622,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0415_OK.xaml", "SilverlightXaml")]
 		public void XA0415_OK()
 		{
@@ -1634,7 +1634,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0415_NG1.xaml", "SilverlightXaml")]
 		public void XA0415_NG()
 		{
@@ -1646,7 +1646,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0416_OK.xaml", "SilverlightXaml")]
 		public void XA0416_OK()
 		{
@@ -1658,7 +1658,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0416_NG1.xaml", "SilverlightXaml")]
 		public void XA0416_NG()
 		{
@@ -1670,7 +1670,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0501_OK.xaml", "SilverlightXaml")]
 		public void XA0501_OK()
 		{
@@ -1682,7 +1682,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0501_NG1.xaml", "SilverlightXaml")]
 		public void XA0501_NG()
 		{
@@ -1694,7 +1694,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0503_OK.xaml", "SilverlightXaml")]
 		public void XA0503_OK()
 		{
@@ -1706,7 +1706,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0503_NG1.xaml", "SilverlightXaml")]
 		public void XA0503_NG()
 		{
@@ -1718,7 +1718,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0504_OK.xaml", "SilverlightXaml")]
 		public void XA0504_OK()
 		{
@@ -1730,7 +1730,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0504_NG1.xaml", "SilverlightXaml")]
 		public void XA0504_NG()
 		{
@@ -1742,7 +1742,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0505_OK.xaml", "SilverlightXaml")]
 		public void XA0505_OK()
 		{
@@ -1754,7 +1754,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0505_NG1.xaml", "SilverlightXaml")]
 		public void XA0505_NG()
 		{
@@ -1766,7 +1766,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0506_OK.xaml", "SilverlightXaml")]
 		public void XA0506_OK()
 		{
@@ -1778,7 +1778,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0506_NG5.xaml", "SilverlightXaml")]
 		public void XA0506_NG()
 		{
@@ -1790,7 +1790,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0507_OK.xaml", "SilverlightXaml")]
 		public void XA0507_OK()
 		{
@@ -1802,7 +1802,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0507_NG1.xaml", "SilverlightXaml")]
 		public void XA0507_NG()
 		{
@@ -1814,7 +1814,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0508_OK.xaml", "SilverlightXaml")]
 		public void XA0508_OK()
 		{
@@ -1826,7 +1826,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0508_NG1.xaml", "SilverlightXaml")]
 		public void XA0508_NG()
 		{
@@ -1838,7 +1838,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0509_OK.xaml", "SilverlightXaml")]
 		public void XA0509_OK()
 		{
@@ -1850,7 +1850,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0509_NG2.xaml", "SilverlightXaml")]
 		public void XA0509_NG()
 		{
@@ -1862,7 +1862,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0510_OK.xaml", "SilverlightXaml")]
 		public void XA0510_OK()
 		{
@@ -1874,7 +1874,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0510_NG4.xaml", "SilverlightXaml")]
 		public void XA0510_NG()
 		{
@@ -1886,7 +1886,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0601_OK.xaml", "SilverlightXaml")]
 		public void XA0601_OK()
 		{
@@ -1898,7 +1898,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0601_NG1.xaml", "SilverlightXaml")]
 		public void XA0601_NG()
 		{
@@ -1910,7 +1910,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0602_OK.xaml", "SilverlightXaml")]
 		public void XA0602_OK()
 		{
@@ -1922,7 +1922,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0602_NG1.xaml", "SilverlightXaml")]
 		public void XA0602_NG()
 		{
@@ -1934,7 +1934,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0603_OK.xaml", "SilverlightXaml")]
 		public void XA0603_OK()
 		{
@@ -1946,7 +1946,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0603_NG1.xaml", "SilverlightXaml")]
 		public void XA0603_NG()
 		{
@@ -1958,7 +1958,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0604_OK.xaml", "SilverlightXaml")]
 		public void XA0604_OK()
 		{
@@ -1970,7 +1970,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0604_NG1.xaml", "SilverlightXaml")]
 		public void XA0604_NG()
 		{
@@ -1982,7 +1982,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0605_OK.xaml", "SilverlightXaml")]
 		public void XA0605_OK()
 		{
@@ -1994,7 +1994,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0605_NG5.xaml", "SilverlightXaml")]
 		public void XA0605_NG()
 		{
@@ -2006,7 +2006,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0606_OK.xaml", "SilverlightXaml")]
 		public void XA0606_OK()
 		{
@@ -2018,7 +2018,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0606_NG5.xaml", "SilverlightXaml")]
 		public void XA0606_NG()
 		{
@@ -2030,7 +2030,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0607_OK.xaml", "SilverlightXaml")]
 		public void XA0607_OK()
 		{
@@ -2042,7 +2042,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0607_NG5.xaml", "SilverlightXaml")]
 		public void XA0607_NG()
 		{
@@ -2054,7 +2054,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0608_OK.xaml", "SilverlightXaml")]
 		public void XA0608_OK()
 		{
@@ -2066,7 +2066,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0608_NG2.xaml", "SilverlightXaml")]
 		public void XA0608_NG()
 		{
@@ -2078,7 +2078,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0609_OK.xaml", "SilverlightXaml")]
 		public void XA0609_OK()
 		{
@@ -2090,7 +2090,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0609_NG3.xaml", "SilverlightXaml")]
 		public void XA0609_NG()
 		{
@@ -2102,7 +2102,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0610_OK.xaml", "SilverlightXaml")]
 		public void XA0610_OK()
 		{
@@ -2114,7 +2114,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0610_NG1.xaml", "SilverlightXaml")]
 		public void XA0610_NG()
 		{
@@ -2126,7 +2126,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0611_OK1.xaml", "SilverlightXaml")]
 		public void XA0611_OK1()
 		{
@@ -2138,7 +2138,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0611_OK2.xaml", "SilverlightXaml")]
 		public void XA0611_OK2()
 		{
@@ -2150,7 +2150,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0611_NG1.xaml", "SilverlightXaml")]
 		public void XA0611_NG()
 		{
@@ -2162,7 +2162,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0701_OK.xaml", "SilverlightXaml")]
 		public void XA0701_OK()
 		{
@@ -2174,7 +2174,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0701_NG1.xaml", "SilverlightXaml")]
 		public void XA0701_NG()
 		{
@@ -2186,7 +2186,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0702_OK.xaml", "SilverlightXaml")]
 		public void XA0702_OK()
 		{
@@ -2198,7 +2198,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0702_NG1.xaml", "SilverlightXaml")]
 		public void XA0702_NG()
 		{
@@ -2210,7 +2210,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0703_OK.xaml", "SilverlightXaml")]
 		public void XA0703_OK()
 		{
@@ -2222,7 +2222,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0703_NG1.xaml", "SilverlightXaml")]
 		public void XA0703_NG()
 		{
@@ -2234,7 +2234,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0704_OK.xaml", "SilverlightXaml")]
 		public void XA0704_OK()
 		{
@@ -2246,7 +2246,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0704_NG1.xaml", "SilverlightXaml")]
 		public void XA0704_NG()
 		{
@@ -2258,7 +2258,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0705_OK.xaml", "SilverlightXaml")]
 		public void XA0705_OK()
 		{
@@ -2270,7 +2270,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0705_NG1.xaml", "SilverlightXaml")]
 		public void XA0705_NG()
 		{
@@ -2282,7 +2282,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0706_OK.xaml", "SilverlightXaml")]
 		public void XA0706_OK()
 		{
@@ -2294,7 +2294,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0706_NG1.xaml", "SilverlightXaml")]
 		public void XA0706_NG()
 		{
@@ -2306,7 +2306,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0707_OK.xaml", "SilverlightXaml")]
 		public void XA0707_OK()
 		{
@@ -2318,7 +2318,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0707_NG5.xaml", "SilverlightXaml")]
 		public void XA0707_NG()
 		{
@@ -2330,7 +2330,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0708_OK.xaml", "SilverlightXaml")]
 		public void XA0708_OK()
 		{
@@ -2342,7 +2342,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0708_NG2.xaml", "SilverlightXaml")]
 		public void XA0708_NG()
 		{
@@ -2354,7 +2354,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0709_OK.xaml", "SilverlightXaml")]
 		public void XA0709_OK()
 		{
@@ -2366,7 +2366,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0709_NG5.xaml", "SilverlightXaml")]
 		public void XA0709_NG()
 		{
@@ -2378,7 +2378,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0710_OK.xaml", "SilverlightXaml")]
 		public void XA0710_OK()
 		{
@@ -2390,7 +2390,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0710_NG1.xaml", "SilverlightXaml")]
 		public void XA0710_NG()
 		{
@@ -2402,7 +2402,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0711_OK.xaml", "SilverlightXaml")]
 		public void XA0711_OK()
 		{
@@ -2414,7 +2414,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0711_NG3.xaml", "SilverlightXaml")]
 		public void XA0711_NG()
 		{
@@ -2426,7 +2426,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0712_OK.xaml", "SilverlightXaml")]
 		public void XA0712_OK()
 		{
@@ -2438,7 +2438,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0712_NG3.xaml", "SilverlightXaml")]
 		public void XA0712_NG()
 		{
@@ -2450,7 +2450,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0713_OK.xaml", "SilverlightXaml")]
 		public void XA0713_OK()
 		{
@@ -2462,7 +2462,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0713_NG2.xaml", "SilverlightXaml")]
 		public void XA0713_NG()
 		{
@@ -2474,7 +2474,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0714_OK.xaml", "SilverlightXaml")]
 		public void XA0714_OK()
 		{
@@ -2486,7 +2486,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0714_NG2.xaml", "SilverlightXaml")]
 		public void XA0714_NG()
 		{
@@ -2498,7 +2498,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0801_OK.xaml", "SilverlightXaml")]
 		public void XA0801_OK()
 		{
@@ -2510,7 +2510,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0801_NG1.xaml", "SilverlightXaml")]
 		public void XA0801_NG()
 		{
@@ -2522,7 +2522,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0802_OK.xaml", "SilverlightXaml")]
 		public void XA0802_OK()
 		{
@@ -2534,7 +2534,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0802_NG1.xaml", "SilverlightXaml")]
 		public void XA0802_NG()
 		{
@@ -2546,7 +2546,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0803_OK.xaml", "SilverlightXaml")]
 		public void XA0803_OK()
 		{
@@ -2558,7 +2558,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0803_NG1.xaml", "SilverlightXaml")]
 		public void XA0803_NG()
 		{
@@ -2570,7 +2570,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0804_OK.xaml", "SilverlightXaml")]
 		public void XA0804_OK()
 		{
@@ -2582,7 +2582,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0804_NG1.xaml", "SilverlightXaml")]
 		public void XA0804_NG()
 		{
@@ -2594,7 +2594,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0805_OK.xaml", "SilverlightXaml")]
 		public void XA0805_OK()
 		{
@@ -2606,7 +2606,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0805_NG1.xaml", "SilverlightXaml")]
 		public void XA0805_NG()
 		{
@@ -2618,7 +2618,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0806_OK.xaml", "SilverlightXaml")]
 		public void XA0806_OK()
 		{
@@ -2630,7 +2630,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0806_NG1.xaml", "SilverlightXaml")]
 		public void XA0806_NG()
 		{
@@ -2642,7 +2642,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0807_OK.xaml", "SilverlightXaml")]
 		public void XA0807_OK()
 		{
@@ -2654,7 +2654,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0807_NG5.xaml", "SilverlightXaml")]
 		public void XA0807_NG()
 		{
@@ -2666,7 +2666,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0808_OK.xaml", "SilverlightXaml")]
 		public void XA0808_OK()
 		{
@@ -2678,7 +2678,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0808_NG5.xaml", "SilverlightXaml")]
 		public void XA0808_NG()
 		{
@@ -2690,7 +2690,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0809_OK.xaml", "SilverlightXaml")]
 		public void XA0809_OK()
 		{
@@ -2702,7 +2702,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0809_NG5.xaml", "SilverlightXaml")]
 		public void XA0809_NG()
 		{
@@ -2714,7 +2714,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0810_OK.xaml", "SilverlightXaml")]
 		public void XA0810_OK()
 		{
@@ -2726,7 +2726,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0810_NG2.xaml", "SilverlightXaml")]
 		public void XA0810_NG()
 		{
@@ -2738,7 +2738,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0901_OK.xaml", "SilverlightXaml")]
 		public void XA0901_OK()
 		{
@@ -2750,7 +2750,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0901_NG1.xaml", "SilverlightXaml")]
 		public void XA0901_NG()
 		{
@@ -2762,7 +2762,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0902_OK.xaml", "SilverlightXaml")]
 		public void XA0902_OK()
 		{
@@ -2774,7 +2774,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0902_NG1.xaml", "SilverlightXaml")]
 		public void XA0902_NG()
 		{
@@ -2786,7 +2786,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0903_OK.xaml", "SilverlightXaml")]
 		public void XA0903_OK()
 		{
@@ -2798,7 +2798,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0903_NG1.xaml", "SilverlightXaml")]
 		public void XA0903_NG()
 		{
@@ -2810,7 +2810,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0904_OK.xaml", "SilverlightXaml")]
 		public void XA0904_OK()
 		{
@@ -2822,7 +2822,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0904_NG1.xaml", "SilverlightXaml")]
 		public void XA0904_NG()
 		{
@@ -2834,7 +2834,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0905_OK.xaml", "SilverlightXaml")]
 		public void XA0905_OK()
 		{
@@ -2846,7 +2846,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0905_NG1.xaml", "SilverlightXaml")]
 		public void XA0905_NG()
 		{
@@ -2858,7 +2858,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0906_OK.xaml", "SilverlightXaml")]
 		public void XA0906_OK()
 		{
@@ -2870,7 +2870,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0906_NG1.xaml", "SilverlightXaml")]
 		public void XA0906_NG()
 		{
@@ -2882,7 +2882,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0907_OK.xaml", "SilverlightXaml")]
 		public void XA0907_OK()
 		{
@@ -2894,7 +2894,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0907_NG5.xaml", "SilverlightXaml")]
 		public void XA0907_NG()
 		{
@@ -2906,7 +2906,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0908_OK.xaml", "SilverlightXaml")]
 		public void XA0908_OK()
 		{
@@ -2918,7 +2918,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0908_NG5.xaml", "SilverlightXaml")]
 		public void XA0908_NG()
 		{
@@ -2930,7 +2930,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0909_OK.xaml", "SilverlightXaml")]
 		public void XA0909_OK()
 		{
@@ -2942,7 +2942,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0909_NG5.xaml", "SilverlightXaml")]
 		public void XA0909_NG()
 		{
@@ -2954,7 +2954,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0910_OK.xaml", "SilverlightXaml")]
 		public void XA0910_OK()
 		{
@@ -2966,7 +2966,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0910_NG1.xaml", "SilverlightXaml")]
 		public void XA0910_NG()
 		{
@@ -2978,7 +2978,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0911_OK.xaml", "SilverlightXaml")]
 		public void XA0911_OK()
 		{
@@ -2990,7 +2990,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA0911_NG1.xaml", "SilverlightXaml")]
 		public void XA0911_NG()
 		{
@@ -3002,7 +3002,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1001_OK.xaml", "SilverlightXaml")]
 		public void XA1001_OK()
 		{
@@ -3014,7 +3014,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1001_NG1.xaml", "SilverlightXaml")]
 		public void XA1001_NG()
 		{
@@ -3026,7 +3026,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1002_OK.xaml", "SilverlightXaml")]
 		public void XA1002_OK()
 		{
@@ -3038,7 +3038,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1002_NG1.xaml", "SilverlightXaml")]
 		public void XA1002_NG()
 		{
@@ -3050,7 +3050,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1003_OK.xaml", "SilverlightXaml")]
 		public void XA1003_OK()
 		{
@@ -3062,7 +3062,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1003_NG1.xaml", "SilverlightXaml")]
 		public void XA1003_NG()
 		{
@@ -3074,7 +3074,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1004_OK.xaml", "SilverlightXaml")]
 		public void XA1004_OK()
 		{
@@ -3086,7 +3086,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1004_NG1.xaml", "SilverlightXaml")]
 		public void XA1004_NG()
 		{
@@ -3098,7 +3098,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1005_OK.xaml", "SilverlightXaml")]
 		public void XA1005_OK()
 		{
@@ -3110,7 +3110,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1005_NG1.xaml", "SilverlightXaml")]
 		public void XA1005_NG()
 		{
@@ -3122,7 +3122,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1006_OK.xaml", "SilverlightXaml")]
 		public void XA1006_OK()
 		{
@@ -3134,7 +3134,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1006_NG1.xaml", "SilverlightXaml")]
 		public void XA1006_NG()
 		{
@@ -3146,7 +3146,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1007_OK.xaml", "SilverlightXaml")]
 		public void XA1007_OK()
 		{
@@ -3158,7 +3158,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1007_NG5.xaml", "SilverlightXaml")]
 		public void XA1007_NG()
 		{
@@ -3170,7 +3170,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1008_OK.xaml", "SilverlightXaml")]
 		public void XA1008_OK()
 		{
@@ -3182,7 +3182,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1008_NG5.xaml", "SilverlightXaml")]
 		public void XA1008_NG()
 		{
@@ -3194,7 +3194,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1009_OK.xaml", "SilverlightXaml")]
 		public void XA1009_OK()
 		{
@@ -3206,7 +3206,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1009_NG5.xaml", "SilverlightXaml")]
 		public void XA1009_NG()
 		{
@@ -3218,7 +3218,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1010_OK.xaml", "SilverlightXaml")]
 		public void XA1010_OK()
 		{
@@ -3230,7 +3230,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1010_NG3.xaml", "SilverlightXaml")]
 		public void XA1010_NG()
 		{
@@ -3242,7 +3242,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1011_OK.xaml", "SilverlightXaml")]
 		public void XA1011_OK()
 		{
@@ -3254,7 +3254,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1011_NG1.xaml", "SilverlightXaml")]
 		public void XA1011_NG()
 		{
@@ -3266,7 +3266,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1012_OK.xaml", "SilverlightXaml")]
 		public void XA1012_OK()
 		{
@@ -3278,7 +3278,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1012_NG1.xaml", "SilverlightXaml")]
 		public void XA1012_NG()
 		{
@@ -3290,7 +3290,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1101_OK.xaml", "SilverlightXaml")]
 		public void XA1101_OK()
 		{
@@ -3302,7 +3302,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1101_NG1.xaml", "SilverlightXaml")]
 		public void XA1101_NG()
 		{
@@ -3314,7 +3314,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1102_OK.xaml", "SilverlightXaml")]
 		public void XA1102_OK()
 		{
@@ -3326,7 +3326,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1102_NG1.xaml", "SilverlightXaml")]
 		public void XA1102_NG()
 		{
@@ -3338,7 +3338,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1103_OK.xaml", "SilverlightXaml")]
 		public void XA1103_OK()
 		{
@@ -3350,7 +3350,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1103_NG1.xaml", "SilverlightXaml")]
 		public void XA1103_NG()
 		{
@@ -3362,7 +3362,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1104_OK.xaml", "SilverlightXaml")]
 		public void XA1104_OK()
 		{
@@ -3374,7 +3374,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1104_NG1.xaml", "SilverlightXaml")]
 		public void XA1104_NG()
 		{
@@ -3386,7 +3386,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1105_OK.xaml", "SilverlightXaml")]
 		public void XA1105_OK()
 		{
@@ -3398,7 +3398,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1105_NG1.xaml", "SilverlightXaml")]
 		public void XA1105_NG()
 		{
@@ -3410,7 +3410,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1106_OK.xaml", "SilverlightXaml")]
 		public void XA1106_OK()
 		{
@@ -3422,7 +3422,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1106_NG1.xaml", "SilverlightXaml")]
 		public void XA1106_NG()
 		{
@@ -3434,7 +3434,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1107_OK.xaml", "SilverlightXaml")]
 		public void XA1107_OK()
 		{
@@ -3446,7 +3446,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1107_NG5.xaml", "SilverlightXaml")]
 		public void XA1107_NG()
 		{
@@ -3458,7 +3458,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1108_OK.xaml", "SilverlightXaml")]
 		public void XA1108_OK()
 		{
@@ -3470,7 +3470,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1108_NG2.xaml", "SilverlightXaml")]
 		public void XA1108_NG()
 		{
@@ -3482,7 +3482,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1109_OK.xaml", "SilverlightXaml")]
 		public void XA1109_OK()
 		{
@@ -3494,7 +3494,7 @@ namespace UnitTestProject
 		}
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA1109_NG5.xaml", "SilverlightXaml")]
 		public void XA1109_NG()
 		{

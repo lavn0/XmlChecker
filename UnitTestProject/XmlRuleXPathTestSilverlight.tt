@@ -57,7 +57,7 @@ namespace UnitTestProject
 #>
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"<#= filePath #>", "<#= RESOURCEPATH #>")]
 		public void <#= testName #>()
 		{
@@ -75,7 +75,7 @@ namespace UnitTestProject
 #>
 
 		[TestMethod]
-		[TestCategory("XmlChecker")]
+		[TestCategory("SilverlightRule")]
 		public void <#= id + "_" + key #>()
 		{
 			Assert.Inconclusive("ルール(ID=<#= id #>)の<#= key == "OK" ? "正常系" : "異常系" #>テストが作成されていません。");
