@@ -1,3 +1,4 @@
 WPFXA0101,Default,//*[name(.)='Border']/@Visibility[.='Visible'],"Visibility=""Visible""はデフォルト値です。"
 WPFXA0102,Default,//*[name(.)='Border']/@IsEnabled[.='True'],"IsEnabled=""True""はデフォルト値です。"
 WPFXA0103,Default,//*[name(.)='Border']/@HorizontalAlignment[.='Stretch'],"HorizontalAlignment=""Stretch""はデフォルト値です。"
+WPFXA0104,Default,//*[name(.)='Border']/@VerticalAlignment[.='Stretch'],"VerticalAlignment=""Stretch""はデフォルト値です。"
