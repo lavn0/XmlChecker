@@ -6,3 +6,4 @@ WPFXA0105,Default,"//*[name(.)='Border'][not(@Name)]/@Margin[.='0' or .='0,0' or
 WPFXA0106,Default,"//*[name(.)='Border'][not(@Name)]/@Padding[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","Padding=""0""はデフォルト値です。"
 WPFXA0107,Error,//*[name(.)='Border'][not(@Name)]/@BorderBrush[.='Transparent'],"BorderBrush=""Transparent""を指定しなくとも背景は透明です。"
 WPFXA0108,Default,"//*[name(.)='Border']/@BorderThickness[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","BorderThickness=""0""はデフォルト値です。"
+WPFXA0109,Error,"//*[name(.)='Border'][not(@Style)][not(@Background)][not(@BorderThickness) or @BorderThickness[.='0' or .='0 0' or .='0,0' or .='0 0 0 0' or .='0,0,0,0']]",BorderのStyle属性もBackground属性もBordertThickness属性もありません。背景色も罫線も持たないBorderは表示されないので入れ子を解除して下さい。
