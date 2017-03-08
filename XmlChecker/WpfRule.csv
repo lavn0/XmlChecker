@@ -2,3 +2,4 @@ WPFXA0101,Default,//*[name(.)='Border']/@Visibility[.='Visible'],"Visibility=""V
 WPFXA0102,Default,//*[name(.)='Border']/@IsEnabled[.='True'],"IsEnabled=""True""はデフォルト値です。"
 WPFXA0103,Default,//*[name(.)='Border']/@HorizontalAlignment[.='Stretch'],"HorizontalAlignment=""Stretch""はデフォルト値です。"
 WPFXA0104,Default,//*[name(.)='Border']/@VerticalAlignment[.='Stretch'],"VerticalAlignment=""Stretch""はデフォルト値です。"
+WPFXA0105,Default,"//*[name(.)='Border'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","Margin=""0""はデフォルト値です。"
