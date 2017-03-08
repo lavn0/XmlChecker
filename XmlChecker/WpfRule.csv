@@ -5,3 +5,4 @@ WPFXA0104,Default,//*[name(.)='Border']/@VerticalAlignment[.='Stretch'],"Vertica
 WPFXA0105,Default,"//*[name(.)='Border'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","Margin=""0""はデフォルト値です。"
 WPFXA0106,Default,"//*[name(.)='Border'][not(@Name)]/@Padding[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","Padding=""0""はデフォルト値です。"
 WPFXA0107,Error,//*[name(.)='Border'][not(@Name)]/@BorderBrush[.='Transparent'],"BorderBrush=""Transparent""を指定しなくとも背景は透明です。"
+WPFXA0108,Default,"//*[name(.)='Border']/@BorderThickness[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","BorderThickness=""0""はデフォルト値です。"
