@@ -156,5 +156,29 @@ namespace UnitTestProject
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
 			Assert.AreEqual(5, errorInstances.Count);
 		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0107_OK.xaml", "WpfXaml")]
+		public void WPFXA0107_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0107", "Error", @"//*[name(.)='Border'][not(@Name)]/@BorderBrush[.='Transparent']", @"BorderBrush=""Transparent""を指定しなくとも背景は透明です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0107_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0107_NG1.xaml", "WpfXaml")]
+		public void WPFXA0107_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0107", "Error", @"//*[name(.)='Border'][not(@Name)]/@BorderBrush[.='Transparent']", @"BorderBrush=""Transparent""を指定しなくとも背景は透明です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0107_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
 	}
 }
