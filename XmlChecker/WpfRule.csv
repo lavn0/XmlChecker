@@ -8,3 +8,4 @@ WPFXA0107,Error,//*[name(.)='Border'][not(@Name)]/@BorderBrush[.='Transparent'],
 WPFXA0108,Default,"//*[name(.)='Border']/@BorderThickness[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","BorderThickness=""0""はデフォルト値です。"
 WPFXA0109,Error,"//*[name(.)='Border'][not(@Style)][not(@Background)][not(@BorderThickness) or @BorderThickness[.='0' or .='0 0' or .='0,0' or .='0 0 0 0' or .='0,0,0,0']]",BorderのStyle属性もBackground属性もBordertThickness属性もありません。背景色も罫線も持たないBorderは表示されないので入れ子を解除して下さい。
 WPFXA0110,Error,//*[name(.)='Border'][not(@Width)][@HorizontalAlignment]/*/@HorizontalAlignment,HorizontalAlignment属性が指定されたBorder配下の要素のHorizontalAlignmentは機能しません。
+WPFXA0111,Error,//*[name(.)='Border'][not(@Height)][@VerticalAlignment]/*/@VerticalAlignment,VerticalAlignment属性が指定されたBorder配下の要素のVerticalAlignmentは機能しません。
