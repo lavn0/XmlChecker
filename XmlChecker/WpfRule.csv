@@ -14,3 +14,4 @@ WPFXA0202,Default,//*[name(.)='StackPanel']/@IsEnabled[.='True'],"IsEnabled=""Tr
 WPFXA0203,Default,//*[name(.)='StackPanel']/@HorizontalAlignment[.='Stretch'],"HorizontalAlignment=""Stretch""はデフォルト値です。"
 WPFXA0204,Default,//*[name(.)='StackPanel']/@VerticalAlignment[.='Stretch'],"VerticalAlignment=""Stretch""はデフォルト値です。"
 WPFXA0205,Default,"//*[name(.)='StackPanel'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","Margin=""0""はデフォルト値です。"
+WPFXA0206,Warning,//*[name(.)='StackPanel'][@Orientation='Vertical'],"StackPanel.Orientation=""Vertical""はデフォルト値です。"
