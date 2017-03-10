@@ -12,3 +12,4 @@ WPFXA0111,Error,//*[name(.)='Border'][not(@Height)][@VerticalAlignment]/*/@Verti
 WPFXA0201,Default,//*[name(.)='StackPanel']/@Visibility[.='Visible'],"Visibility=""Visible""はデフォルト値です。"
 WPFXA0202,Default,//*[name(.)='StackPanel']/@IsEnabled[.='True'],"IsEnabled=""True""はデフォルト値です。"
 WPFXA0203,Default,//*[name(.)='StackPanel']/@HorizontalAlignment[.='Stretch'],"HorizontalAlignment=""Stretch""はデフォルト値です。"
+WPFXA0204,Default,//*[name(.)='StackPanel']/@VerticalAlignment[.='Stretch'],"VerticalAlignment=""Stretch""はデフォルト値です。"

@@ -1,0 +1,5 @@
+﻿<StackPanel
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	VerticalAlignment="Stretch">
+	<TextBlock Text="DummyText" />
+</StackPanel>
