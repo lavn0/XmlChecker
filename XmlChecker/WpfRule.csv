@@ -11,3 +11,4 @@ WPFXA0110,Error,//*[name(.)='Border'][not(@Width)][@HorizontalAlignment]/*/@Hori
 WPFXA0111,Error,//*[name(.)='Border'][not(@Height)][@VerticalAlignment]/*/@VerticalAlignment,VerticalAlignment属性が指定されたBorder配下の要素のVerticalAlignmentは機能しません。
 WPFXA0201,Default,//*[name(.)='StackPanel']/@Visibility[.='Visible'],"Visibility=""Visible""はデフォルト値です。"
 WPFXA0202,Default,//*[name(.)='StackPanel']/@IsEnabled[.='True'],"IsEnabled=""True""はデフォルト値です。"
+WPFXA0203,Default,//*[name(.)='StackPanel']/@HorizontalAlignment[.='Stretch'],"HorizontalAlignment=""Stretch""はデフォルト値です。"
