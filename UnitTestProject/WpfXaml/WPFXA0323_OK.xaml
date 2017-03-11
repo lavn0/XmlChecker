@@ -1,0 +1,8 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<Grid.RowDefinitions>
+		<RowDefinition Height="Auto" />
+		<RowDefinition Height="Auto" />
+	</Grid.RowDefinitions>
+	<TextBlock Grid.Row="0" Text="DummyText1" />
+	<TextBlock Grid.Row="1" Text="DummyText2" />
+</Grid>

@@ -1,0 +1,19 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<Grid.RowDefinitions>
+		<RowDefinition Height="Auto" />
+		<RowDefinition Height="Auto" />
+	</Grid.RowDefinitions>
+	<Grid.ColumnDefinitions>
+		<ColumnDefinition Width="Auto" />
+		<ColumnDefinition Width="Auto" />
+	</Grid.ColumnDefinitions>
+	<Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Cyan">
+		<TextBlock Text="DummyText1" />
+	</Border>
+	<Border Grid.Row="1" Grid.Column="0" Background="Red">
+		<TextBlock Text="DummyText2" />
+	</Border>
+	<Border Grid.Row="1" Grid.Column="1" Background="Red">
+		<TextBlock Text="DummyText3" />
+	</Border>
+</Grid>
