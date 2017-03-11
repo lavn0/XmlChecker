@@ -45,3 +45,19 @@ WPFXA0321,Error,//*[name(.)='Grid.RowDefinitions'][not(*)],Grid.RowDefinitions配
 WPFXA0322,Error,//*[name(.)='Grid.ColumnDefinitions'][not(*)],Grid.ColumnDefinitions配下の要素がありません。
 WPFXA0323,Critical,"//*[name(.)='Grid.RowDefinitions']/following-sibling::*[not(starts-with(name(.),'Grid.'))][not(starts-with(local-name(.),'Interaction'))][not(@*[name(.)='Grid.Row'])]",Grid.RowDefinitionが定義されたGrid配下でGrid.Row添付プロパティが指定されていません。
 WPFXA0324,Critical,"//*[name(.)='Grid.ColumnDefinitions']/following-sibling::*[not(starts-with(name(.),'Grid.'))][not(starts-with(local-name(.),'Interaction'))][not(@*[name(.)='Grid.Column'])]",Grid.ColumnDefinitionが定義されたGrid配下でGrid.Column添付プロパティが指定されていません。
+WPFXA0401,Default,//*[name(.)='ScrollViewer']/@Visibility[.='Visible'],"Visibility=""Visible""はデフォルト値です。"
+WPFXA0402,Default,//*[name(.)='ScrollViewer']/@IsEnabled[.='True'],"IsEnabled=""True""はデフォルト値です。"
+WPFXA0403,Default,//*[name(.)='ScrollViewer']/@HorizontalAlignment[.='Stretch'],"HorizontalAlignment=""Stretch""はデフォルト値です。"
+WPFXA0404,Default,//*[name(.)='ScrollViewer']/@VerticalAlignment[.='Stretch'],"VerticalAlignment=""Stretch""はデフォルト値です。"
+WPFXA0405,Default,"//*[name(.)='ScrollViewer'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","ScrollViewer.Margin=""0""はデフォルト値です。"
+WPFXA0406,Default,"//*[name(.)='ScrollViewer'][not(@Name)]/@Padding[.='4' or .='4,4' or .='4 4' or .='4,4,4,4' or .='4 4 4 4']","ScrollViewer.Padding=""4""はデフォルト値です。"
+WPFXA0407,Default,"//*[name(.)='ScrollViewer']/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']","ScrollViewer.BorderThickness=""1""はデフォルト値です。"
+WPFXA0408,Default,//*[name(.)='ScrollViewer']/@HorizontalContentAlignment[.='Left'],"ScrollViewer.HorizontalContentAlignment=""Left""はデフォルト値です。"
+WPFXA0409,Default,//*[name(.)='ScrollViewer']/@VerticalContentAlignment[.='Top'],"ScrollViewer.VerticalContentAlignment=""Top""はデフォルト値です。"
+WPFXA0410,Default,//*[name(.)='ScrollViewer']/@HorizontalScrollBarVisibility[.='Auto'],"ScrollViewer.HorizontalScrollBarVisibility=""Auto""はデフォルト値です。"
+WPFXA0411,Default,//*[name(.)='ScrollViewer']/@VerticalScrollBarVisibility[.='Visible'],"ScrollViewer.VerticalScrollBarVisibility=""Visible""はデフォルト値です。"
+WPFXA0412,Warning,//*[name(.)='ScrollViewer']/@HorizontalScrollBarVisibility[not(.='Auto')][not(.='Visible')],"ScrollViewer.HorizontalScrollBarVisibility属性に""Auto"",""Visible""以外の値が指定されています。レイアウトのズレが目視確認できなくなっている可能性があります。"
+WPFXA0413,Warning,//*[name(.)='ScrollViewer']/@VerticalScrollBarVisibility[not(.='Auto')][not(.='Visible')],"ScrollViewer.VerticalScrollBarVisibility属性に""Auto"",""Visible""以外の値が指定されています。レイアウトのズレが目視確認できなくなっている可能性があります。"
+WPFXA0414,Critical,//*[name(.)='ScrollViewer'][not(@Background)],"ScrollViewer.Background属性が有りません。マウスホイールに反応させるため、Background=""Transparent""を指定してください。"
+WPFXA0415,Warning,//*[name(.)='ScrollViewer'][@BorderThickness='0']/@BorderBrush,"ScrollViewer.BorderBrush属性があります。BorderThickness=""0""によってBorderは非表示になっているため、指定不要です"
+WPFXA0416,Warning,//*[name(.)='ScrollViewer'][not(@BorderThickness='0')]/@BorderBrush,ScrollViewer.BorderBrush属性があります。意図的でなければ指定を削除してください。
