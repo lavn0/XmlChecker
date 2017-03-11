@@ -1,0 +1,10 @@
+﻿<Grid
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<StackPanel>
+		<TextBlock Text="DummyText" />
+	</StackPanel>
+	<StackPanel>
+		<StackPanel.Background>Gray</StackPanel.Background>
+		<TextBlock Text="DummyText" />
+	</StackPanel>
+</Grid>

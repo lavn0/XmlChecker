@@ -15,3 +15,4 @@ WPFXA0203,Default,//*[name(.)='StackPanel']/@HorizontalAlignment[.='Stretch'],"H
 WPFXA0204,Default,//*[name(.)='StackPanel']/@VerticalAlignment[.='Stretch'],"VerticalAlignment=""Stretch""はデフォルト値です。"
 WPFXA0205,Default,"//*[name(.)='StackPanel'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","Margin=""0""はデフォルト値です。"
 WPFXA0206,Warning,//*[name(.)='StackPanel'][@Orientation='Vertical'],"StackPanel.Orientation=""Vertical""はデフォルト値です。"
+WPFXA0207,Error,"//*[name(.)='StackPanel'][*[not(starts-with(local-name(.),'StackPanel.'))][1]][not(*[not(starts-with(local-name(.),'StackPanel.'))][2])]",StackPanelの子要素が1つしかありません。子要素を複数持たないStackPanelは不要な入れ子なので解除するか、Borderに変更できます。
