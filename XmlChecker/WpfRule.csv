@@ -19,3 +19,4 @@ WPFXA0207,Error,"//*[name(.)='StackPanel'][*[not(starts-with(local-name(.),'Stac
 WPFXA0208,Error,//*[name(.)='StackPanel'][not(@Orientation=('Horizontal'))]/@HorizontalAlignment[.='Center' or .='Left'],縦方向StackPanelではなく、内部のコントロールに対してHorizontalAlignmentを設定すべきです。
 WPFXA0209,Error,//*[name(.)='StackPanel'][@Orientation='Horizontal']/@VerticalAlignment[.='Center' or .='Top'],横方向StackPanelではなく、内部のコントロールに対してVerticalAlignmentを設定すべきです。
 WPFXA0210,Warning,//*[name(.)='StackPanel'][not(@Orientation='Horizontal')]/*/@VerticalAlignment,縦方向StackPanel配下のVerticalAlignmentは機能しません。
+WPFXA0211,Warning,//*[name(.)='StackPanel'][@Orientation='Horizontal']/*/@HorizontalAlignment,横方向StackPanel配下のHorizontalAlignmentは機能しません。
