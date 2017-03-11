@@ -1,0 +1,15 @@
+﻿<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
+		</Grid.ColumnDefinitions>
+		<TextBlock Grid.Column="0" Text="DummyText1" TextAlignment="Center" />
+	</Grid>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="Auto" />
+		</Grid.ColumnDefinitions>
+		<TextBlock Grid.Column="1" Text="DummyText2" TextAlignment="Right" />
+	</Grid>
+</StackPanel>

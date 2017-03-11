@@ -61,3 +61,12 @@ WPFXA0413,Warning,//*[name(.)='ScrollViewer']/@VerticalScrollBarVisibility[not(.
 WPFXA0414,Critical,//*[name(.)='ScrollViewer'][not(@Background)],"ScrollViewer.Background属性が有りません。マウスホイールに反応させるため、Background=""Transparent""を指定してください。"
 WPFXA0415,Warning,//*[name(.)='ScrollViewer'][@BorderThickness='0']/@BorderBrush,"ScrollViewer.BorderBrush属性があります。BorderThickness=""0""によってBorderは非表示になっているため、指定不要です"
 WPFXA0416,Warning,//*[name(.)='ScrollViewer'][not(@BorderThickness='0')]/@BorderBrush,ScrollViewer.BorderBrush属性があります。意図的でなければ指定を削除してください。
+WPFXA0501,Default,//*[name(.)='TextBlock']/@Visibility[.='Visible'],"TextBlock.Visibility=""Visible""はデフォルト値です。"
+WPFXA0502,Default,//*[name(.)='TextBlock']/@IsEnabled[.='True'],"TextBlock.IsEnabled=""True""はデフォルト値です。"
+WPFXA0503,Default,//*[name(.)='TextBlock']/@HorizontalAlignment,TextBlock.HorizontalAlignmentを使用するよりもTextAlignmentを使用します。
+WPFXA0504,Default,//*[name(.)='TextBlock']/@VerticalAlignment[.='Stretch'],"TextBlock.VerticalAlignment=""Stretch""はデフォルト値です。"
+WPFXA0505,Default,//*[name(.)='TextBlock']/@TextAlignment[.='Left'],"TextBlock.TextAlignment=""Left""はデフォルト値です。"
+WPFXA0506,Default,"//*[name(.)='TextBlock'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","TextBlock.Margin=""0""はデフォルト値です。"
+WPFXA0507,Critical,//*[name(.)='TextBlock'][not(@Text)][not(text())],TextBlock.Text属性がありません。
+WPFXA0509,Warning,//*[name(.)='Grid']/*[name(.)='Grid.ColumnDefinitions']/*[name(.)='ColumnDefinition'][@Width='Auto'][count(preceding-sibling::*)=parent::*/parent::*/*[@TextAlignment][not(number(@Grid.ColumnSpan)>1)]/@Grid.Column],"ColulmnDefinition.Width=""Auto""が指定されているため、該当列に存在する要素の""TextAlignment""の指定値は機能しません。"
+WPFXA0510,Warning,//*[name(.)='StackPanel'][@Orientation='Horizontal']/*/@TextAlignment,横方向StackPanel配下のTextAlignmentは機能しません。

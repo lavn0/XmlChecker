@@ -1,0 +1,29 @@
+﻿<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
+		</Grid.ColumnDefinitions>
+		<TextBlock Grid.Column="0" Text="DummyText1" />
+	</Grid>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="Auto" />
+		</Grid.ColumnDefinitions>
+		<TextBlock Grid.Column="1" Text="DummyText2" />
+	</Grid>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="Auto" />
+		</Grid.ColumnDefinitions>
+		<TextBlock Grid.Column="0" Grid.ColumnSpan="2" Text="Unable To Find 1" TextAlignment="Center" />
+	</Grid>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<TextBlock Grid.Column="0" Grid.ColumnSpan="2" Text="Unable To Find 2" TextAlignment="Center" />
+	</Grid>
+</StackPanel>
