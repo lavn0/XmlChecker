@@ -18,3 +18,4 @@ WPFXA0206,Warning,//*[name(.)='StackPanel'][@Orientation='Vertical'],"StackPanel
 WPFXA0207,Error,"//*[name(.)='StackPanel'][*[not(starts-with(local-name(.),'StackPanel.'))][1]][not(*[not(starts-with(local-name(.),'StackPanel.'))][2])]",StackPanelの子要素が1つしかありません。子要素を複数持たないStackPanelは不要な入れ子なので解除するか、Borderに変更できます。
 WPFXA0208,Error,//*[name(.)='StackPanel'][not(@Orientation=('Horizontal'))]/@HorizontalAlignment[.='Center' or .='Left'],縦方向StackPanelではなく、内部のコントロールに対してHorizontalAlignmentを設定すべきです。
 WPFXA0209,Error,//*[name(.)='StackPanel'][@Orientation='Horizontal']/@VerticalAlignment[.='Center' or .='Top'],横方向StackPanelではなく、内部のコントロールに対してVerticalAlignmentを設定すべきです。
+WPFXA0210,Warning,//*[name(.)='StackPanel'][not(@Orientation='Horizontal')]/*/@VerticalAlignment,縦方向StackPanel配下のVerticalAlignmentは機能しません。

@@ -492,5 +492,29 @@ namespace UnitTestProject
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
 			Assert.AreEqual(2, errorInstances.Count);
 		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0210_OK.xaml", "WpfXaml")]
+		public void WPFXA0210_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0210", "Warning", @"//*[name(.)='StackPanel'][not(@Orientation='Horizontal')]/*/@VerticalAlignment", @"縦方向StackPanel配下のVerticalAlignmentは機能しません。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0210_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0210_NG4.xaml", "WpfXaml")]
+		public void WPFXA0210_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0210", "Warning", @"//*[name(.)='StackPanel'][not(@Orientation='Horizontal')]/*/@VerticalAlignment", @"縦方向StackPanel配下のVerticalAlignmentは機能しません。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0210_NG4.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(4, errorInstances.Count);
+		}
 	}
 }

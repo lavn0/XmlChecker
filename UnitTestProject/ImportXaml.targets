@@ -1160,5 +1160,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>WPFXA0209_NG2.xaml</DependentUpon>
     </Content>
+    <Content Include="WpfXaml\WPFXA0210_NG4.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0210_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>WPFXA0210_NG4.xaml</DependentUpon>
+    </Content>
   </ItemGroup>
 </Project>
