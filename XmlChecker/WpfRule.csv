@@ -94,3 +94,13 @@ WPFXA0711,Info,"//*[name(.)='CheckBox'][not(@IsEnabled='False')][@*[local-name()
 WPFXA0712,Critical,"//*[name(.)='CheckBox'][not(@IsEnabled='False')][not(@*[local-name()='Name'])]/@IsChecked[contains(.,'Mode=')][not(contains(.,'TwoWay'))]",名前なしコントロールの読み取り専用ではないCheckBox.IsChecked属性にTwoWay以外のバインディングが指定されています。
 WPFXA0713,Error,"//*[name(.)='CheckBox']/@Content[starts-with(.,' ') or starts-with(.,'　')]",CheckBox.Content属性の先頭に空白があります
 WPFXA0714,Error,"//*[name(.)='CheckBox']/@Content[substring(.,string-length())=' ' or substring(.,string-length())='　']",CheckBox.Content属性の末尾に空白があります
+WPFXA0801,Default,//*[name(.)='Button']/@Visibility[.='Visible'],"Button.Visibility=""Visible""はデフォルト値です。"
+WPFXA0802,Default,//*[name(.)='Button']/@IsEnabled[.='True'],"Button.IsEnabled=""True""はデフォルト値です。"
+WPFXA0803,Default,//*[name(.)='Button']/@HorizontalAlignment[.='Stretch'],"Button.HorizontalAlignment=""Stretch""はデフォルト値です。"
+WPFXA0804,Default,//*[name(.)='Button']/@VerticalAlignment[.='Stretch'],"Button.VerticalAlignment=""Stretch""はデフォルト値です。"
+WPFXA0805,Default,//*[name(.)='Button']/@HorizontalContentAlignment[.='Center'],"Button.HorizontalContentAlignment=""Center""はデフォルト値です。"
+WPFXA0806,Default,//*[name(.)='Button']/@VerticalContentAlignment[.='Center'],"Button.VerticalContentAlignment=""Center""はデフォルト値です。"
+WPFXA0807,Default,"//*[name(.)='Button'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","Button.Margin=""0""はデフォルト値です。"
+WPFXA0808,Default,"//*[name(.)='Button'][not(@Name)]/@Padding[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']","Button.Padding=""1""はデフォルト値です。"
+WPFXA0809,Default,"//*[name(.)='Button'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']","Button.BorderThickness=""1""はデフォルト値です。"
+WPFXA0810,Default,"//*[name(.)='Button'][not(@Name)]/@Background[.='#FF1F3B53' or .='#1F3B53']","Button.Background=""#FF1F3B53""はデフォルト値です。"

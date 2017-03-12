@@ -2328,5 +2328,245 @@ namespace UnitTestProject
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
 			Assert.AreEqual(2, errorInstances.Count);
 		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0801_OK.xaml", "WpfXaml")]
+		public void WPFXA0801_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0801", "Default", @"//*[name(.)='Button']/@Visibility[.='Visible']", @"Button.Visibility=""Visible""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0801_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0801_NG1.xaml", "WpfXaml")]
+		public void WPFXA0801_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0801", "Default", @"//*[name(.)='Button']/@Visibility[.='Visible']", @"Button.Visibility=""Visible""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0801_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0802_OK.xaml", "WpfXaml")]
+		public void WPFXA0802_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0802", "Default", @"//*[name(.)='Button']/@IsEnabled[.='True']", @"Button.IsEnabled=""True""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0802_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0802_NG1.xaml", "WpfXaml")]
+		public void WPFXA0802_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0802", "Default", @"//*[name(.)='Button']/@IsEnabled[.='True']", @"Button.IsEnabled=""True""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0802_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0803_OK.xaml", "WpfXaml")]
+		public void WPFXA0803_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0803", "Default", @"//*[name(.)='Button']/@HorizontalAlignment[.='Stretch']", @"Button.HorizontalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0803_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0803_NG1.xaml", "WpfXaml")]
+		public void WPFXA0803_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0803", "Default", @"//*[name(.)='Button']/@HorizontalAlignment[.='Stretch']", @"Button.HorizontalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0803_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0804_OK.xaml", "WpfXaml")]
+		public void WPFXA0804_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0804", "Default", @"//*[name(.)='Button']/@VerticalAlignment[.='Stretch']", @"Button.VerticalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0804_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0804_NG1.xaml", "WpfXaml")]
+		public void WPFXA0804_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0804", "Default", @"//*[name(.)='Button']/@VerticalAlignment[.='Stretch']", @"Button.VerticalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0804_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0805_OK.xaml", "WpfXaml")]
+		public void WPFXA0805_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0805", "Default", @"//*[name(.)='Button']/@HorizontalContentAlignment[.='Center']", @"Button.HorizontalContentAlignment=""Center""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0805_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0805_NG1.xaml", "WpfXaml")]
+		public void WPFXA0805_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0805", "Default", @"//*[name(.)='Button']/@HorizontalContentAlignment[.='Center']", @"Button.HorizontalContentAlignment=""Center""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0805_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0806_OK.xaml", "WpfXaml")]
+		public void WPFXA0806_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0806", "Default", @"//*[name(.)='Button']/@VerticalContentAlignment[.='Center']", @"Button.VerticalContentAlignment=""Center""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0806_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0806_NG1.xaml", "WpfXaml")]
+		public void WPFXA0806_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0806", "Default", @"//*[name(.)='Button']/@VerticalContentAlignment[.='Center']", @"Button.VerticalContentAlignment=""Center""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0806_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0807_OK.xaml", "WpfXaml")]
+		public void WPFXA0807_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0807", "Default", @"//*[name(.)='Button'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"Button.Margin=""0""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0807_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0807_NG5.xaml", "WpfXaml")]
+		public void WPFXA0807_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0807", "Default", @"//*[name(.)='Button'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"Button.Margin=""0""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0807_NG5.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(5, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0808_OK.xaml", "WpfXaml")]
+		public void WPFXA0808_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0808", "Default", @"//*[name(.)='Button'][not(@Name)]/@Padding[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"Button.Padding=""1""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0808_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0808_NG5.xaml", "WpfXaml")]
+		public void WPFXA0808_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0808", "Default", @"//*[name(.)='Button'][not(@Name)]/@Padding[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"Button.Padding=""1""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0808_NG5.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(5, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0809_OK.xaml", "WpfXaml")]
+		public void WPFXA0809_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0809", "Default", @"//*[name(.)='Button'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"Button.BorderThickness=""1""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0809_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0809_NG5.xaml", "WpfXaml")]
+		public void WPFXA0809_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0809", "Default", @"//*[name(.)='Button'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"Button.BorderThickness=""1""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0809_NG5.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(5, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0810_OK.xaml", "WpfXaml")]
+		public void WPFXA0810_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0810", "Default", @"//*[name(.)='Button'][not(@Name)]/@Background[.='#FF1F3B53' or .='#1F3B53']", @"Button.Background=""#FF1F3B53""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0810_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0810_NG2.xaml", "WpfXaml")]
+		public void WPFXA0810_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0810", "Default", @"//*[name(.)='Button'][not(@Name)]/@Background[.='#FF1F3B53' or .='#1F3B53']", @"Button.Background=""#FF1F3B53""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0810_NG2.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(2, errorInstances.Count);
+		}
 	}
 }
