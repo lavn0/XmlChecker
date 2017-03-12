@@ -1,0 +1,6 @@
+﻿<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<ListBox />
+	<ListBox ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
+	<ListBox ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
+	<ListBox ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+</StackPanel>

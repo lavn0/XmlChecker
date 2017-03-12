@@ -1,0 +1,5 @@
+﻿<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<ListBox Background="Red" />
+	<ListBox Background="#FFFF0000" />
+	<ListBox Background="#FF0000" />
+</StackPanel>

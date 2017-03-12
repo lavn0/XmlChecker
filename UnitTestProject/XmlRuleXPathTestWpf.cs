@@ -2568,5 +2568,293 @@ namespace UnitTestProject
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
 			Assert.AreEqual(2, errorInstances.Count);
 		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0901_OK.xaml", "WpfXaml")]
+		public void WPFXA0901_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0901", "Default", @"//*[name(.)='ListBox']/@Visibility[.='Visible']", @"ListBox.Visibility=""Visible""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0901_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0901_NG1.xaml", "WpfXaml")]
+		public void WPFXA0901_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0901", "Default", @"//*[name(.)='ListBox']/@Visibility[.='Visible']", @"ListBox.Visibility=""Visible""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0901_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0902_OK.xaml", "WpfXaml")]
+		public void WPFXA0902_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0902", "Default", @"//*[name(.)='ListBox']/@IsEnabled[.='True']", @"ListBox.IsEnabled=""True""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0902_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0902_NG1.xaml", "WpfXaml")]
+		public void WPFXA0902_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0902", "Default", @"//*[name(.)='ListBox']/@IsEnabled[.='True']", @"ListBox.IsEnabled=""True""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0902_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0903_OK.xaml", "WpfXaml")]
+		public void WPFXA0903_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0903", "Default", @"//*[name(.)='ListBox']/@HorizontalAlignment[.='Stretch']", @"ListBox.HorizontalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0903_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0903_NG1.xaml", "WpfXaml")]
+		public void WPFXA0903_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0903", "Default", @"//*[name(.)='ListBox']/@HorizontalAlignment[.='Stretch']", @"ListBox.HorizontalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0903_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0904_OK.xaml", "WpfXaml")]
+		public void WPFXA0904_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0904", "Default", @"//*[name(.)='ListBox']/@VerticalAlignment[.='Stretch']", @"ListBox.VerticalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0904_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0904_NG1.xaml", "WpfXaml")]
+		public void WPFXA0904_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0904", "Default", @"//*[name(.)='ListBox']/@VerticalAlignment[.='Stretch']", @"ListBox.VerticalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0904_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0905_OK.xaml", "WpfXaml")]
+		public void WPFXA0905_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0905", "Default", @"//*[name(.)='ListBox']/@HorizontalContentAlignment[.='Left']", @"ListBox.HorizontalContentAlignment=""Left""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0905_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0905_NG1.xaml", "WpfXaml")]
+		public void WPFXA0905_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0905", "Default", @"//*[name(.)='ListBox']/@HorizontalContentAlignment[.='Left']", @"ListBox.HorizontalContentAlignment=""Left""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0905_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0906_OK.xaml", "WpfXaml")]
+		public void WPFXA0906_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0906", "Default", @"//*[name(.)='ListBox']/@VerticalContentAlignment[.='Center']", @"ListBox.VerticalContentAlignment=""Center""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0906_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0906_NG1.xaml", "WpfXaml")]
+		public void WPFXA0906_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0906", "Default", @"//*[name(.)='ListBox']/@VerticalContentAlignment[.='Center']", @"ListBox.VerticalContentAlignment=""Center""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0906_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0907_OK.xaml", "WpfXaml")]
+		public void WPFXA0907_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0907", "Default", @"//*[name(.)='ListBox'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"ListBox.Margin=""0""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0907_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0907_NG5.xaml", "WpfXaml")]
+		public void WPFXA0907_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0907", "Default", @"//*[name(.)='ListBox'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"ListBox.Margin=""0""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0907_NG5.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(5, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0908_OK.xaml", "WpfXaml")]
+		public void WPFXA0908_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0908", "Default", @"//*[name(.)='ListBox'][not(@Name)]/@Padding[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"ListBox.Padding=""0""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0908_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0908_NG5.xaml", "WpfXaml")]
+		public void WPFXA0908_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0908", "Default", @"//*[name(.)='ListBox'][not(@Name)]/@Padding[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"ListBox.Padding=""0""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0908_NG5.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(5, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0909_OK.xaml", "WpfXaml")]
+		public void WPFXA0909_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0909", "Default", @"//*[name(.)='ListBox'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"ListBox.BorderThickness=""1""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0909_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0909_NG5.xaml", "WpfXaml")]
+		public void WPFXA0909_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0909", "Default", @"//*[name(.)='ListBox'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"ListBox.BorderThickness=""1""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0909_NG5.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(5, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0910_OK.xaml", "WpfXaml")]
+		public void WPFXA0910_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0910", "Default", @"//*[name(.)='ListBox'][not(@Name)]/@Background[.='White' or .='#FFFFFFFF' or .='#FFFFFF']", @"ListBox.Background=""White""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0910_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0910_NG3.xaml", "WpfXaml")]
+		public void WPFXA0910_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0910", "Default", @"//*[name(.)='ListBox'][not(@Name)]/@Background[.='White' or .='#FFFFFFFF' or .='#FFFFFF']", @"ListBox.Background=""White""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0910_NG3.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(3, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0911_OK.xaml", "WpfXaml")]
+		public void WPFXA0911_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0911", "Default", @"//*[name(.)='ListBox'][not(@Name)]/@*[name(.)='ScrollViewer.HorizontalScrollBarVisibility'][.='Auto']", @"ListBox.HorizontalScrollBarVisibility=""Auto""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0911_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0911_NG1.xaml", "WpfXaml")]
+		public void WPFXA0911_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0911", "Default", @"//*[name(.)='ListBox'][not(@Name)]/@*[name(.)='ScrollViewer.HorizontalScrollBarVisibility'][.='Auto']", @"ListBox.HorizontalScrollBarVisibility=""Auto""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0911_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0912_OK.xaml", "WpfXaml")]
+		public void WPFXA0912_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0912", "Default", @"//*[name(.)='ListBox'][not(@Name)]/@*[name(.)='ScrollViewer.VerticalScrollBarVisibility'][.='Auto']", @"ListBox.VerticalScrollBarVisibility=""Auto""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0912_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0912_NG1.xaml", "WpfXaml")]
+		public void WPFXA0912_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0912", "Default", @"//*[name(.)='ListBox'][not(@Name)]/@*[name(.)='ScrollViewer.VerticalScrollBarVisibility'][.='Auto']", @"ListBox.VerticalScrollBarVisibility=""Auto""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0912_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
 	}
 }

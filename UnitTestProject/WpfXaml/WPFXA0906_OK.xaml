@@ -1,0 +1,32 @@
+﻿<StackPanel
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	Orientation="Horizontal">
+	<StackPanel.Resources>
+		<Style TargetType="ListBoxItem">
+			<Setter Property="Height" Value="50" />
+			<Setter Property="BorderBrush" Value="Red" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Setter Property="Margin" Value="2" />
+		</Style>
+	</StackPanel.Resources>
+	<ListBox Width="200">
+		<ListBoxItem Content="{Binding VerticalContentAlignment, RelativeSource={RelativeSource Mode=Self}}"/>
+		<ListBoxItem Content="ListBoxItem1-1" />
+		<ListBoxItem Content="ListBoxItem1-2" />
+	</ListBox>
+	<ListBox Width="200" VerticalContentAlignment="Stretch">
+		<ListBoxItem Content="{Binding VerticalContentAlignment, RelativeSource={RelativeSource Mode=Self}}"/>
+		<ListBoxItem Content="ListBoxItem1-2" />
+		<ListBoxItem Content="ListBoxItem2-2" />
+	</ListBox>
+	<ListBox Width="200" VerticalContentAlignment="Top">
+		<ListBoxItem Content="{Binding VerticalContentAlignment, RelativeSource={RelativeSource Mode=Self}}"/>
+		<ListBoxItem Content="ListBoxItem3-1" />
+		<ListBoxItem Content="ListBoxItem3-2" />
+	</ListBox>
+	<ListBox Width="200" VerticalContentAlignment="Bottom">
+		<ListBoxItem Content="{Binding VerticalContentAlignment, RelativeSource={RelativeSource Mode=Self}}"/>
+		<ListBoxItem Content="ListBoxItem4-1" />
+		<ListBoxItem Content="ListBoxItem4-2" />
+	</ListBox>
+</StackPanel>
