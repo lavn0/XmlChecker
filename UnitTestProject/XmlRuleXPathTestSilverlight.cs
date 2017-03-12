@@ -2010,7 +2010,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"SilverlightXaml\XA0606_OK.xaml", "SilverlightXaml")]
 		public void XA0606_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0606", "Default", @"//*[name(.)='TextBox'][not(@Name)]/@Padding[.='2' or .='2,2' or .='2 2' or .='2,2,2,2' or .='2 2 2 2']", @"TextBox.Padding=""4""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0606", "Default", @"//*[name(.)='TextBox'][not(@Name)]/@Padding[.='2' or .='2,2' or .='2 2' or .='2,2,2,2' or .='2 2 2 2']", @"TextBox.Padding=""2""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"SilverlightXaml\XA0606_OK.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
@@ -2022,7 +2022,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"SilverlightXaml\XA0606_NG5.xaml", "SilverlightXaml")]
 		public void XA0606_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0606", "Default", @"//*[name(.)='TextBox'][not(@Name)]/@Padding[.='2' or .='2,2' or .='2 2' or .='2,2,2,2' or .='2 2 2 2']", @"TextBox.Padding=""4""はデフォルト値です。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA0606", "Default", @"//*[name(.)='TextBox'][not(@Name)]/@Padding[.='2' or .='2,2' or .='2 2' or .='2,2,2,2' or .='2 2 2 2']", @"TextBox.Padding=""2""はデフォルト値です。", });
 			var xaml = File.ReadAllText(@"SilverlightXaml\XA0606_NG5.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();

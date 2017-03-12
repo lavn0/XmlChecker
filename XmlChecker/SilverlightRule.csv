@@ -81,7 +81,7 @@ XA0602,Default,//*[name(.)='TextBox']/@IsEnabled[.='True'],"IsEnabled=""True""は
 XA0603,Default,//*[name(.)='TextBox']/@HorizontalAlignment[.='Stretch'],"HorizontalAlignment=""Stretch""はデフォルト値です。"
 XA0604,Default,//*[name(.)='TextBox']/@VerticalAlignment[.='Stretch'],"VerticalAlignment=""Stretch""はデフォルト値です。"
 XA0605,Default,"//*[name(.)='TextBox'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","TextBox.Margin=""0""はデフォルト値です。"
-XA0606,Default,"//*[name(.)='TextBox'][not(@Name)]/@Padding[.='2' or .='2,2' or .='2 2' or .='2,2,2,2' or .='2 2 2 2']","TextBox.Padding=""4""はデフォルト値です。"
+XA0606,Default,"//*[name(.)='TextBox'][not(@Name)]/@Padding[.='2' or .='2,2' or .='2 2' or .='2,2,2,2' or .='2 2 2 2']","TextBox.Padding=""2""はデフォルト値です。"
 XA0607,Default,"//*[name(.)='TextBox']/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']","TextBox.BorderThickness=""1""はデフォルト値です。"
 XA0608,Critical,//*[name(.)='TextBox'][not(@Text)][not(text())],TextBox.Text属性がありません。
 XA0609,Critical,"//*[name(.)='TextBox'][not(@IsReadOnly='True')][not(@IsEnabled='False')]/@Text[not(contains(.,'TwoWay'))]",読み取り専用ではないTextBox.Text属性がTwoWayバインディングされていません。
