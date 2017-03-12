@@ -1,0 +1,14 @@
+﻿<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<ComboBox>
+		<ComboBoxItem Content="ComboBoxItem1" />
+		<ComboBoxItem Content="ComboBoxItem2" />
+		<ComboBoxItem Content="ComboBoxItem3" />
+		<ComboBoxItem Content="ComboBoxItem4" />
+	</ComboBox>
+	<ComboBox IsEnabled="False">
+		<ComboBoxItem Content="ComboBoxItem1" />
+		<ComboBoxItem Content="ComboBoxItem2" />
+		<ComboBoxItem Content="ComboBoxItem3" />
+		<ComboBoxItem Content="ComboBoxItem4" />
+	</ComboBox>
+</StackPanel>

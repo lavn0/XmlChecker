@@ -1,0 +1,8 @@
+﻿<StackPanel
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	Width="200">
+	<ComboBox HorizontalAlignment="Stretch">
+		<ComboBoxItem Content="ComboBoxItem1"/>
+		<ComboBoxItem Content="ComboBoxItem2"/>
+	</ComboBox>
+</StackPanel>

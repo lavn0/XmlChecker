@@ -2856,5 +2856,221 @@ namespace UnitTestProject
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
 			Assert.AreEqual(1, errorInstances.Count);
 		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1001_OK.xaml", "WpfXaml")]
+		public void WPFXA1001_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1001", "Default", @"//*[name(.)='ComboBox']/@Visibility[.='Visible']", @"ComboBox.Visibility=""Visible""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1001_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1001_NG1.xaml", "WpfXaml")]
+		public void WPFXA1001_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1001", "Default", @"//*[name(.)='ComboBox']/@Visibility[.='Visible']", @"ComboBox.Visibility=""Visible""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1001_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1002_OK.xaml", "WpfXaml")]
+		public void WPFXA1002_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1002", "Default", @"//*[name(.)='ComboBox']/@IsEnabled[.='True']", @"ComboBox.IsEnabled=""True""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1002_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1002_NG1.xaml", "WpfXaml")]
+		public void WPFXA1002_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1002", "Default", @"//*[name(.)='ComboBox']/@IsEnabled[.='True']", @"ComboBox.IsEnabled=""True""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1002_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1003_OK.xaml", "WpfXaml")]
+		public void WPFXA1003_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1003", "Default", @"//*[name(.)='ComboBox']/@HorizontalAlignment[.='Stretch']", @"ComboBox.HorizontalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1003_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1003_NG1.xaml", "WpfXaml")]
+		public void WPFXA1003_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1003", "Default", @"//*[name(.)='ComboBox']/@HorizontalAlignment[.='Stretch']", @"ComboBox.HorizontalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1003_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1004_OK.xaml", "WpfXaml")]
+		public void WPFXA1004_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1004", "Default", @"//*[name(.)='ComboBox']/@VerticalAlignment[.='Stretch']", @"ComboBox.VerticalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1004_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1004_NG1.xaml", "WpfXaml")]
+		public void WPFXA1004_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1004", "Default", @"//*[name(.)='ComboBox']/@VerticalAlignment[.='Stretch']", @"ComboBox.VerticalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1004_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1005_OK.xaml", "WpfXaml")]
+		public void WPFXA1005_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1005", "Default", @"//*[name(.)='ComboBox']/@HorizontalContentAlignment[.='Left']", @"ComboBox.HorizontalContentAlignment=""Left""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1005_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1005_NG1.xaml", "WpfXaml")]
+		public void WPFXA1005_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1005", "Default", @"//*[name(.)='ComboBox']/@HorizontalContentAlignment[.='Left']", @"ComboBox.HorizontalContentAlignment=""Left""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1005_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1006_OK.xaml", "WpfXaml")]
+		public void WPFXA1006_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1006", "Default", @"//*[name(.)='ComboBox']/@VerticalContentAlignment[.='Top']", @"ComboBox.VerticalContentAlignment=""Top""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1006_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1006_NG1.xaml", "WpfXaml")]
+		public void WPFXA1006_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1006", "Default", @"//*[name(.)='ComboBox']/@VerticalContentAlignment[.='Top']", @"ComboBox.VerticalContentAlignment=""Top""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1006_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1007_OK.xaml", "WpfXaml")]
+		public void WPFXA1007_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1007", "Default", @"//*[name(.)='ComboBox'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"ComboBox.Margin=""0""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1007_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1007_NG5.xaml", "WpfXaml")]
+		public void WPFXA1007_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1007", "Default", @"//*[name(.)='ComboBox'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"ComboBox.Margin=""0""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1007_NG5.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(5, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1008_OK.xaml", "WpfXaml")]
+		public void WPFXA1008_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1008", "Default", @"//*[name(.)='ComboBox'][not(@Name)]/@Padding[.='6,3,5,3' or .='6 3 5 3']", @"ComboBox.Padding=""6,3,5,3""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1008_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1008_NG2.xaml", "WpfXaml")]
+		public void WPFXA1008_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1008", "Default", @"//*[name(.)='ComboBox'][not(@Name)]/@Padding[.='6,3,5,3' or .='6 3 5 3']", @"ComboBox.Padding=""6,3,5,3""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1008_NG2.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(2, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1009_OK.xaml", "WpfXaml")]
+		public void WPFXA1009_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1009", "Default", @"//*[name(.)='ComboBox'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"ComboBox.BorderThickness=""1""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1009_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA1009_NG5.xaml", "WpfXaml")]
+		public void WPFXA1009_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA1009", "Default", @"//*[name(.)='ComboBox'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"ComboBox.BorderThickness=""1""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA1009_NG5.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(5, errorInstances.Count);
+		}
 	}
 }

@@ -1,0 +1,19 @@
+﻿<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<ComboBox Width="200">
+		<ComboBoxItem Content="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource Mode=Self}}"/>
+		<ComboBoxItem Content="ComboBoxItem1-1" />
+		<ComboBoxItem Content="ComboBoxItem1-2" />
+	</ComboBox>
+	<ComboBox Width="200" HorizontalContentAlignment="Stretch">
+		<ComboBoxItem Content="ComboBoxItem1-2" />
+		<ComboBoxItem Content="ComboBoxItem2-2" />
+	</ComboBox>
+	<ComboBox Width="200" HorizontalContentAlignment="Center">
+		<ComboBoxItem Content="ComboBoxItem3-1" />
+		<ComboBoxItem Content="ComboBoxItem3-2" />
+	</ComboBox>
+	<ComboBox Width="200" HorizontalContentAlignment="Right">
+		<ComboBoxItem Content="ComboBoxItem4-1" />
+		<ComboBoxItem Content="ComboBoxItem4-2" />
+	</ComboBox>
+</StackPanel>

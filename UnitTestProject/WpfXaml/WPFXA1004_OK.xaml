@@ -1,0 +1,21 @@
+﻿<StackPanel
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	Orientation="Horizontal"
+	Height="100">
+	<ComboBox>
+		<ComboBoxItem Content="ComboBoxItem1-1"/>
+		<ComboBoxItem Content="ComboBoxItem1-2"/>
+	</ComboBox>
+	<ComboBox VerticalAlignment="Top">
+		<ComboBoxItem Content="ComboBoxItem2-1"/>
+		<ComboBoxItem Content="ComboBoxItem2-2"/>
+	</ComboBox>
+	<ComboBox VerticalAlignment="Center">
+		<ComboBoxItem Content="ComboBoxItem3-1"/>
+		<ComboBoxItem Content="ComboBoxItem3-2"/>
+	</ComboBox>
+	<ComboBox VerticalAlignment="Bottom">
+		<ComboBoxItem Content="ComboBoxItem4-1"/>
+		<ComboBoxItem Content="ComboBoxItem4-2"/>
+	</ComboBox>
+</StackPanel>
