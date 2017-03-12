@@ -70,3 +70,13 @@ WPFXA0506,Default,"//*[name(.)='TextBlock'][not(@Name)]/@Margin[.='0' or .='0,0'
 WPFXA0507,Critical,//*[name(.)='TextBlock'][not(@Text)][not(text())],TextBlock.Text属性がありません。
 WPFXA0509,Warning,//*[name(.)='Grid']/*[name(.)='Grid.ColumnDefinitions']/*[name(.)='ColumnDefinition'][@Width='Auto'][count(preceding-sibling::*)=parent::*/parent::*/*[@TextAlignment][not(number(@Grid.ColumnSpan)>1)]/@Grid.Column],"ColulmnDefinition.Width=""Auto""が指定されているため、該当列に存在する要素の""TextAlignment""の指定値は機能しません。"
 WPFXA0510,Warning,//*[name(.)='StackPanel'][@Orientation='Horizontal']/*/@TextAlignment,横方向StackPanel配下のTextAlignmentは機能しません。
+WPFXA0601,Default,//*[name(.)='TextBox']/@Visibility[.='Visible'],"Visibility=""Visible""はデフォルト値です。"
+WPFXA0602,Default,//*[name(.)='TextBox']/@IsEnabled[.='True'],"IsEnabled=""True""はデフォルト値です。"
+WPFXA0603,Default,//*[name(.)='TextBox']/@HorizontalAlignment[.='Stretch'],"HorizontalAlignment=""Stretch""はデフォルト値です。"
+WPFXA0604,Default,//*[name(.)='TextBox']/@VerticalAlignment[.='Stretch'],"VerticalAlignment=""Stretch""はデフォルト値です。"
+WPFXA0605,Default,"//*[name(.)='TextBox'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","TextBox.Margin=""0""はデフォルト値です。"
+WPFXA0606,Default,"//*[name(.)='TextBox'][not(@Name)]/@Padding[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","TextBox.Padding=""2""はデフォルト値です。"
+WPFXA0607,Default,"//*[name(.)='TextBox']/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']","TextBox.BorderThickness=""1""はデフォルト値です。"
+WPFXA0608,Critical,//*[name(.)='TextBox'][not(@Text)][not(text())],TextBox.Text属性がありません。
+WPFXA0609,Critical,"//*[name(.)='TextBox'][not(@IsReadOnly='True')][not(@IsEnabled='False')]/@Text[contains(.,'Mode=')][not(contains(.,'TwoWay'))]",読み取り専用ではないTextBox.Text属性にTwoWay以外のバインディングが指定されています。
+WPFXA0611,Error,//*[name(.)='TextBox'][not(@MaxLength)][parent::*][not(@IsReadOnly='True') and not(@IsEnabled='False')],TextBox.MaxLengthが設定されていません。

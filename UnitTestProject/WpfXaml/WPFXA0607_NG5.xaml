@@ -1,0 +1,7 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<TextBox Text="{Binding DummyText, Mode=TwoWay}" BorderThickness="1" />
+	<TextBox Text="{Binding DummyText, Mode=TwoWay}" BorderThickness="1 1" />
+	<TextBox Text="{Binding DummyText, Mode=TwoWay}" BorderThickness="1,1" />
+	<TextBox Text="{Binding DummyText, Mode=TwoWay}" BorderThickness="1 1 1 1" />
+	<TextBox Text="{Binding DummyText, Mode=TwoWay}" BorderThickness="1,1,1,1" />
+</Grid>

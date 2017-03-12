@@ -1,0 +1,4 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<TextBox Text="{Binding DummyText, Mode=TwoWay}" />
+	<TextBox Text="{Binding DummyText, Mode=TwoWay}" Visibility="Collapsed" />
+</Grid>
