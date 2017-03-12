@@ -1,0 +1,5 @@
+﻿<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<CheckBox IsChecked="{Binding DummyFlag, Mode=TwoWay}" Content="Contet" />
+	<CheckBox IsChecked="{Binding DummyFlag, Mode=TwoWay}" Content="Contet" Background="Transparent" />
+	<CheckBox IsChecked="{Binding DummyFlag, Mode=TwoWay}" Content="Contet" Background="Red" />
+</StackPanel>

@@ -1,0 +1,4 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<CheckBox Content="　Content1" />
+	<CheckBox Content=" Content2" />
+</Grid>

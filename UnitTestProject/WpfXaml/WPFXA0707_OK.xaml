@@ -1,0 +1,7 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<CheckBox IsChecked="{Binding DummyFlag, Mode=TwoWay}" Margin="1" />
+	<CheckBox IsChecked="{Binding DummyFlag, Mode=TwoWay}" Margin="1 1" />
+	<CheckBox IsChecked="{Binding DummyFlag, Mode=TwoWay}" Margin="1,1" />
+	<CheckBox IsChecked="{Binding DummyFlag, Mode=TwoWay}" Margin="1 1 1 1" />
+	<CheckBox IsChecked="{Binding DummyFlag, Mode=TwoWay}" Margin="1,1,1,1" />
+</Grid>

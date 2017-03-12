@@ -1598,5 +1598,103 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>WPFXA0611_NG1.xaml</DependentUpon>
     </Content>
+    <Content Include="WpfXaml\WPFXA0701_NG1.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0701_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>WPFXA0701_NG1.xaml</DependentUpon>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0702_NG1.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0702_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>WPFXA0702_NG1.xaml</DependentUpon>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0703_NG1.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0703_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>WPFXA0703_NG1.xaml</DependentUpon>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0704_NG1.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0704_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>WPFXA0704_NG1.xaml</DependentUpon>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0705_NG1.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0705_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>WPFXA0705_NG1.xaml</DependentUpon>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0706_NG1.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0706_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>WPFXA0706_NG1.xaml</DependentUpon>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0707_NG5.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0707_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>WPFXA0707_NG5.xaml</DependentUpon>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0708_NG5.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0708_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>WPFXA0708_NG5.xaml</DependentUpon>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0709_NG5.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0709_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>WPFXA0709_NG5.xaml</DependentUpon>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0710_NG3.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0710_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>WPFXA0710_NG3.xaml</DependentUpon>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0711_NG2.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0711_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>WPFXA0711_NG2.xaml</DependentUpon>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0712_NG2.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0712_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>WPFXA0712_NG2.xaml</DependentUpon>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0713_NG2.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0713_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>WPFXA0713_NG2.xaml</DependentUpon>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0714_NG2.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfXaml\WPFXA0714_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>WPFXA0714_NG2.xaml</DependentUpon>
+    </Content>
   </ItemGroup>
 </Project>

@@ -80,3 +80,17 @@ WPFXA0607,Default,"//*[name(.)='TextBox']/@BorderThickness[.='1' or .='1,1' or .
 WPFXA0608,Critical,//*[name(.)='TextBox'][not(@Text)][not(text())],TextBox.Text属性がありません。
 WPFXA0609,Critical,"//*[name(.)='TextBox'][not(@IsReadOnly='True')][not(@IsEnabled='False')]/@Text[contains(.,'Mode=')][not(contains(.,'TwoWay'))]",読み取り専用ではないTextBox.Text属性にTwoWay以外のバインディングが指定されています。
 WPFXA0611,Error,//*[name(.)='TextBox'][not(@MaxLength)][parent::*][not(@IsReadOnly='True') and not(@IsEnabled='False')],TextBox.MaxLengthが設定されていません。
+WPFXA0701,Default,//*[name(.)='CheckBox']/@Visibility[.='Visible'],"CheckBox.Visibility=""Visible""はデフォルト値です。"
+WPFXA0702,Default,//*[name(.)='CheckBox']/@IsEnabled[.='True'],"CheckBox.IsEnabled=""True""はデフォルト値です。"
+WPFXA0703,Default,//*[name(.)='CheckBox']/@HorizontalAlignment[.='Stretch'],"CheckBox.HorizontalAlignment=""Stretch""はデフォルト値です。"
+WPFXA0704,Default,//*[name(.)='CheckBox']/@VerticalAlignment[.='Stretch'],"CheckBox.VerticalAlignment=""Stretch""はデフォルト値です。"
+WPFXA0705,Default,//*[name(.)='CheckBox']/@HorizontalContentAlignment[.='Left'],"CheckBox.HorizontalContentAlignment=""Left""はデフォルト値です。"
+WPFXA0706,Default,//*[name(.)='CheckBox']/@VerticalContentAlignment[.='Top'],"CheckBox.VerticalContentAlignment=""Top""はデフォルト値です。"
+WPFXA0707,Default,"//*[name(.)='CheckBox'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","CheckBox.Margin=""0""はデフォルト値です。"
+WPFXA0708,Default,"//*[name(.)='CheckBox'][not(@Name)]/@Padding[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","CheckBox.Padding=""0""はデフォルト値です。"
+WPFXA0709,Default,"//*[name(.)='CheckBox'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']","CheckBox.BorderThickness=""1""はデフォルト値です。"
+WPFXA0710,Default,"//*[name(.)='CheckBox'][not(@Name)]/@Background[.='#FFFFFFFF' or .='#FFFFFF' or .='White']","CheckBox.Background=""#FFFFFFFF""はデフォルト値です。"
+WPFXA0711,Info,"//*[name(.)='CheckBox'][not(@IsEnabled='False')][@*[local-name()='Name']]/@IsChecked[contains(.,'Mode=')][not(contains(.,'TwoWay'))]",名前付きコントロールの読み取り専用ではないCheckBox.IsChecked属性にTwoWay以外のバインディングが指定されています。
+WPFXA0712,Critical,"//*[name(.)='CheckBox'][not(@IsEnabled='False')][not(@*[local-name()='Name'])]/@IsChecked[contains(.,'Mode=')][not(contains(.,'TwoWay'))]",名前なしコントロールの読み取り専用ではないCheckBox.IsChecked属性にTwoWay以外のバインディングが指定されています。
+WPFXA0713,Error,"//*[name(.)='CheckBox']/@Content[starts-with(.,' ') or starts-with(.,'　')]",CheckBox.Content属性の先頭に空白があります
+WPFXA0714,Error,"//*[name(.)='CheckBox']/@Content[substring(.,string-length())=' ' or substring(.,string-length())='　']",CheckBox.Content属性の末尾に空白があります

@@ -1992,5 +1992,341 @@ namespace UnitTestProject
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
 			Assert.AreEqual(1, errorInstances.Count);
 		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0701_OK.xaml", "WpfXaml")]
+		public void WPFXA0701_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0701", "Default", @"//*[name(.)='CheckBox']/@Visibility[.='Visible']", @"CheckBox.Visibility=""Visible""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0701_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0701_NG1.xaml", "WpfXaml")]
+		public void WPFXA0701_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0701", "Default", @"//*[name(.)='CheckBox']/@Visibility[.='Visible']", @"CheckBox.Visibility=""Visible""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0701_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0702_OK.xaml", "WpfXaml")]
+		public void WPFXA0702_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0702", "Default", @"//*[name(.)='CheckBox']/@IsEnabled[.='True']", @"CheckBox.IsEnabled=""True""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0702_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0702_NG1.xaml", "WpfXaml")]
+		public void WPFXA0702_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0702", "Default", @"//*[name(.)='CheckBox']/@IsEnabled[.='True']", @"CheckBox.IsEnabled=""True""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0702_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0703_OK.xaml", "WpfXaml")]
+		public void WPFXA0703_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0703", "Default", @"//*[name(.)='CheckBox']/@HorizontalAlignment[.='Stretch']", @"CheckBox.HorizontalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0703_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0703_NG1.xaml", "WpfXaml")]
+		public void WPFXA0703_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0703", "Default", @"//*[name(.)='CheckBox']/@HorizontalAlignment[.='Stretch']", @"CheckBox.HorizontalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0703_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0704_OK.xaml", "WpfXaml")]
+		public void WPFXA0704_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0704", "Default", @"//*[name(.)='CheckBox']/@VerticalAlignment[.='Stretch']", @"CheckBox.VerticalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0704_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0704_NG1.xaml", "WpfXaml")]
+		public void WPFXA0704_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0704", "Default", @"//*[name(.)='CheckBox']/@VerticalAlignment[.='Stretch']", @"CheckBox.VerticalAlignment=""Stretch""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0704_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0705_OK.xaml", "WpfXaml")]
+		public void WPFXA0705_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0705", "Default", @"//*[name(.)='CheckBox']/@HorizontalContentAlignment[.='Left']", @"CheckBox.HorizontalContentAlignment=""Left""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0705_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0705_NG1.xaml", "WpfXaml")]
+		public void WPFXA0705_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0705", "Default", @"//*[name(.)='CheckBox']/@HorizontalContentAlignment[.='Left']", @"CheckBox.HorizontalContentAlignment=""Left""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0705_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0706_OK.xaml", "WpfXaml")]
+		public void WPFXA0706_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0706", "Default", @"//*[name(.)='CheckBox']/@VerticalContentAlignment[.='Top']", @"CheckBox.VerticalContentAlignment=""Top""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0706_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0706_NG1.xaml", "WpfXaml")]
+		public void WPFXA0706_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0706", "Default", @"//*[name(.)='CheckBox']/@VerticalContentAlignment[.='Top']", @"CheckBox.VerticalContentAlignment=""Top""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0706_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(1, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0707_OK.xaml", "WpfXaml")]
+		public void WPFXA0707_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0707", "Default", @"//*[name(.)='CheckBox'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"CheckBox.Margin=""0""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0707_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0707_NG5.xaml", "WpfXaml")]
+		public void WPFXA0707_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0707", "Default", @"//*[name(.)='CheckBox'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"CheckBox.Margin=""0""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0707_NG5.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(5, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0708_OK.xaml", "WpfXaml")]
+		public void WPFXA0708_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0708", "Default", @"//*[name(.)='CheckBox'][not(@Name)]/@Padding[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"CheckBox.Padding=""0""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0708_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0708_NG5.xaml", "WpfXaml")]
+		public void WPFXA0708_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0708", "Default", @"//*[name(.)='CheckBox'][not(@Name)]/@Padding[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']", @"CheckBox.Padding=""0""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0708_NG5.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(5, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0709_OK.xaml", "WpfXaml")]
+		public void WPFXA0709_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0709", "Default", @"//*[name(.)='CheckBox'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"CheckBox.BorderThickness=""1""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0709_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0709_NG5.xaml", "WpfXaml")]
+		public void WPFXA0709_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0709", "Default", @"//*[name(.)='CheckBox'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']", @"CheckBox.BorderThickness=""1""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0709_NG5.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(5, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0710_OK.xaml", "WpfXaml")]
+		public void WPFXA0710_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0710", "Default", @"//*[name(.)='CheckBox'][not(@Name)]/@Background[.='#FFFFFFFF' or .='#FFFFFF' or .='White']", @"CheckBox.Background=""#FFFFFFFF""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0710_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0710_NG3.xaml", "WpfXaml")]
+		public void WPFXA0710_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0710", "Default", @"//*[name(.)='CheckBox'][not(@Name)]/@Background[.='#FFFFFFFF' or .='#FFFFFF' or .='White']", @"CheckBox.Background=""#FFFFFFFF""はデフォルト値です。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0710_NG3.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(3, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0711_OK.xaml", "WpfXaml")]
+		public void WPFXA0711_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0711", "Info", @"//*[name(.)='CheckBox'][not(@IsEnabled='False')][@*[local-name()='Name']]/@IsChecked[contains(.,'Mode=')][not(contains(.,'TwoWay'))]", @"名前付きコントロールの読み取り専用ではないCheckBox.IsChecked属性にTwoWay以外のバインディングが指定されています。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0711_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0711_NG2.xaml", "WpfXaml")]
+		public void WPFXA0711_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0711", "Info", @"//*[name(.)='CheckBox'][not(@IsEnabled='False')][@*[local-name()='Name']]/@IsChecked[contains(.,'Mode=')][not(contains(.,'TwoWay'))]", @"名前付きコントロールの読み取り専用ではないCheckBox.IsChecked属性にTwoWay以外のバインディングが指定されています。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0711_NG2.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(2, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0712_OK.xaml", "WpfXaml")]
+		public void WPFXA0712_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0712", "Critical", @"//*[name(.)='CheckBox'][not(@IsEnabled='False')][not(@*[local-name()='Name'])]/@IsChecked[contains(.,'Mode=')][not(contains(.,'TwoWay'))]", @"名前なしコントロールの読み取り専用ではないCheckBox.IsChecked属性にTwoWay以外のバインディングが指定されています。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0712_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0712_NG2.xaml", "WpfXaml")]
+		public void WPFXA0712_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0712", "Critical", @"//*[name(.)='CheckBox'][not(@IsEnabled='False')][not(@*[local-name()='Name'])]/@IsChecked[contains(.,'Mode=')][not(contains(.,'TwoWay'))]", @"名前なしコントロールの読み取り専用ではないCheckBox.IsChecked属性にTwoWay以外のバインディングが指定されています。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0712_NG2.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(2, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0713_OK.xaml", "WpfXaml")]
+		public void WPFXA0713_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0713", "Error", @"//*[name(.)='CheckBox']/@Content[starts-with(.,' ') or starts-with(.,'　')]", @"CheckBox.Content属性の先頭に空白があります", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0713_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0713_NG2.xaml", "WpfXaml")]
+		public void WPFXA0713_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0713", "Error", @"//*[name(.)='CheckBox']/@Content[starts-with(.,' ') or starts-with(.,'　')]", @"CheckBox.Content属性の先頭に空白があります", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0713_NG2.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(2, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0714_OK.xaml", "WpfXaml")]
+		public void WPFXA0714_OK()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0714", "Error", @"//*[name(.)='CheckBox']/@Content[substring(.,string-length())=' ' or substring(.,string-length())='　']", @"CheckBox.Content属性の末尾に空白があります", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0714_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(0, errorInstances.Count);
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA0714_NG2.xaml", "WpfXaml")]
+		public void WPFXA0714_NG()
+		{
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA0714", "Error", @"//*[name(.)='CheckBox']/@Content[substring(.,string-length())=' ' or substring(.,string-length())='　']", @"CheckBox.Content属性の末尾に空白があります", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA0714_NG2.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			Assert.AreEqual(2, errorInstances.Count);
+		}
 	}
 }
