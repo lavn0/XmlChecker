@@ -31,3 +31,15 @@ ErrorLevels|エラーとして扱うレベルを指定します。レベルはルールファイルで記述しま
 
 "XmlChecker.targets" ファイルがMSBuildタスクのサンプルとなります。
 このファイルはnugetパッケージ内で使用されています。
+
+### ルールファイルについて
+Silverlight向けのルールファイル(SilverlightRule.csv)とWPF向けのルールファイル(WpfRule.csv)が付属しています。  
+nugetでプロジェクトに取り込んだ場合は、プロジェクトの種類に応じて不要な方を削除して問題ありません。  
+ルールファイルは以下のようなフォーマットに従い、CSVで記述します。ヘッダはありません。  
+自由に書き換えが可能ですので、不要なルールを削除したり、必要なルールを追加して利用します。
+
+ID|レベル|XPath|メッセージ
+---|---|---
+WPFXA0101|Default|//*[name(.)='Border']/@Visibility[.='Visible']|Visibility="Visible"はデフォルト値です。
+WPFXA0102|Default|//*[name(.)='Border']/@IsEnabled[.='True']|IsEnabled="True"はデフォルト値です。
+
