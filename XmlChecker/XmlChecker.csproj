@@ -51,18 +51,16 @@
     <Compile Include="XmlRuleXPath.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\icon.png" />
+    <Content Include="Resources\icon.svg" />
     <Content Include="SilverlightRule.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="WpfRule.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="XmlChecker.targets" />
-    <None Include="XmlChecker.nuspec" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="icon.png" />
-    <None Include="icon.svg" />
+    <None Include="Resources\XmlChecker.targets" />
+    <None Include="Resources\XmlChecker.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
