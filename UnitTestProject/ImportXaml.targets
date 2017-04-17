@@ -1920,5 +1920,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>WPFXA1009_NG5.xaml</DependentUpon>
     </Content>
+    <Content Include="WpfXaml\WPFXA9999_NG2.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WpfXaml\WPFXA9999_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>WPFXA9999_NG2.xaml</DependentUpon>
+    </Content>
   </ItemGroup>
 </Project>
