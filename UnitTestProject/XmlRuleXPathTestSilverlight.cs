@@ -3504,5 +3504,19 @@ namespace UnitTestProject
 			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
 			Assert.AreEqual(5, errorInstances.Count);
 		}
+
+		[TestMethod]
+		[TestCategory("SilverlightRule")]
+		public void XA9999_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA9999)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("SilverlightRule")]
+		public void XA9999_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA9999)の異常系テストが作成されていません。");
+		}
 	}
 }

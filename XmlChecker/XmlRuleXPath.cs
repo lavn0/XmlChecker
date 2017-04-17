@@ -38,7 +38,9 @@ namespace XmlChecker
 			{
 				try
 				{
-					var evaluateResult = xdocument.XPathEvaluate(this.XPath) as IEnumerable<object>;
+					var resolver = new CustomContext();
+					resolver.AddNamespace("ext", "http://ext");
+					var evaluateResult = xdocument.XPathEvaluate(this.XPath, resolver) as IEnumerable<object>;
 					var result = evaluateResult.Cast<XObject>().ToList();
 					this.IsValid = true;
 					return result;
