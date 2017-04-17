@@ -49,8 +49,8 @@
     <Compile Include="ViolationUtility.cs" />
     <Compile Include="XmlCheckTask.cs" />
     <Compile Include="XmlRuleXPath.cs" />
-    <Compile Include="XPathExtension\CustomContent.cs" />
-    <Compile Include="XPathExtension\XPathRegExExtensionFunction.cs" />
+    <Compile Include="XPathExtension\CustomContext.cs" />
+    <Compile Include="XPathExtension\ContainsAnyFunction.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\icon.png" />

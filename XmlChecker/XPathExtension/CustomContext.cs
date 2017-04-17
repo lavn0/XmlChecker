@@ -12,7 +12,7 @@ namespace XmlChecker
 		{
 			switch (name)
 			{
-				case "contains-any": return new XPathRegExExtensionFunction();
+				case "contains-any": return new ContainsAnyFunction();
 			}
 
 			return null;

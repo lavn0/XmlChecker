@@ -3,14 +3,14 @@ using System.Xml.Xsl;
 
 namespace XmlChecker
 {
-	public class XPathRegExExtensionFunction : IXsltContextFunction
+	public class ContainsAnyFunction : IXsltContextFunction
 	{
 		public int Minargs => 2;
 		public int Maxargs => 2;
 		public XPathResultType[] ArgTypes => new[] { XPathResultType.Navigator, XPathResultType.Navigator, };
 		public XPathResultType ReturnType => XPathResultType.Boolean;
 
-		public XPathRegExExtensionFunction()
+		public ContainsAnyFunction()
 		{
 		}
 
