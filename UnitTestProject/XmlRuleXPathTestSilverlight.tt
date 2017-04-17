@@ -64,7 +64,7 @@ namespace UnitTestProject
 			var rule = new XmlRuleXPath(string.Empty, <#= okFiles.IndexOf(okFile) #>, new string[] { "<#= id #>", "<#= level #>", @"<#= xpath.Replace(@"""", @"""""") #>", @"<#= description.Replace(@"""", @"""""") #>", });
 			var xaml = File.ReadAllText(@"<#= filePath #>");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
-			var errorInstances = ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath)).Cast<XObject>().ToList();
+			var errorInstances = GetErrorInstances(xdoc, rule);
 			Assert.AreEqual(<#= key == "OK" ? 0 : ngCount #>, errorInstances.Count);
 		}
 <#
@@ -85,5 +85,12 @@ namespace UnitTestProject
 		}
 	}
 #>
+
+		private static List<XObject> GetErrorInstances(XDocument xdoc, XmlRuleXPath rule)
+		{
+			var resolver = new CustomContext();
+			resolver.AddNamespace("ext", "http://ext");
+			return ((IEnumerable<object>)xdoc.XPathEvaluate(rule.XPath, resolver)).Cast<XObject>().ToList();
+		}
 	}
 }

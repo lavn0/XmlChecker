@@ -1020,6 +1020,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>XA1109_NG5.xaml</DependentUpon>
     </Content>
+    <Content Include="SilverlightXaml\XA9999_NG2.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SilverlightXaml\XA9999_OK.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>XA9999_NG2.xaml</DependentUpon>
+    </Content>
     <Content Include="WpfXaml\WPFXA0101_NG1.xaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
