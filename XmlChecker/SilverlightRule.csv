@@ -143,4 +143,4 @@ XA1106,Default,//*[name(.)='ComboBox']/@VerticalContentAlignment[.='Top'],"Combo
 XA1107,Default,"//*[name(.)='ComboBox'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","ComboBox.Margin=""0""はデフォルト値です。"
 XA1108,Default,"//*[name(.)='ComboBox'][not(@Name)]/@Padding[.='6,2,25,2' or .='6 2 25 2']","ComboBox.Padding=""6,2,25,2""はデフォルト値です。"
 XA1109,Default,"//*[name(.)='ComboBox'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']","ComboBox.BorderThickness=""1""はデフォルト値です。"
-XA9999,Info,"//*[@*[local-name(.)='Key']][not(ext:contains-any(following::*/@*,string(@*[local-name(.)='Key'])))]",Keyが使用されていません。
+XA9999,Info,//@*[local-name(.)='Key'][not(ext:contains-any(parent::*/following::*/@*))],Keyが使用されていません。

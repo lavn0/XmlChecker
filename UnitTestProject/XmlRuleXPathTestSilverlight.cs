@@ -3510,7 +3510,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"SilverlightXaml\XA9999_OK.xaml", "SilverlightXaml")]
 		public void XA9999_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA9999", "Info", @"//*[@*[local-name(.)='Key']][not(ext:contains-any(following::*/@*,string(@*[local-name(.)='Key'])))]", @"Keyが使用されていません。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA9999", "Info", @"//@*[local-name(.)='Key'][not(ext:contains-any(parent::*/following::*/@*))]", @"Keyが使用されていません。", });
 			var xaml = File.ReadAllText(@"SilverlightXaml\XA9999_OK.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = GetErrorInstances(xdoc, rule);
@@ -3522,7 +3522,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"SilverlightXaml\XA9999_NG2.xaml", "SilverlightXaml")]
 		public void XA9999_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA9999", "Info", @"//*[@*[local-name(.)='Key']][not(ext:contains-any(following::*/@*,string(@*[local-name(.)='Key'])))]", @"Keyが使用されていません。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA9999", "Info", @"//@*[local-name(.)='Key'][not(ext:contains-any(parent::*/following::*/@*))]", @"Keyが使用されていません。", });
 			var xaml = File.ReadAllText(@"SilverlightXaml\XA9999_NG2.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = GetErrorInstances(xdoc, rule);

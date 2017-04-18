@@ -125,4 +125,4 @@ WPFXA1006,Default,//*[name(.)='ComboBox']/@VerticalContentAlignment[.='Top'],"Co
 WPFXA1007,Default,"//*[name(.)='ComboBox'][not(@Name)]/@Margin[.='0' or .='0,0' or .='0 0' or .='0,0,0,0' or .='0 0 0 0']","ComboBox.Margin=""0""はデフォルト値です。"
 WPFXA1008,Default,"//*[name(.)='ComboBox'][not(@Name)]/@Padding[.='6,3,5,3' or .='6 3 5 3']","ComboBox.Padding=""6,3,5,3""はデフォルト値です。"
 WPFXA1009,Default,"//*[name(.)='ComboBox'][not(@Name)]/@BorderThickness[.='1' or .='1,1' or .='1 1' or .='1,1,1,1' or .='1 1 1 1']","ComboBox.BorderThickness=""1""はデフォルト値です。"
-WPFXA9999,Info,"//*[@*[local-name(.)='Key']][not(ext:contains-any(following::*/@*,string(@*[local-name(.)='Key'])))]",Keyが使用されていません。
+WPFXA9999,Info,//@*[local-name(.)='Key'][not(ext:contains-any(parent::*/following::*/@*))],Keyが使用されていません。

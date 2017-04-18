@@ -5,9 +5,9 @@ namespace XmlChecker
 {
 	public class ContainsAnyFunction : IXsltContextFunction
 	{
-		public int Minargs => 2;
-		public int Maxargs => 2;
-		public XPathResultType[] ArgTypes => new[] { XPathResultType.Navigator, XPathResultType.Navigator, };
+		public int Minargs => 1;
+		public int Maxargs => 1;
+		public XPathResultType[] ArgTypes => new[] { XPathResultType.Navigator, };
 		public XPathResultType ReturnType => XPathResultType.Boolean;
 
 		public ContainsAnyFunction()
@@ -16,10 +16,9 @@ namespace XmlChecker
 
 		public object Invoke(XsltContext xsltContext, object[] args, XPathNavigator docContext)
 		{
-			var item2 = (string)args[1];
 			foreach (XPathNavigator item in (XPathNodeIterator)args[0])
 			{
-				if (item.Value.Contains(item2))
+				if (item.Value.Contains(docContext.Value))
 				{
 					return true;
 				}

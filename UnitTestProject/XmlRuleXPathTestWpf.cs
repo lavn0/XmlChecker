@@ -3078,7 +3078,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"WpfXaml\WPFXA9999_OK.xaml", "WpfXaml")]
 		public void WPFXA9999_OK()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA9999", "Info", @"//*[@*[local-name(.)='Key']][not(ext:contains-any(following::*/@*,string(@*[local-name(.)='Key'])))]", @"Keyが使用されていません。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA9999", "Info", @"//@*[local-name(.)='Key'][not(ext:contains-any(parent::*/following::*/@*))]", @"Keyが使用されていません。", });
 			var xaml = File.ReadAllText(@"WpfXaml\WPFXA9999_OK.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = GetErrorInstances(xdoc, rule);
@@ -3090,7 +3090,7 @@ namespace UnitTestProject
 		[DeploymentItem(@"WpfXaml\WPFXA9999_NG2.xaml", "WpfXaml")]
 		public void WPFXA9999_NG()
 		{
-			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA9999", "Info", @"//*[@*[local-name(.)='Key']][not(ext:contains-any(following::*/@*,string(@*[local-name(.)='Key'])))]", @"Keyが使用されていません。", });
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA9999", "Info", @"//@*[local-name(.)='Key'][not(ext:contains-any(parent::*/following::*/@*))]", @"Keyが使用されていません。", });
 			var xaml = File.ReadAllText(@"WpfXaml\WPFXA9999_NG2.xaml");
 			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
 			var errorInstances = GetErrorInstances(xdoc, rule);
