@@ -13,6 +13,7 @@ namespace XmlChecker
 			switch (name)
 			{
 				case "contains-any": return new ContainsAnyFunction();
+				case "used-namespace": return new UsedNamespaceFunction();
 			}
 
 			return null;

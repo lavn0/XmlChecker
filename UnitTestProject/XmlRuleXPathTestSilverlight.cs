@@ -3507,6 +3507,20 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("SilverlightRule")]
+		public void XA9998_OK()
+		{
+			Assert.Inconclusive("ルール(ID=XA9998)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("SilverlightRule")]
+		public void XA9998_NG()
+		{
+			Assert.Inconclusive("ルール(ID=XA9998)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("SilverlightRule")]
 		[DeploymentItem(@"SilverlightXaml\XA9999_OK.xaml", "SilverlightXaml")]
 		public void XA9999_OK()
 		{

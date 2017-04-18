@@ -51,6 +51,7 @@
     <Compile Include="XmlRuleXPath.cs" />
     <Compile Include="XPathExtension\CustomContext.cs" />
     <Compile Include="XPathExtension\ContainsAnyFunction.cs" />
+    <Compile Include="XPathExtension\UsedNamespaceFunction.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\icon.png" />

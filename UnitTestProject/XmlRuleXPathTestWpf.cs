@@ -3075,6 +3075,20 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("WpfRule")]
+		public void WPFXA9998_OK()
+		{
+			Assert.Inconclusive("ルール(ID=WPFXA9998)の正常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
+		public void WPFXA9998_NG()
+		{
+			Assert.Inconclusive("ルール(ID=WPFXA9998)の異常系テストが作成されていません。");
+		}
+
+		[TestMethod]
+		[TestCategory("WpfRule")]
 		[DeploymentItem(@"WpfXaml\WPFXA9999_OK.xaml", "WpfXaml")]
 		public void WPFXA9999_OK()
 		{
