@@ -3507,16 +3507,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("SilverlightRule")]
+		[DeploymentItem(@"SilverlightXaml\XA9998_OK.xaml", "SilverlightXaml")]
 		public void XA9998_OK()
 		{
-			Assert.Inconclusive("ルール(ID=XA9998)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA9998", "Info", @"//namespace::*[not(name()='xml')][not(parent::*/parent::*)][not(.=namespace-uri(parent::*))][not(ext:used-namespace(parent::*/descendant-or-self::*) or ext:used-namespace(parent::*/descendant-or-self::*/@*))]", @"宣言されたNamespaceが使用されていません。", });
+			var xaml = File.ReadAllText(@"SilverlightXaml\XA9998_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = GetErrorInstances(xdoc, rule);
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("SilverlightRule")]
+		[DeploymentItem(@"SilverlightXaml\XA9998_NG1.xaml", "SilverlightXaml")]
 		public void XA9998_NG()
 		{
-			Assert.Inconclusive("ルール(ID=XA9998)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "XA9998", "Info", @"//namespace::*[not(name()='xml')][not(parent::*/parent::*)][not(.=namespace-uri(parent::*))][not(ext:used-namespace(parent::*/descendant-or-self::*) or ext:used-namespace(parent::*/descendant-or-self::*/@*))]", @"宣言されたNamespaceが使用されていません。", });
+			var xaml = File.ReadAllText(@"SilverlightXaml\XA9998_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = GetErrorInstances(xdoc, rule);
+			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]

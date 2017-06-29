@@ -1,0 +1,14 @@
+﻿<StackPanel
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:blend="http://schemas.microsoft.com/expression/blend/2008">
+    <StackPanel.Resources>
+        <DataTemplate x:Key="TestDataTemplate">
+            <Grid />
+        </DataTemplate>
+        <ControlTemplate x:Key="TestControlTemplate">
+            <Grid />
+        </ControlTemplate>
+    </StackPanel.Resources>
+    <ContentControl Content="Test" Template="{Binding}" ContentTemplate="{Binding}" />
+</StackPanel>

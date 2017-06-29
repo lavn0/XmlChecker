@@ -3075,16 +3075,26 @@ namespace UnitTestProject
 
 		[TestMethod]
 		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA9998_OK.xaml", "WpfXaml")]
 		public void WPFXA9998_OK()
 		{
-			Assert.Inconclusive("ルール(ID=WPFXA9998)の正常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA9998", "Info", @"//namespace::*[not(name()='xml')][not(parent::*/parent::*)][not(.=namespace-uri(parent::*))][not(ext:used-namespace(parent::*/descendant-or-self::*) or ext:used-namespace(parent::*/descendant-or-self::*/@*))]", @"宣言されたNamespaceが使用されていません。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA9998_OK.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = GetErrorInstances(xdoc, rule);
+			Assert.AreEqual(0, errorInstances.Count);
 		}
 
 		[TestMethod]
 		[TestCategory("WpfRule")]
+		[DeploymentItem(@"WpfXaml\WPFXA9998_NG1.xaml", "WpfXaml")]
 		public void WPFXA9998_NG()
 		{
-			Assert.Inconclusive("ルール(ID=WPFXA9998)の異常系テストが作成されていません。");
+			var rule = new XmlRuleXPath(string.Empty, 0, new string[] { "WPFXA9998", "Info", @"//namespace::*[not(name()='xml')][not(parent::*/parent::*)][not(.=namespace-uri(parent::*))][not(ext:used-namespace(parent::*/descendant-or-self::*) or ext:used-namespace(parent::*/descendant-or-self::*/@*))]", @"宣言されたNamespaceが使用されていません。", });
+			var xaml = File.ReadAllText(@"WpfXaml\WPFXA9998_NG1.xaml");
+			var xdoc = XDocument.Parse(xaml, LoadOptions.SetLineInfo);
+			var errorInstances = GetErrorInstances(xdoc, rule);
+			Assert.AreEqual(1, errorInstances.Count);
 		}
 
 		[TestMethod]
